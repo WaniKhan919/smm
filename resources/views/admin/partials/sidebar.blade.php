@@ -12,7 +12,7 @@
 
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="users-profile.html">
+        <a class="nav-link {{ Route::is('admin.dashboard.profile')? '': 'collapsed' }}" href="{{ route('admin.dashboard.profile') }}">
           <i class="bi bi-person"></i>
           <span>Profile</span>
         </a>
