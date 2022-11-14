@@ -23,13 +23,3 @@ Admin | Dashboard
 </div>
 
 @endsection
-
-@push('scripts')
-
-<script>
-
-    $(".nav-link:eq(0)").removeClass("collapsed");
-
-</script>
-
-@endpush

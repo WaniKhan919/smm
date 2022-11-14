@@ -40,6 +40,6 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::middleware('auth')->group(function () {
         Route::get('/dashboard', [AdminDashboardController::class, 'index'])->name('dashboard');
         Route::get('/dashboard/profile', [AdminDashboardController::class, 'profile'])->name('dashboard.profile');
-        Route::post('/dashboard/profile/update', [AdminDashboardController::class, 'profile'])->name('dashboard.profile.update');
+        Route::post('/dashboard/profile/update', [AdminProfileController::class, 'profile_update'])->name('dashboard.profile.update');
     });
 });

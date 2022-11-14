@@ -13,5 +13,17 @@ class ProfileController extends Controller
             'name' => 'required',
             'email' => 'required | email',
         ]);
+
+        $user = User::where('email', auth()->user()->email)->first();
+        if($user){
+            $user->update([
+                'name' => $request->name,
+                'email' => $request->email,
+            ]);
+
+            return back()->with(session()->flash('alert'));
+        }else{
+            return back();
+        }
     }
 }

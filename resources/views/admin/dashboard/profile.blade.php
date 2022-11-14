@@ -10,6 +10,15 @@ Admin | Profile
 
 <div id="main">
 
+    @if (session()->has('alert'))
+        
+        <div class="alert alert-success bg-success text-light border-0 alert-dismissible fade show" role="alert">
+            {{ session('alert') }}
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+
+    @endif
+
     <div class="pagetitle">
         <h1>Profile</h1>
         <nav>
@@ -70,6 +79,15 @@ Admin | Profile
                       <label for="fullName" class="col-md-4 col-lg-3 col-form-label">Name</label>
                       <div class="col-md-8 col-lg-9">
                         <input name="fullName" type="text" name="name" class="form-control" id="fullName" value="{{ auth()->user()->name }}">
+                        <span class="text-danger">
+
+                            @error('name')
+                                
+                                {{ $message }}
+
+                            @enderror
+
+                        </span>
                       </div>
                     </div>
 
@@ -77,6 +95,15 @@ Admin | Profile
                       <label for="fullName" class="col-md-4 col-lg-3 col-form-label">Email</label>
                       <div class="col-md-8 col-lg-9">
                         <input name="fullName" type="email" name="email" class="form-control" id="fullName" value="{{ auth()->user()->email }}">
+                        <span class="text-danger">
+
+                            @error('email')
+                                
+                                {{ $message }}
+
+                            @enderror
+
+                        </span>
                       </div>
                     </div>
                   
@@ -129,13 +156,3 @@ Admin | Profile
 </div>
 
 @endsection
-
-@push('scripts')
-
-<script>
-
-    $(".nav-link:eq(1)").removeClass("collapsed");
-
-</script>
-
-@endpush
