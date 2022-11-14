@@ -38,28 +38,15 @@
 
   </head>
   <body>
+
     
-    <div class="row">
+    @include('admin.partials.header')
 
-        <div class="col-12">
+    @include('admin.partials.sidebar')
 
-            @include('admin.partials.header')
+    @yield('main-content')
 
-        </div>
 
-        <div class="col-3 bg-white">
-
-            @include('admin.partials.sidebar')
-
-        </div>
-
-        <div class="col-9">
-
-            @yield('main-content')
-
-        </div>
-
-    </div>
 
     {{-- Admin Panel --}}
     <script src="{{ asset('assets/admin/vendor/apexcharts/apexcharts.min.js') }}"></script>
@@ -71,6 +58,9 @@
     <script src="{{ asset('assets/admin/vendor/tinymce/tinymce.min.js') }}"></script>
     <script src="{{ asset('assets/admin/vendor/php-email-form/validate.js') }}"></script>
     <script src="{{ asset('assets/admin/js/main.js') }}"></script>
+
+    {{-- JQuery --}}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     
     {{-- Custom --}}
     @stack('scripts')

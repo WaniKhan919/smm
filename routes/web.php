@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Artisan;
 use App\Http\Controllers\Admin\Auth\LoginController as AdminLoginController;
 use App\Http\Controllers\Admin\DashboardController as AdminDashboardController;
+use App\Http\Controllers\Admin\Profile\ProfileController as AdminProfileController;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,5 +39,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
     // Athenticated Routes
     Route::middleware('auth')->group(function () {
         Route::get('/dashboard', [AdminDashboardController::class, 'index'])->name('dashboard');
+        Route::get('/dashboard/profile', [AdminDashboardController::class, 'profile'])->name('dashboard.profile');
+        Route::post('/dashboard/profile/update', [AdminDashboardController::class, 'profile'])->name('dashboard.profile.update');
     });
 });
