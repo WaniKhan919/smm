@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\front\FrontController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Artisan;
 use App\Http\Controllers\Admin\Auth\LoginController as AdminLoginController;
@@ -20,15 +21,20 @@ use App\Http\Controllers\Admin\PackageTypesController as AdminPackageTypesContro
 |
 */
 
+
 Route::get('cmd/{cmd}', function ($cmd) {
     Artisan::call($cmd);
     echo "<pre style='color:white;background-color:black;padding:20px;'>";
     return Artisan::output();
 });
-
-Route::get('/', function () {
-    return view('welcome');
-});
+//Front Route//
+Route::get('/',[FrontController::class,'index']);
+Route::get('/about',[FrontController::class,'about'])->name('about-us');
+Route::get('/contact',[FrontController::class,'contact'])->name('contact');
+Route::get('/blog',[FrontController::class,'blog'])->name('blog');
+Route::get('/faq',[FrontController::class,'faq'])->name('faq');
+Route::get('/pricing',[FrontController::class,'pricing'])->name('pricing');
+Route::get('/services',[FrontController::class,'services'])->name('services');
 
 /* Admin Route */
 Route::prefix('admin')->name('admin.')->group(function () {
