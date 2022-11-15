@@ -24,6 +24,8 @@
     <link href="{{ asset('assets/admin/vendor/simple-datatables/style.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/admin/css/style.css') }}" rel="stylesheet">
 
+    {{-- Custom --}}
+    <link href="{{ asset('assets/css/admin/style.css') }}" rel="stylesheet">
 
     {{-- Styles --}}
 

@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\front;
 
 use App\Http\Controllers\Controller;
+use App\Models\Faq;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class FrontController extends Controller
 {
@@ -14,7 +16,8 @@ class FrontController extends Controller
         return view('front.about');
     }
     public function faq(){
-        return view('front.faq');
+        $faqs=Faq::where('status',1)->get();
+        return view('front.faq',compact('faqs'));
     }
     public function contact(){
         return view('front.contact');
@@ -27,5 +30,19 @@ class FrontController extends Controller
     }
     public function services(){
         return view('front.services');
+    }
+    public function login(){
+        if(Auth::check()){
+            return redirect('/');
+        }else{
+            return view('front.login');
+        }
+    }
+    public function register(){
+        if(Auth::check()){
+            return redirect('/');
+        }else{
+            return view('front.register');
+        }
     }
 }

@@ -58,13 +58,17 @@
 						</div>
 						<div class="col-lg-6 text-right">
 							<div class="header-top-right pull-right">
-								<div class="social-icons">
-									<a href="#"><i class="fa fa-facebook"></i></a>
-									<a href="#"><i class="fa fa-twitter"></i></a>
-									<a href="#"><i class="fa fa-linkedin"></i></a>
-									<a href="#"><i class="fa fa-instagram"></i></a>
+								@if (Auth::check())
+									<a href="{{ route('user-dashboard') }}" class="btn-common">Dashboard</a>
+								@else
+									<a href="{{ route('login') }}" class="btn-common">Signin / Signup</a>
+								@endif
+								
+								<div class="social-icons ml-2">
+									@if (Auth::check())
+										<a href="{{ route('user-logout') }}">Logout</a>
+									@endif
 								</div>
-								<a href="#" class="btn-common">Free SEO Audit</a>
 								<div class="site-lang">
 									<ul>
 										<li>
