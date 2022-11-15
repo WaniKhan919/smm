@@ -10,6 +10,7 @@ use App\Http\Controllers\Admin\PackagesController as AdminPackagesController;
 use App\Http\Controllers\Admin\PackageCategoriesController as AdminPackageCategoriesController;
 use App\Http\Controllers\Admin\PackageTypesController as AdminPackageTypesController;
 use App\Http\Controllers\Admin\FaqController;
+use App\Http\Controllers\front\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,13 +30,22 @@ Route::get('cmd/{cmd}', function ($cmd) {
     return Artisan::output();
 });
 //Front Route//
-Route::get('/',[FrontController::class,'index']);
+Route::get('/',[FrontController::class,'index'])->name('index');
 Route::get('/about',[FrontController::class,'about'])->name('about-us');
 Route::get('/contact',[FrontController::class,'contact'])->name('contact');
 Route::get('/blog',[FrontController::class,'blog'])->name('blog');
 Route::get('/faq',[FrontController::class,'faq'])->name('faq');
 Route::get('/pricing',[FrontController::class,'pricing'])->name('pricing');
 Route::get('/services',[FrontController::class,'services'])->name('services');
+Route::get('/login',[FrontController::class,'login'])->name('login');
+Route::get('/register',[FrontController::class,'register'])->name('register');
+Route::post('/register',[UserController::class,'register'])->name('user.register');
+Route::post('/user/login',[UserController::class,'login'])->name('user.login');
+Route::get('/logout',[UserController::class,'logout'])->name('user-logout');
+Route::get('/user/profile',[UserController::class,'profile'])->name('user-profile');
+Route::get('/user/change/password',[UserController::class,'changepassword'])->name('user-change-password');
+
+Route::get('/user/dashboard',[UserController::class,'dashbard'])->name('user-dashboard');
 
 /* Admin Route */
 Route::prefix('admin')->name('admin.')->group(function () {
