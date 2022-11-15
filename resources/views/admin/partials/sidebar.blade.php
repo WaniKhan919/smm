@@ -36,7 +36,12 @@
           </li>
         </ul>
       </li><!-- End Packages Nav -->
-
+      <li class="nav-item">
+        <a class="nav-link {{ Route::is('admin.faqs')? '': 'collapsed' }}" href="{{ route('admin.faqs.index') }}">
+          <i class="bi bi-menu-button-wide"></i>
+          <span>FAQ's</span>
+        </a>
+      </li>
       <li class="nav-item">
         <a class="nav-link {{ Route::is('admin.dashboard.profile')? '': 'collapsed' }}" href="{{ route('admin.dashboard.profile') }}">
           <i class="bi bi-person"></i>

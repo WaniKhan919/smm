@@ -122,7 +122,8 @@ input:-moz-placeholder, textarea:-moz-placeholder {
 /*  Button CSS
 /*----------------------------------------*/
 .btn-common {
-	background-color:#38c3c8;
+	/* background-color:#38c3c8; */
+	background-color:#fb5c71;
 	font-family: 'Nunito', sans-serif;
     font-size: 16px;
     font-weight: 700;
