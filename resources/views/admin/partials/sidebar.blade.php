@@ -26,6 +26,22 @@
           </li>
           <li>
             <a href="{{ route('admin.blog.category.index') }}" class="{{ Route::is('admin.blog.category.index')? 'active': '' }}">
+        <a class="nav-link {{ Route::is('admin.package*')? '': 'collapsed' }}" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-box"></i><span>Packages</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="{{ route('admin.packages.index') }}" class="{{ Route::is('admin.package.index')? 'active': '' }}">
+              <i class="bi bi-circle"></i><span>All Packages</span>
+            </a>
+          </li>
+          <li>
+            <a href="{{ route('admin.packages.create') }}" class="{{ Route::is('admin.package.create')? 'active': '' }}">
+              <i class="bi bi-circle"></i><span>Add New</span>
+            </a>
+          </li>
+          <li>
+            <a href="{{ route('admin.package-categories.index') }}" class="{{ Route::is('admin.package-categories.index')? 'active': '' }}">
               <i class="bi bi-circle"></i><span>Categories</span>
             </a>
           </li>
@@ -37,6 +53,18 @@
         </ul>
       </li>
 
+            <a href="{{ route('admin.package-types.index') }}" class="{{ Route::is('admin.package-types.index')? 'active': '' }}">
+              <i class="bi bi-circle"></i><span>Types</span>
+            </a>
+          </li>
+        </ul>
+      </li><!-- End Packages Nav -->
+      <li class="nav-item">
+        <a class="nav-link {{ Route::is('admin.faqs')? '': 'collapsed' }}" href="{{ route('admin.faqs.index') }}">
+          <i class="bi bi-menu-button-wide"></i>
+          <span>FAQ's</span>
+        </a>
+      </li>
       <li class="nav-item">
         <a class="nav-link {{ Route::is('admin.profile')? '': 'collapsed' }}" href="{{ route('admin.profile') }}">
           <i class="bi bi-person"></i>
