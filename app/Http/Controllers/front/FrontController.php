@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\front;
 
 use App\Http\Controllers\Controller;
+use App\Models\Faq;
 use Illuminate\Http\Request;
 
 class FrontController extends Controller
@@ -14,7 +15,8 @@ class FrontController extends Controller
         return view('front.about');
     }
     public function faq(){
-        return view('front.faq');
+        $faqs=Faq::where('status',1)->get();
+        return view('front.faq',compact('faqs'));
     }
     public function contact(){
         return view('front.contact');

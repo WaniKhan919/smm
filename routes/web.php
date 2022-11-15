@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\Profile\ProfileController as AdminProfileControll
 use App\Http\Controllers\Admin\PackagesController as AdminPackagesController;
 use App\Http\Controllers\Admin\PackageCategoriesController as AdminPackageCategoriesController;
 use App\Http\Controllers\Admin\PackageTypesController as AdminPackageTypesController;
+use App\Http\Controllers\Admin\FaqController;
 
 /*
 |--------------------------------------------------------------------------
@@ -55,5 +56,8 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::resource('/packages', AdminPackagesController::class);
         Route::resource('/package-categories', AdminPackageCategoriesController::class);
         Route::resource('/package-types', AdminPackageTypesController::class);
+
+        //FAQ's
+        Route::resource('faqs',FaqController::class);
     });
 });
