@@ -120,7 +120,6 @@
 										<li><a href="{{ route('contact') }}">Contact Us</a></li>
 										<li><a href="{{ route('faq') }}">FAQ</a></li>
 										<li class="mobile-icon"><a href="#mobile-menu"><i class="ti-menu"></i></a></li>
-										<li class="search-icon"><a href="#" data-toggle="modal" data-target="#exampleModal"><i class="ti-search"></i></a></li>
 									</ul>
 								</nav>
 							</div>
@@ -130,24 +129,31 @@
 										<ul class="list-none">
 											<li><a href="{{ url('/') }}">Home</a>
 											</li>
-											<li><a href="{{ route('services') }}">Services</a>
+											<li><a href="#">Services</a>
 												<ul>
-													<li><a href="#">Service A</a>
+													<li>
+														<a href="{{ route('services') }}">Service A</a>
 													</li>
-													<li><a href="#">Packages <i class="icon_plus"></i></a>
-														<ul>
-															<li><a href="{{ route('pricing') }}">Package A</a></li>
-														</ul>
-													</li>
-													<li><a href="#">Blog <i class="icon_plus"></i></a>
-														<ul>
-															<li><a href="{{ route('blog') }}">Blog Detail</a></li>
-														</ul>
-													</li>
-													<li><a href="{{ route('about-us') }}">About Us</a></li>
-													<li><a href="{{ route('contact') }}">Contact Us</a></li>
-													<li><a href="{{ route('faq') }}">FAQ</a></li>
 												</ul>
+											</li>
+											<li><a href="#">Packages</a>
+												<ul>
+													<li><a href="{{ route('pricing') }}">Package A</a></li>
+												</ul>
+											</li>
+											<li><a href="#">Blog</a>
+												<ul>
+													<li><a href="{{ route('blog') }}">Blog Detail</a></li>
+												</ul>
+											</li>
+											<li>
+												<a href="{{ route('about-us') }}">About Us</a>
+											</li>
+											<li>
+												<a href="{{ route('contact') }}">Contact Us</a>
+											</li>
+											<li>
+												<a href="{{ route('faq') }}">FAQ</a>
 											</li>
 										</ul>
 									</div>
@@ -287,21 +293,6 @@
 		<script src="{{ asset('front_assets/js/plugins.js')}}"></script>
 		<!-- main js -->
 		<script src="{{ asset('front_assets/js/main.js')}}"></script>
-		
-		<!-- Search Modal -->
-		<div class="search-modal">
-			<div class="modal fade bd-example-modal-lg" id="exampleModal" tabindex="-1" role="dialog" aria-hidden="true">
-				<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-					<div class="modal-content">
-						<div class="modal-body popup-search">
-							<form>
-								<input type="text" placeholder="Search..." />
-								<button type="submit"><i class="icon_search"></i></button>
-							</form>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
+
 	</body>
 </html>
