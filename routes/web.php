@@ -6,6 +6,9 @@ use Illuminate\Support\Facades\Artisan;
 use App\Http\Controllers\Admin\Auth\LoginController as AdminLoginController;
 use App\Http\Controllers\Admin\DashboardController as AdminDashboardController;
 use App\Http\Controllers\Admin\Profile\ProfileController as AdminProfileController;
+use App\Http\Controllers\Admin\PackagesController as AdminPackagesController;
+use App\Http\Controllers\Admin\PackageCategoriesController as AdminPackageCategoriesController;
+use App\Http\Controllers\Admin\PackageTypesController as AdminPackageTypesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -47,5 +50,10 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::get('/dashboard', [AdminDashboardController::class, 'index'])->name('dashboard');
         Route::get('/dashboard/profile', [AdminDashboardController::class, 'profile'])->name('dashboard.profile');
         Route::post('/dashboard/profile/update', [AdminProfileController::class, 'profile_update'])->name('dashboard.profile.update');
+
+        // Packages
+        Route::resource('/packages', AdminPackagesController::class);
+        Route::resource('/package-categories', AdminPackageCategoriesController::class);
+        Route::resource('/package-types', AdminPackageTypesController::class);
     });
 });
