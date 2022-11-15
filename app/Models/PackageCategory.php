@@ -17,4 +17,9 @@ class PackageCategory extends Model
     protected $fillable = [
         'name',
     ];
+
+    public function types()
+    {
+        return $this->hasMany(PackageType::class, 'id', 'category_id');
+    }
 }

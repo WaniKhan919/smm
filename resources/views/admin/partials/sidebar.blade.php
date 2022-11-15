@@ -10,10 +10,10 @@
       </li><!-- End Dashboard Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#" aria-expanded="false">
-          <i class="bi bi-journal-text"></i><span>Blog</span><i class="bi bi-chevron-down ms-auto"></i>
+        <a class="nav-link {{ Route::is('admin.blog*')? '': 'collapsed' }}" data-bs-target="#blog-nav" data-bs-toggle="collapse" href="#" aria-expanded="false">
+          <i class="bi bi-pin-angle"></i><span>Blog</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
-        <ul id="forms-nav" class="nav-content collapse {{ Route::is('admin.blog.category.index')? 'show': '' }} {{ Route::is('admin.blog.category.create')? 'show': '' }} {{ Route::is('admin.blog.category.edit')? 'show': '' }} {{ Route::is('admin.blog.post.index')? 'show': '' }} {{ Route::is('admin.blog.post.create')? 'show': '' }} {{ Route::is('admin.blog.post.edit')? 'show': '' }}" data-bs-parent="#sidebar-nav" style="">
+        <ul id="blog-nav" class="nav-content collapse {{ Route::is('admin.blog*')? 'show': '' }}" data-bs-parent="#sidebar-nav" style="">
           <li>
             <a href="{{ route('admin.blog.post.index') }}" class="{{ Route::is('admin.blog.post.index')? 'active': '' }}">
               <i class="bi bi-circle"></i><span>Posts</span>
@@ -26,17 +26,28 @@
           </li>
           <li>
             <a href="{{ route('admin.blog.category.index') }}" class="{{ Route::is('admin.blog.category.index')? 'active': '' }}">
-        <a class="nav-link {{ Route::is('admin.package*')? '': 'collapsed' }}" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
+              <i class="bi bi-circle"></i><span>Categories</span>
+            </a>
+          <li>
+            <a href="{{ route('admin.blog.category.create') }}" class="{{ Route::is('admin.blog.category.create')? 'active': '' }}">
+              <i class="bi bi-circle"></i><span>Add Category</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        <a class="nav-link {{ Route::is('admin.package*')? '': 'collapsed' }}" data-bs-target="#packages-nav" data-bs-toggle="collapse" href="#">
           <i class="bi bi-box"></i><span>Packages</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
-        <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+        <ul id="packages-nav" class="nav-content collapse {{ Route::is('admin.package*')? 'show': '' }}" data-bs-parent="#sidebar-nav">
           <li>
-            <a href="{{ route('admin.packages.index') }}" class="{{ Route::is('admin.package.index')? 'active': '' }}">
+            <a href="{{ route('admin.packages.index') }}" class="{{ Route::is('admin.packages.index')? 'active': '' }}">
               <i class="bi bi-circle"></i><span>All Packages</span>
             </a>
           </li>
           <li>
-            <a href="{{ route('admin.packages.create') }}" class="{{ Route::is('admin.package.create')? 'active': '' }}">
+            <a href="{{ route('admin.packages.create') }}" class="{{ Route::is('admin.packages.create')? 'active': '' }}">
               <i class="bi bi-circle"></i><span>Add New</span>
             </a>
           </li>
@@ -46,19 +57,13 @@
             </a>
           </li>
           <li>
-            <a href="{{ route('admin.blog.category.create') }}" class="{{ Route::is('admin.blog.category.create')? 'active': '' }}">
-              <i class="bi bi-circle"></i><span>Add Category</span>
-            </a>
-          </li>
-        </ul>
-      </li>
-
             <a href="{{ route('admin.package-types.index') }}" class="{{ Route::is('admin.package-types.index')? 'active': '' }}">
               <i class="bi bi-circle"></i><span>Types</span>
             </a>
           </li>
         </ul>
       </li><!-- End Packages Nav -->
+
       <li class="nav-item">
         <a class="nav-link {{ Route::is('admin.faqs')? '': 'collapsed' }}" href="{{ route('admin.faqs.index') }}">
           <i class="bi bi-menu-button-wide"></i>
