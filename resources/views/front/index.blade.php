@@ -66,7 +66,7 @@
         <div class="counter-single">
           <i class="ti-bar-chart"></i>
           <span class="count2">8630</span>
-          <h4>Keywords Rank</h4>
+          <h4>App reviewed</h4>
         </div>
       </div>
       <div class="col-lg-3 col-md-3 col-sm-6">
@@ -81,7 +81,7 @@
           <i class="ti-crown"></i>
           <span class="count4">40</span>
           <span>+</span>
-          <h4>Awards Win</h4>
+          <h4>Reviews websites</h4>
         </div>
       </div>
     </div>
