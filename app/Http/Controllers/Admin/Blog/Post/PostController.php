@@ -17,7 +17,7 @@ class PostController extends Controller
     public function index()
     {
         $posts = Post::all();
-        return view('admin.dashboard.blog.post.index', compact('posts'));
+        return view('admin.blog.post.index', compact('posts'));
     }
 
     /**
@@ -28,7 +28,7 @@ class PostController extends Controller
     public function create()
     {
         $categories = Category::all();
-        return view('admin.dashboard.blog.post.add', compact('categories'));
+        return view('admin.blog.post.add', compact('categories'));
     }
 
     /**
@@ -88,7 +88,7 @@ class PostController extends Controller
         $post = Post::find($id);
         $categories = Category::all();
 
-        return view('admin.dashboard.blog.post.edit', compact('id','post' , 'categories'));
+        return view('admin.blog.post.edit', compact('id','post' , 'categories'));
     }
 
     /**
@@ -146,7 +146,7 @@ class PostController extends Controller
         if($post){
             $post = $post->delete();
             if($post){
-                return back()->with(session()->flash('alert', 'Post Successfully Deleted'));
+                return back()->with(session()->flash('alert', 'Post Successfully Deleted.'));
             }else{
                 return back();
             }
