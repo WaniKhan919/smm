@@ -11,6 +11,8 @@ use Illuminate\Support\Facades\Redis;
 
 class PackagesController extends Controller
 {
+    protected $isAdmin = true;
+    
     public function index()
     {
         $packages = Package::all();

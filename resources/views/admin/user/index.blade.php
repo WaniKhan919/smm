@@ -49,7 +49,7 @@ Admin | Users
                 <div class="card">
                     <div class="card-body">
                         <div class="d-flex align-items-center justify-content-between">
-                            <h5 class="card-title">Users</h5>
+                            <h5 class="card-title">All Users</h5>
                         </div>
         
                       <!-- Default Table -->

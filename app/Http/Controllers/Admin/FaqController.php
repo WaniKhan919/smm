@@ -8,6 +8,8 @@ use Illuminate\Http\Request;
 
 class FaqController extends Controller
 {
+    protected $isAdmin = true;
+    
     /**
      * Display a listing of the resource.
      *
