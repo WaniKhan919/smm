@@ -77,6 +77,14 @@
           <span>FAQ's</span>
         </a>
       </li>
+
+      <li class="nav-item">
+        <a class="nav-link {{ Route::is('admin.reviews.index')? '': 'collapsed' }}" href="{{ route('admin.reviews.index') }}">
+          <i class="bi bi-stars"></i>
+          <span>Reviews</span>
+        </a>
+      </li>
+
       <li class="nav-item">
         <a class="nav-link {{ Route::is('admin.profile')? '': 'collapsed' }}" href="{{ route('admin.profile') }}">
           <i class="bi bi-person"></i>
