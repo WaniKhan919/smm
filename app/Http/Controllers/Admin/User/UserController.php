@@ -1,12 +1,13 @@
 <?php
 
-namespace App\Http\Controllers\Admin\Blog\Category;
+namespace App\Http\Controllers\Admin\User;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
-use App\Models\BlogCategory as Category;
+use App\Models\User;
 
-class CategoryController extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +16,8 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $categories = Category::all();
-        return view('admin.blog.category.index', compact('categories'));
+        $users = User::all();
+        return view('admin.user.index', compact('users'));
     }
 
     /**
@@ -26,7 +27,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        return view('admin.blog.category.add');
+        //
     }
 
     /**
@@ -37,19 +38,7 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'title' => 'required',
-        ]);
-
-        $category = Category::create([
-            'title' => $request->title,
-        ]);
-
-        if($category){
-            return back()->with(session()->flash('alert', 'Category Successfully Added.'));
-        }else{
-            return back();
-        }
+        
     }
 
     /**
@@ -71,10 +60,9 @@ class CategoryController extends Controller
      */
     public function edit($id)
     {
-        $category = Category::find($id);
-        
-        if($category){
-            return view('admin.blog.category.edit', compact('category', 'id'));
+        $user = User::find($id);
+        if($user){
+            return view('admin.user.edit', compact('id', 'user'));
         }else{
             return back();
         }
@@ -90,18 +78,30 @@ class CategoryController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'title' => 'required',
+            'name' => 'required',
+            'email' => 'required | email',
+            'phone' => 'required | integer',
         ]);
 
-        $category = Category::find($id);
-        
-        if($category){
-            $category = $category->update([
-                'title' => $request->title,
+        if($request->password != ""){
+            $request->validate([
+                'password' => 'confirmed',
+                'password_confirmation' => 'required',
+            ]);
+        }
+
+        $user = User::find($id);
+        if($user){
+            $user = $user->update([
+                'name' => $request->name,
+                'lastname' => $request->lastname,
+                'email' => $request->email,
+                'phone' => $request->phone,
+                'password' => Hash::make($request->password),
             ]);
 
-            if($category){
-                return back()->with(session()->flash('alert', 'Category Successfully Updated.'));
+            if($user){
+                return back()->with(session()->flash('alert', 'User Successfully Updated.'));
             }else{
                 return back();
             }
@@ -118,13 +118,11 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-        $category = Category::find($id);
-        
-        if($category){
-            $category = $category->delete();
-
-            if($category){
-                return back()->with(session()->flash('alert', 'Category Successfully Deleted.'));
+        $user = User::find($id);
+        if($user){
+            $user = $user->delete();
+            if($user){
+                return back()->with(session()->flash('alert', 'User Successfully Deleted'));
             }else{
                 return back();
             }
