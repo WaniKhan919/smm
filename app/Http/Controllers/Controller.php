@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
+use Illuminate\Support\Facades\View;
 use Illuminate\Foundation\Bus\DispatchesJobs;
-use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Routing\Controller as BaseController;
+use Illuminate\Foundation\Validation\ValidatesRequests;
+use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 
 class Controller extends BaseController
 {
@@ -13,7 +14,17 @@ class Controller extends BaseController
 
     public function __construct()
     {
-        //$this->getCountriesInfo();
+        // Get user language code and inject to views
+        if (!isset($this->isAdmin) || $this->isAdmin === false)
+            View::share('userLangCode', $this->getUserLanguageCode());
+    }
+
+    protected function getUserLanguageCode()
+    {
+        $location = $this->getCountryByIpAddress();
+        if ($location !== false)
+            return $this->getLanguage($location['countryCode']);
+        return 'en';
     }
 
     protected function getCountryByIpAddress()
@@ -22,7 +33,8 @@ class Controller extends BaseController
         $query = json_decode(file_get_contents('http://ip-api.com/json/' . $ip), true);
         if ($query && $query['status'] == 'success') {
             $country = $query['country'];
-            return $country;
+            $countryCode = $query['countryCode'];
+            return compact('country', 'countryCode');
         } else {
             return false;
         }
@@ -39,36 +51,11 @@ class Controller extends BaseController
         }
     }
 
-    protected function getCountriesInfo()
+    protected function getLanguage($country)
     {
-        $curl = curl_init();
-        set_time_limit(0);
-        curl_setopt($curl, CURLOPT_TIMEOUT, 500);
-
-        curl_setopt_array($curl, [
-            CURLOPT_URL => "https://ajayakv-rest-countries-v1.p.rapidapi.com/rest/v1/all",
-            CURLOPT_RETURNTRANSFER => true,
-            CURLOPT_FOLLOWLOCATION => true,
-            CURLOPT_ENCODING => "",
-            CURLOPT_MAXREDIRS => 10,
-            CURLOPT_TIMEOUT => 30,
-            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-            CURLOPT_CUSTOMREQUEST => "GET",
-            CURLOPT_HTTPHEADER => [
-                "X-RapidAPI-Host: ajayakv-rest-countries-v1.p.rapidapi.com",
-                "X-RapidAPI-Key: 5d874c8dfcmsh7f6592acd1df02ap1cb434jsnbfd669590248"
-            ],
-        ]);
-
-        $response = curl_exec($curl);
-        $err = curl_error($curl);
-
-        curl_close($curl);
-
-        if ($err) {
-            dd("cURL Error #:" . $err);
-        } else {
-            dd($response);
-        }
+        $subtags = \ResourceBundle::create('likelySubtags', 'ICUDATA', false);
+        $country = \Locale::canonicalize('und_'.$country);
+        $locale = $subtags->get($country) ?: $subtags->get('und');
+        return \Locale::getPrimaryLanguage($locale);
     }
 }
