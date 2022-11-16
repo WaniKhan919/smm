@@ -36,7 +36,10 @@ Route::get('cmd/{cmd}', function ($cmd) {
 Route::get('/',[FrontController::class,'index'])->name('index');
 Route::get('/about',[FrontController::class,'about'])->name('about-us');
 Route::get('/contact',[FrontController::class,'contact'])->name('contact');
-Route::get('/blog',[FrontController::class,'blog'])->name('blog');
+Route::get('/blog/{id}',[FrontController::class,'blog'])->name('blog');
+Route::get('/blog/{id}',[FrontController::class,'blog'])->name('blog');
+Route::get('/blog/detail/{id}',[FrontController::class,'blogDetail'])->name('blog-detail');
+Route::post('/blog/search/',[FrontController::class,'blogSearch'])->name('blog-search');
 Route::get('/faq',[FrontController::class,'faq'])->name('faq');
 Route::get('/pricing',[FrontController::class,'pricing'])->name('pricing');
 Route::get('/services',[FrontController::class,'services'])->name('services');
@@ -47,6 +50,8 @@ Route::post('/user/login',[UserController::class,'login'])->name('user.login');
 Route::get('/logout',[UserController::class,'logout'])->name('user-logout');
 Route::get('/user/profile',[UserController::class,'profile'])->name('user-profile');
 Route::get('/user/change/password',[UserController::class,'changepassword'])->name('user-change-password');
+Route::put('/user/update/profile',[UserController::class,'updateprofile'])->name('update.user.profile');
+Route::put('/user/update/password',[UserController::class,'updatepassword'])->name('user-update-password');
 
 Route::get('/user/dashboard',[UserController::class,'dashbard'])->name('user-dashboard');
 

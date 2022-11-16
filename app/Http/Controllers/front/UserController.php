@@ -43,6 +43,44 @@ class UserController extends Controller
             return back()->with('error','Failed to login');
         }
     }
+    public function updateprofile(Request $request){
+        $request->validate([
+            'name'=>'required',
+            'lastname'=>'required',
+            'email'=>'required',
+            'phone'=>'required',
+        ]);
+        $model=User::find(Auth::guard('web')->user()->id);
+        $model->name=$request->name;
+        $model->lastname=$request->lastname;
+        $model->email=$request->email;
+        $model->phone=$request->phone;
+        if($model->update()){
+            return redirect()->back()->with('success','Profile updated successfully');
+        }else{
+            return redirect()->back()->with('error','Failed to update profile');
+        }
+    }
+    public function updatepassword(Request $request){
+        $request->validate([
+            'current_password'=>'required',
+            'password'=>'required|confirmed',
+            'password_confirmation'=>'required',
+        ]);
+        $model=User::find(Auth::guard('web')->user()->id);
+        if(isset($request->password)){
+            if(Hash::check($request->current_password,$model->password)){
+                $model->password= Hash::make($request->password);
+                if($model->update()){
+                    return redirect()->back()->with('success','Password changed successfully');
+                }else{
+                    return redirect()->back()->with('error','Failed to change password');
+                }
+            }else{
+                return redirect()->back()->with('error','Your current password not matched!');
+            }
+        }
+    }
     public function logout(){
         Auth::logout();
         return redirect()->route('index');

@@ -12,10 +12,10 @@
             <div class="card-body">
               <h5>Welcome To Dashboard</h5>
               <ul class="list-group">
-                <li class="list-group-item">First Name : {{ auth('web')->user()->name; }}</li>
-                <li class="list-group-item">Last Name :  {{ auth('web')->user()->lastname; }}</li>
-                <li class="list-group-item">Email :  {{ auth('web')->user()->email; }}</li>
-                <li class="list-group-item">Mobile : {{ auth('web')->user()->phone; }} </li>
+                <li class="list-group-item">First Name : {{ auth('web')->user()->name }}</li>
+                <li class="list-group-item">Last Name :  {{ auth('web')->user()->lastname }}</li>
+                <li class="list-group-item">Email :  {{ auth('web')->user()->email }}</li>
+                <li class="list-group-item">Mobile : {{ auth('web')->user()->phone }} </li>
               </ul>
             </div>
           </div>
