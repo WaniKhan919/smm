@@ -5,13 +5,15 @@ namespace App\Http\Controllers\front;
 use App\Http\Controllers\Controller;
 use App\Models\BlogPost;
 use App\Models\Faq;
+use App\Models\Package;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class FrontController extends Controller
 {
     public function index(){
-        return view('front.index');
+        $blogs=BlogPost::orderBy('id','Desc')->limit(6)->get();
+        return view('front.index',compact('blogs'));
     }
     public function about(){
         return view('front.about');
@@ -37,11 +39,9 @@ class FrontController extends Controller
         ->get();
         return view('front.blog',compact('blogs'));
     }
-    public function pricing(){
-        return view('front.pricing');
-    }
-    public function services(){
-        return view('front.services');
+    public function servicesCategory($id){
+        $packages=Package::where('type_id',$id)->get();
+        return view('front.pricing',compact('packages'));
     }
     public function login(){
         if(Auth::check()){

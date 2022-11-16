@@ -148,7 +148,6 @@
                       <a href="{{ url('/') }}">Home</a>
 										</li>
 										<x-navbar-services></x-navbar-services>
-										<x-navbar-pakages></x-navbar-pakages>
 										<x-navbar-blogs></x-navbar-blogs>
 										<li><a href="{{ route('about-us') }}">About</a></li>
 										<li><a href="{{ route('contact') }}">Contact</a></li>
@@ -163,23 +162,8 @@
 										<ul class="list-none">
 											<li><a href="{{ url('/') }}">Home</a>
 											</li>
-											<li><a href="#">Services</a>
-												<ul>
-													<li>
-														<a href="{{ route('services') }}">Service A</a>
-													</li>
-												</ul>
-											</li>
-											<li><a href="#">Packages</a>
-												<ul>
-													<li><a href="{{ route('pricing') }}">Package A</a></li>
-												</ul>
-											</li>
-											<li><a href="#">Blog</a>
-												<ul>
-													<li><a href="">Blog Detail</a></li>
-												</ul>
-											</li>
+											<x-navbar-services></x-navbar-services>
+											<x-navbar-blogs></x-navbar-blogs>
 											<li>
 												<a href="{{ route('about-us') }}">About Us</a>
 											</li>
