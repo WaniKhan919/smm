@@ -3352,3 +3352,6 @@ a.value-decrease::before {
     overflow: visible;
     visibility: visible;
 }
+.footer-area{
+	background: #f3f8f8 !important;
+}

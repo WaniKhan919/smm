@@ -221,27 +221,14 @@
 								<h4><span>About Us</span></h4>
 							</div>
 							<ul class="list-none">
-								<li><a href="#">Home</a></li>
-								<li><a href="#">Contact Us</a></li>
-								<li><a href="#">About Us</a></li>
-								<li><a href="#">FAQs</a></li>
+								<li><a href="{{ url('/') }}">Home</a></li>
+								<li><a href="{{ route('contact') }}">Contact Us</a></li>
+								<li><a href="{{ route('about-us') }}">About Us</a></li>
+								<li><a href="{{ route('faq') }}">FAQs</a></li>
 							</ul>
 						</div>
 					</div>
-					<div class="col-lg-3 col-sm-6">
-						<div class="footer-widget mt-sm-35">
-							<div class="footer-widget-title">
-								<h4><span>Services</span></h4>
-							</div>
-							<ul class="list-none">
-								<li><a href="#">SEO Services</a></li>
-								<li><a href="#">Social Media</a></li>
-								<li><a href="#">SEO Case Studies</a></li>
-								<li><a href="#">PPC Case Studies</a></li>
-								<li><a href="#">Social Media Case Studies</a></li>
-							</ul>
-						</div>
-					</div>
+					<x-footer-services></x-footer-services>
 					<div class="col-lg-3 col-sm-6">
 						<div class="footer-widget footer-contact mt-sm-35">
 							<div class="footer-widget-title">
