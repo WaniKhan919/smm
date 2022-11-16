@@ -45,7 +45,7 @@ Route::get('/blog/detail/{id}',[FrontController::class,'blogDetail'])->name('blo
 Route::post('/blog/search/',[FrontController::class,'blogSearch'])->name('blog-search');
 Route::get('/faq',[FrontController::class,'faq'])->name('faq');
 Route::get('/pricing',[FrontController::class,'pricing'])->name('pricing');
-Route::get('/services',[FrontController::class,'services'])->name('services');
+Route::get('/service/{id}',[FrontController::class,'servicesCategory'])->name('service-category');
 Route::get('/login',[FrontController::class,'login'])->name('login');
 Route::get('/register',[FrontController::class,'register'])->name('register');
 Route::post('/register',[UserController::class,'register'])->name('user.register');
