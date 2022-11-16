@@ -13,6 +13,8 @@ use App\Models\Admin;
 
 class PasswordResetController extends Controller
 {
+    protected $isAdmin = true;
+    
     public function index()
     {
         return view('admin.password_reset.index');

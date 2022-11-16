@@ -8,6 +8,8 @@ use App\Models\BlogCategory as Category;
 
 class CategoryController extends Controller
 {
+    protected $isAdmin = true;
+
     /**
      * Display a listing of the resource.
      *
@@ -46,7 +48,7 @@ class CategoryController extends Controller
         ]);
 
         if($category){
-            return back()->with(session()->flash('alert', 'Category Successfully Added.'));
+            return back()->with(session()->flash('alert', 'New category added successfully!'));
         }else{
             return back();
         }
@@ -101,7 +103,7 @@ class CategoryController extends Controller
             ]);
 
             if($category){
-                return back()->with(session()->flash('alert', 'Category Successfully Updated.'));
+                return back()->with(session()->flash('alert', 'Category edited successfully!'));
             }else{
                 return back();
             }
@@ -124,7 +126,7 @@ class CategoryController extends Controller
             $category = $category->delete();
 
             if($category){
-                return back()->with(session()->flash('alert', 'Category Successfully Deleted.'));
+                return back()->with(session()->flash('alert', 'Category deleted successfully!'));
             }else{
                 return back();
             }

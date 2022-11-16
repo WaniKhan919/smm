@@ -9,6 +9,8 @@ use Illuminate\Http\Request;
 
 class PackageCategoriesController extends Controller
 {
+    protected $isAdmin = true;
+    
     public function index()
     {
         $categories = PackageCategory::all();

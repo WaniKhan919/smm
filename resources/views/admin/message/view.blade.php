@@ -2,7 +2,7 @@
 
 @push('title')
 
-Admin - Profile
+Admin | View - message
 
 @endpush
 
@@ -31,12 +31,12 @@ Admin - Profile
     @endif
 
     <div class="pagetitle">
-        <h1>Profile</h1>
+        <h1>Message</h1>
         <nav>
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}">Home</a></li>
-                <li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}">Dashboard</a></li>
-                <li class="breadcrumb-item active">Profile</li>
+                <li class="breadcrumb-item"><a href="{{ route('admin.message.index') }}">Messages</a></li>
+                <li class="breadcrumb-item active">Message-details</li>
             </ol>
         </nav>
     </div>
@@ -45,40 +45,34 @@ Admin - Profile
 
         <div class="row">
 
-          <div class="col-md-7 col-sm-10 col-12">
+          <div class="col-md-10 col-sm-10 col-12">
 
             <div class="card">
               <div class="card-body pt-3">
-                <!-- Bordered Tabs -->
-                <ul class="nav nav-tabs nav-tabs-bordered" role="tablist">
-  
-                  <li class="nav-item" role="presentation">
-                    <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#profile-overview" aria-selected="true" role="tab">Overview</button>
-                  </li>
-  
-                  <li class="nav-item" role="presentation">
-                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#profile-edit" aria-selected="false" tabindex="-1" role="tab">Edit Profile</button>
-                  </li>
-  
-                  <li class="nav-item" role="presentation">
-                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#profile-change-password" aria-selected="false" tabindex="-1" role="tab">Change Password</button>
-                  </li>
-  
-                </ul>
                 <div class="tab-content pt-2">
   
                   <div class="tab-pane fade show active profile-overview" id="profile-overview" role="tabpanel">
                  
-                    <h5 class="card-title">Profile Details</h5>
+                    <h5 class="card-title">Message Details</h5>
   
-                    <div class="row">
+                    <div class="row mb-2">
                       <div class="col-lg-3 col-md-4 col-4 label message-view-field">Name</div>
-                      <div class="col-lg-9 col-md-8 col-8">{{ auth()->user()->name }}</div>
+                      <div class="col-lg-9 col-md-8 col-8">{{ $message->name ?? '' }}</div>
                     </div>
   
-                    <div class="row">
+                    <div class="row mb-2">
                       <div class="col-lg-3 col-md-4 col-4 label message-view-field">Email</div>
-                      <div class="col-lg-9 col-md-8 col-8">{{ auth()->user()->email }}</div>
+                      <div class="col-lg-9 col-md-8 col-8">{{ $message->email ?? '' }}</div>
+                    </div>
+
+                    <div class="row mb-2">
+                      <div class="col-lg-3 col-md-4 col-4 label message-view-field">Subject</div>
+                      <div class="col-lg-9 col-md-8 col-8">{{ $message->subject ?? '' }}</div>
+                    </div>
+
+                    <div class="row mb-2">
+                      <div class="col-lg-3 col-md-4 col-4 label message-view-field">Message</div>
+                      <div class="col-lg-9 col-md-8 col-8">{{ $message->message ?? '' }}</div>
                     </div>
                     
                   </div>

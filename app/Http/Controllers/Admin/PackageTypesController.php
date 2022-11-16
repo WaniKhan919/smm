@@ -9,6 +9,8 @@ use Illuminate\Http\Request;
 
 class PackageTypesController extends Controller
 {
+    protected $isAdmin = true;
+    
     public function index()
     {
         $types = PackageType::all();

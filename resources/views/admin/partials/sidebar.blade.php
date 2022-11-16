@@ -10,13 +10,6 @@
       </li>
 
       <li class="nav-item">
-        <a class="nav-link {{ Route::is('admin.user*')? '': 'collapsed' }}" href="{{ route('admin.user.index') }}">
-          <i class="bi bi-people"></i>
-          <span>Users</span>
-        </a>
-      </li>
-
-      <li class="nav-item">
         <a class="nav-link {{ Route::is('admin.blog*')? '': 'collapsed' }}" data-bs-target="#blog-nav" data-bs-toggle="collapse" href="#" aria-expanded="false">
           <i class="bi bi-pin-angle"></i><span>Blog</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
@@ -69,7 +62,21 @@
             </a>
           </li>
         </ul>
-      </li><!-- End Packages Nav -->
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link {{ Route::is('admin.user*')? '': 'collapsed' }}" href="{{ route('admin.user.index') }}">
+          <i class="bi bi-people"></i>
+          <span>Users</span>
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link {{ Route::is('admin.message*')? '': 'collapsed' }}" href="{{ route('admin.message.index') }}">
+          <i class="bi bi-chat-square-dots"></i>
+          <span>Messages</span>
+        </a>
+      </li>
 
       <li class="nav-item">
         <a class="nav-link {{ Route::is('admin.faqs')? '': 'collapsed' }}" href="{{ route('admin.faqs.index') }}">
