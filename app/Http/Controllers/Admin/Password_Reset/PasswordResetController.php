@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Password;
 use Illuminate\Support\Str;
+use App\Models\Admin;
 
 
 class PasswordResetController extends Controller
@@ -27,8 +28,8 @@ class PasswordResetController extends Controller
             $request->only('email')
         );
 
-        session()->flash('alert', 'A Password resetting email has been sent to you.');
-        return $status === Password::RESET_LINK_SENT? back()->with(['status' => __($status)]): back()->withErrors(['email' => __($status)]);
+        // session()->flash('alert', 'A Password resetting email has been sent to you.');
+        return $status === Password::RESET_LINK_SENT? back()->with(['status' => __($status), 'alert' => 'A Password resetting email has been sent to you.']): back()->withErrors(['email' => __($status)]);
     }
 
     public function reset_page($token)
