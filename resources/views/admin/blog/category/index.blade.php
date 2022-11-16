@@ -80,8 +80,8 @@ Admin | Blog - Categories
 
                                     <tr>
                                         <th>{{ $i }}</th>
-                                        <td>{{ $category->title }}</td>
-                                        <td>{{ \Illuminate\Support\Carbon::parse($category->created_at)->format('M j Y')
+                                        <td>{{ $category->title ?? '' }}</td>
+                                        <td>{{ \Illuminate\Support\Carbon::parse($category->created_at ?? '')->format('M j Y')
                                             }}</td>
                                         <td class="d-flex align-items-center gap-2">
                                             <a href="{{ route('admin.blog.category.edit', $category->id) }}" class="btn btn-warning btn-sm"><i class="bi bi-pencil"></i></a>

@@ -7,7 +7,14 @@
           <i class="bi bi-grid"></i>
           <span>Dashboard</span>
         </a>
-      </li><!-- End Dashboard Nav -->
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link {{ Route::is('admin.user*')? '': 'collapsed' }}" href="{{ route('admin.user.index') }}">
+          <i class="bi bi-people"></i>
+          <span>Users</span>
+        </a>
+      </li>
 
       <li class="nav-item">
         <a class="nav-link {{ Route::is('admin.blog*')? '': 'collapsed' }}" data-bs-target="#blog-nav" data-bs-toggle="collapse" href="#" aria-expanded="false">

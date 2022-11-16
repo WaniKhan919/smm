@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Artisan;
 use App\Http\Controllers\Admin\Auth\LoginController as AdminLoginController;
 use App\Http\Controllers\Admin\DashboardController as AdminDashboardController;
 use App\Http\Controllers\Admin\Profile\ProfileController as AdminProfileController;
+use App\Http\Controllers\Admin\User\UserController as AdminUserController;
 use App\Http\Controllers\Admin\Blog\Category\CategoryController as AdminCategoryController;
 use App\Http\Controllers\Admin\Blog\Post\PostController as AdminPostController;
 use App\Http\Controllers\Admin\Password_Reset\PasswordResetController as AdminPasswordResetController;
@@ -80,24 +81,26 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::get('/profile', [AdminDashboardController::class, 'profile'])->name('profile');
         Route::post('/profile/update', [AdminProfileController::class, 'profile_update'])->name('profile.update');
         Route::post('/profile/change/password', [AdminProfileController::class, 'change_password'])->name('profile.change.password');
-        // Category Routes
+        // Category Crud Routes
+        Route::resource('user', AdminUserController::class);
+        // User Crud Routes
         Route::resource('/blog/category', AdminCategoryController::class, [
             'as' => 'blog'
         ]);
-        // Post Routes
+        // Post Crud Routes
         Route::resource('/blog/post', AdminPostController::class, [
             'as' => 'blog'
         ]);
         Route::get('/dashboard/profile', [AdminDashboardController::class, 'profile'])->name('dashboard.profile');
         Route::post('/dashboard/profile/update', [AdminProfileController::class, 'profile_update'])->name('dashboard.profile.update');
 
-        // Packages
+        // Packages Crud Routes
         Route::resource('/packages', AdminPackagesController::class);
         Route::resource('/package-categories', AdminPackageCategoriesController::class);
         Route::resource('/package-types', AdminPackageTypesController::class);
         Route::get('/package-types/{category_id}/json', [AdminPackageTypesController::class, 'getTypesJSON'])->name('package-types.json');
 
-        //FAQ's
+        //FAQ's Crud Routes
         Route::resource('faqs',FaqController::class);
     });
 });

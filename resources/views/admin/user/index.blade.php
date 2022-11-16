@@ -2,17 +2,11 @@
 
 @push('title')
 
-Admin | Blog - Posts
+Admin | Users 
 
 @endpush
 
 @section('main-content')
-
-@php
-    
-    use App\Models\BlogCategory as Category;
-
-@endphp
 
 <div id="main">
 
@@ -37,12 +31,11 @@ Admin | Blog - Posts
     @endif
 
     <div class="pagetitle">
-        <h1>Posts</h1>
+        <h1>Users</h1>
         <nav>
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}">Home</a></li>
-                <li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}">Blog</a></li>
-                <li class="breadcrumb-item active">Posts</li>
+                <li class="breadcrumb-item active">Users</li>
             </ol>
         </nav>
     </div>
@@ -56,10 +49,7 @@ Admin | Blog - Posts
                 <div class="card">
                     <div class="card-body">
                         <div class="d-flex align-items-center justify-content-between">
-                            <h5 class="card-title">Posts</h5>
-                            <div>
-                                <a href="{{ route('admin.blog.post.create') }}" class="btn btn-primary">Add New</a>
-                            </div>
+                            <h5 class="card-title">Users</h5>
                         </div>
         
                       <!-- Default Table -->
@@ -70,7 +60,7 @@ Admin | Blog - Posts
                               <tr>
                                 <th scope="col">#</th>
                                 <th scope="col">Name</th>
-                                <th scope="col">Category</th>
+                                <th scope="col">Email</th>
                                 <th scope="col">Created</th>
                                 <th scope="col">Action</th>
                               </tr>
@@ -83,24 +73,26 @@ Admin | Blog - Posts
     
                               @endphp
     
-                                @forelse ($posts as $post)
+                               @forelse ($users as $user)
                                     
                                     <tr>
                                         <th>{{ $i }}</th>
                                         <td>
-                                            <a href="{{ route('admin.blog.post.edit', $post->id) }}" class="admin-post-links">
-                                                {{ $post->title }}    
+                                            <a href="{{ route('admin.user.edit', $user->id) }}" class="admin-post-links">
+                                                {{ $user->name ?? '' }}    
                                             </a>
                                         </td>
                                         <td>
-                                            <a href="{{ route('admin.blog.category.edit', Category::find($post->blog_category_id)->id) }}" class="admin-post-links">
-                                                {{ Category::find($post->blog_category_id)->title ?? '' }}
+                                            <a href="{{ route('admin.user.edit', $user->id) }}" class="admin-post-links">
+                                                {{ $user->email }}
                                             </a>
                                         </td>
-                                        <td>{{ \Illuminate\Support\Carbon::parse($post->created_at)->format('M j Y')}}</td>
+                                        <td>
+                                            {{ \Illuminate\Support\Carbon::parse($user->created)->format('M j Y') }}
+                                        </td>
                                         <td class="d-flex align-items-center gap-2">
-                                            <a href="{{ route('admin.blog.post.edit', $post->id) }}" class="btn btn-warning btn-sm"><i class="bi bi-pencil"></i></a>
-                                            <form action="{{ route('admin.blog.post.destroy', $post->id) }}" method="post">
+                                            <a href="{{ route('admin.user.edit', $user->id) }}" class="btn btn-warning btn-sm"><i class="bi bi-pencil"></i></a>
+                                            <form action="{{ route('admin.user.destroy', $user->id) }}" method="post">
                                                 @method('DELETE')
                                                 @csrf
                                                 <button type="submit" class="btn btn-danger btn-sm"><i class="bi bi-trash"></i></button>
@@ -114,13 +106,13 @@ Admin | Blog - Posts
     
                                     @endphp
     
-                                @empty
+                             @empty
     
                                     <tr>
-                                        <th colspan="8">No Records Found!</th>
+                                        <td class="text-center" colspan="8">No Records Found!</td>
                                     </tr>
                                     
-                                @endforelse
+                              @endforelse
     
                             </tbody>
                           </table>
