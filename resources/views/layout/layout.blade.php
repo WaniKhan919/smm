@@ -147,24 +147,11 @@
 										<li>
                       <a href="{{ url('/') }}">Home</a>
 										</li>
-										<li>
-                      <a href="#">Services</a>
-											<ul class="submenu">
-												<li><a href="{{ route('services') }}">Service 1</a></li>
-											</ul>
-										</li>
-										<li><a href="#">Packages</a>
-											<ul class="submenu">
-												<li><a href="{{ route('pricing') }}">Package A</a></li>
-											</ul>
-										</li>
-										<li><a href="#">Blog</a>
-											<ul class="submenu">
-												<li><a href="{{ route('blog') }}">Blog Default</a></li>
-											</ul>
-										</li>
-										<li><a href="{{ route('about-us') }}">About Us</a></li>
-										<li><a href="{{ route('contact') }}">Contact Us</a></li>
+										<x-navbar-services></x-navbar-services>
+										<x-navbar-pakages></x-navbar-pakages>
+										<x-navbar-blogs></x-navbar-blogs>
+										<li><a href="{{ route('about-us') }}">About</a></li>
+										<li><a href="{{ route('contact') }}">Contact</a></li>
 										<li><a href="{{ route('faq') }}">FAQ</a></li>
 										<li class="mobile-icon"><a href="#mobile-menu"><i class="ti-menu"></i></a></li>
 									</ul>
@@ -190,7 +177,7 @@
 											</li>
 											<li><a href="#">Blog</a>
 												<ul>
-													<li><a href="{{ route('blog') }}">Blog Detail</a></li>
+													<li><a href="">Blog Detail</a></li>
 												</ul>
 											</li>
 											<li>

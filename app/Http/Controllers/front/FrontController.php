@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\front;
 
 use App\Http\Controllers\Controller;
+use App\Models\BlogPost;
 use App\Models\Faq;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -22,8 +23,19 @@ class FrontController extends Controller
     public function contact(){
         return view('front.contact');
     }
-    public function blog(){
-        return view('front.blog');
+    public function blog($id){
+        $blogs=BlogPost::where('blog_category_id',$id)->get();
+        return view('front.blog',compact('blogs'));
+    }
+    public function blogDetail($id){
+        $blogs=BlogPost::where('id',$id)->get();
+        return view('front.blog',compact('blogs'));
+    }
+    public function blogSearch(Request $request){
+        $blogs=BlogPost::where('title','like','%'.$request->search.'%')
+        ->orWhere('description','like','%'.$request->search.'%')
+        ->get();
+        return view('front.blog',compact('blogs'));
     }
     public function pricing(){
         return view('front.pricing');
