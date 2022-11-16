@@ -8,6 +8,8 @@ use App\Models\User;
 
 class DashboardController extends Controller
 {
+    protected $isAdmin = true;
+    
     public function index()
     {
         return view('admin.dashboard.index');

@@ -9,6 +9,8 @@ use App\Models\BlogPost as Post;
 
 class PostController extends Controller
 {
+    protected $isAdmin = true;
+    
     /**
      * Display a listing of the resource.
      *
@@ -60,7 +62,7 @@ class PostController extends Controller
         ]);
 
         if($post){
-            return back()->with(session()->flash('alert', 'Post Successfully Added.'));
+            return back()->with(session()->flash('alert', 'New post added successfully!'));
         }else{
             return back();
         }
@@ -124,7 +126,7 @@ class PostController extends Controller
             ]);
 
             if($post){
-                return back()->with(session()->flash('alert', 'Post Successfully Edited.'));
+                return back()->with(session()->flash('alert', 'Post edited successfully!'));
             }else{
                 return back();
             }
@@ -146,7 +148,7 @@ class PostController extends Controller
         if($post){
             $post = $post->delete();
             if($post){
-                return back()->with(session()->flash('alert', 'Post Successfully Deleted.'));
+                return back()->with(session()->flash('alert', 'Category deleted successfully!'));
             }else{
                 return back();
             }
