@@ -2,7 +2,7 @@
 
 @push('title')
 
-Admin | Blog | Posts
+Admin | Blog - Posts
 
 @endpush
 
@@ -55,7 +55,12 @@ Admin | Blog | Posts
 
                 <div class="card">
                     <div class="card-body">
-                      <h5 class="card-title">Posts</h5>
+                        <div class="d-flex align-items-center justify-content-between">
+                            <h5 class="card-title">Posts</h5>
+                            <div>
+                                <a href="{{ route('admin.blog.post.create') }}" class="btn btn-primary">Add New</a>
+                            </div>
+                        </div>
         
                       <!-- Default Table -->
                     <div class="table-responsive-md">
@@ -64,8 +69,9 @@ Admin | Blog | Posts
                             <thead>
                               <tr>
                                 <th scope="col">#</th>
-                                <th scope="col">Title</th>
+                                <th scope="col">Name</th>
                                 <th scope="col">Category</th>
+                                <th scope="col">Created</th>
                                 <th scope="col">Action</th>
                               </tr>
                             </thead>
@@ -80,7 +86,7 @@ Admin | Blog | Posts
                                 @forelse ($posts as $post)
                                     
                                     <tr>
-                                        <td>{{ $i }}</td>
+                                        <th>{{ $i }}</th>
                                         <td>
                                             <a href="{{ route('admin.blog.post.edit', $post->id) }}" class="admin-post-links">
                                                 {{ $post->title }}    
@@ -91,28 +97,14 @@ Admin | Blog | Posts
                                                 {{ Category::find($post->blog_category_id)->title ?? '' }}
                                             </a>
                                         </td>
-                                        <td>
-                                            <div class="dropdown">
-                                                <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                                Action
-                                                </button>
-                                                <ul class="dropdown-menu">
-                                                <li>
-                                                    <a class="dropdown-item" href="{{ route('admin.blog.post.edit', $post->id) }}"><button class="border-0" style="background-color: inherit;" type="submit">Edit</button></a>
-                                                </li>
-                                                <li>
-                                                    <form action="" method="POST">
-                                                        @csrf
-
-                                                        <input name="_method" type="hidden" value="DELETE">
-                                                        <li>
-                                                            <a class="dropdown-item" type="submit" href=""><button class="border-0" type="submit"  style="background-color: inherit;">Delete</button>
-                                                            </a>
-                                                        </li>
-                                                      </form>
-                                                </li>
-                                                </ul>
-                                            </div>
+                                        <td>{{ \Illuminate\Support\Carbon::parse($post->created_at)->format('M j Y')}}</td>
+                                        <td class="d-flex align-items-center gap-2">
+                                            <a href="{{ route('admin.blog.post.edit', $post->id) }}" class="btn btn-warning btn-sm"><i class="bi bi-pencil"></i></a>
+                                            <form action="{{ route('admin.blog.post.destroy', $post->id) }}" method="post">
+                                                @method('DELETE')
+                                                @csrf
+                                                <button type="submit" class="btn btn-danger btn-sm"><i class="bi bi-trash"></i></button>
+                                            </form>
                                         </td>
                                     </tr>
     
@@ -125,7 +117,7 @@ Admin | Blog | Posts
                                 @empty
     
                                     <tr>
-                                        <th>No Records Found!</th>
+                                        <th colspan="8">No Records Found!</th>
                                     </tr>
                                     
                                 @endforelse

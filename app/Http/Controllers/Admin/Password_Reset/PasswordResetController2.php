@@ -10,23 +10,9 @@ use Illuminate\Support\Facades\Password;
 use Illuminate\Support\Str;
 use App\Models\Admin;
 
+
 class PasswordResetController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('guest:admin');
-    }
-
-    protected function guard()
-    {
-        return Auth::guard('admin');
-    }
-
-    protected function broker()
-    {
-        return Password::broker('admins'); //set password broker name according to guard which you have set in config/auth.php
-    }
-
     public function index()
     {
         return view('admin.password_reset.index');
@@ -34,22 +20,18 @@ class PasswordResetController extends Controller
 
     public function email(Request $request)
     {
-        $this->validate(request(), [
-            'email' => 'required|email',
-        ]);
-        $response = Password::broker('admins')->sendResetLink([
-            'email' => $request->email
+        $request->validate([
+            'email' => 'required | email',
         ]);
 
-        //overridden if condition 
-        if($response == "passwords.sent")
-        {
-        return back()->with(session()->flash('alert', 'Password reset link has been sent, please check your email'));
-        }
+        $status = Password::sendResetLink(
+            $request->only('email')
+        );
 
-        return back()->with(session()->flash('alert', 'No such email address in our records, try again'));
+        session()->flash('alert', 'A Password resetting email has been sent to you.');
+        return $status === Password::RESET_LINK_SENT? back()->with(['status' => __($status)]): back()->withErrors(['email' => __($status)]);
     }
-    
+
     public function reset_page($token)
     {
         return view('admin.password_reset.reset', ['token' => $token]);
@@ -63,7 +45,7 @@ class PasswordResetController extends Controller
             'password' => 'required|min:8|confirmed',
         ]);
      
-        $status = Password::broker('admins')->reset(
+        $status = Password::reset(
             $request->only('email', 'password', 'password_confirmation', 'token'),
             function ($user, $password) {
                 $user->forceFill([
