@@ -20,7 +20,7 @@
       </div>
       <div class="col-lg-5 col-md-6">
         <div class="banner-image wow fadeIn" data-wow-delay=".6s">
-          <img src="{{ asset('front_assets/images/banner/1.png')}}" alt="" />
+          <img src="{{ asset('front_assets/images/banner/rating.png')}}" alt="" />
         </div>
       </div>
     </div>
@@ -101,7 +101,7 @@
         </div>
         <div class="ds-sm-none">
           <div class="wow fadeIn">
-            <img src="{{ asset('front_assets/images/services/1.png')}}" alt="" />
+            <img src="{{ asset('front_assets/images/services/people-holding-gold-stars.png')}}" alt="" />
           </div>
         </div>
       </div>
@@ -274,16 +274,6 @@
         </div>
       </div>
     </div>
-    <div class="row mt-45">
-      <div class="col-lg-12">
-        <div class="pricing-nav text-center">
-          <ul class="nav nav-tabs align-items-center">
-            <li><a class="active" data-toggle="tab" href="#monthly">Monthly</a></li>
-            <li><a data-toggle="tab" href="#yearly">Yearly</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
     <div class="tab-content mt-25">
       <div id="monthly" class="tab-pane fade in show active">
         <div class="row pricing-carousel">
@@ -346,67 +336,6 @@
           </div>
         </div>
       </div>
-      <div id="yearly" class="tab-pane fade">
-        <div class="row pricing-carousel">
-          <div class="col-lg-4">
-            <div class="pricing-table-single">
-              <div class="pricing-table-head">
-                <h3>Started</h3>
-                <p>$350 with 20% Special Discount</p>
-                <h4><sup>$</sup>399<span>/per month</span></h4>
-              </div>
-              <div class="pricing-table-body">
-                <ul class="list-sign">
-                  <li>Up to 30 Keywords</li>
-                  <li>Up to 10 Web Pages</li>
-                  <li>Quarterly Ranking Report</li>
-                  <li>Bi-Yearly Link Outreach Campaign</li>
-                  <li>24/7 Support</li>
-                </ul>
-                <a href="#" class="btn-common">Get Started</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4">
-            <div class="pricing-table-single highlight">
-              <div class="pricing-table-head">
-                <h3>Professional</h3>
-                <p>$250 with 20% Special Discount</p>
-                <h4><sup>$</sup>459<span>/per month</span></h4>
-              </div>
-              <div class="pricing-table-body">
-                <ul class="list-sign">
-                  <li>Up to 30 Keywords</li>
-                  <li>Up to 10 Web Pages</li>
-                  <li>Quarterly Ranking Report</li>
-                  <li>Bi-Yearly Link Outreach Campaign</li>
-                  <li>24/7 Support</li>
-                </ul>
-                <a href="#" class="btn-common">Get Started</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 d-sm-none d-md-block">
-            <div class="pricing-table-single">
-              <div class="pricing-table-head">
-                <h3>Enterprise</h3>
-                <p>$250 with 20% Special Discount</p>
-                <h4><sup>$</sup>599<span>/per month</span></h4>
-              </div>
-              <div class="pricing-table-body">
-                <ul class="list-sign">
-                  <li>Up to 30 Keywords</li>
-                  <li>Up to 10 Web Pages</li>
-                  <li>Quarterly Ranking Report</li>
-                  <li>Bi-Yearly Link Outreach Campaign</li>
-                  <li>24/7 Support</li>
-                </ul>
-                <a href="#" class="btn-common">Get Started</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
   </div>
 </div>
@@ -425,7 +354,7 @@
     <div class="row mt-50">
       <div class="col-xl-5">
         <div class="ds-sm-none wow fadeIn">
-          <img src="{{ asset('front_assets/images/testimonials/1.png')}}" alt="" />
+          <img src="{{ asset('front_assets/images/testimonials/review.png')}}" alt="" />
         </div>
       </div>
       <div class="col-xl-7">
@@ -494,59 +423,27 @@
     <div class="row">
       <div class="col-lg-12">
         <div class="section-title text-center">
-          <h2><span>Latest News</span></h2>
+          <h2><span>Latest Blogs</span></h2>
         </div>
       </div>
     </div>
     <div class="row blog-carousel mt-45">
-      <div class="col-lg-4">
-        <div class="blog-single wow fadeIn" data-wow-delay=".3s">
-          <div class="blog-thumb">
-            <a href="blog-details.html"><img src="{{ asset('front_assets/images/blog/1.jpg')}}" alt="" /></a>
-          </div>
-          <div class="blog-desc mt-30">
-            <ul class="blog-category">
-              <li><a href="#">Content Marketing</a></li>
-            </ul>
-            <h3><a href="#">Galliford saves hardest for last on Thames resi scheme</a></h3>
-            <ul class="blog-date-time">
-              <li><a href="#"><i class="fa fa-clock-o"></i> 18th Jan, 2020</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4">
-        <div class="blog-single wow fadeIn" data-wow-delay=".4s">
-          <div class="blog-thumb">
-            <a href="blog-details.html"><img src="{{ asset('front_assets/images/blog/2.jpg')}}" alt="" /></a>
-          </div>
-          <div class="blog-desc mt-30">
-            <ul class="blog-category">
-              <li><a href="#">Social Media Marketing</a></li>
-            </ul>
-            <h3><a href="#">Mobile Payment App Alipay Is Coming to Walgreens</a></h3>
-            <ul class="blog-date-time">
-              <li><a href="#"><i class="fa fa-clock-o"></i> 25th Feb, 2020</a></li>
-            </ul>
+      @foreach ($blogs as $blog)
+        <div class="col-lg-4">
+          <div class="blog-single wow fadeIn" data-wow-delay=".3s">
+            <div class="blog-thumb" style="width: 360px;height: 243px;">
+              <a href="{{ route('blog-detail',$blog->id) }}"><img class="h-100" src="{{ asset('/assets/admin/img/post/'.$blog->img)}}" alt="" /></a>
+            </div>
+            <div class="blog-desc mt-30">
+              <ul class="blog-category">
+                <li><a href="{{ route('blog-detail',$blog->id) }}">{{ Str::substr($blog->title, 0, 17) }}...</a></li>
+              </ul>
+              <h3><a href="{{ route('blog-detail',$blog->id) }}">{{ Str::substr($blog->description, 0, 54) }}...</a></h3>
+              
+            </div>
           </div>
         </div>
-      </div>
-      <div class="col-lg-4">
-        <div class="blog-single wow fadeIn" data-wow-delay=".5s">
-          <div class="blog-thumb">
-            <a href="blog-details.html"><img src="{{ asset('front_assets/images/blog/3.jpg')}}" alt="" /></a>
-          </div>
-          <div class="blog-desc mt-30">
-            <ul class="blog-category">
-              <li><a href="#">Email Marketing</a></li>
-            </ul>
-            <h3><a href="#">Willmott school targets UK first with next-level precision</a></h3>
-            <ul class="blog-date-time">
-              <li><a href="#"><i class="fa fa-clock-o"></i>22nd Mar, 2020</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
+      @endforeach
     </div>
   </div>
 </div>

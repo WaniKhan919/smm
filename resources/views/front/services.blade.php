@@ -155,6 +155,125 @@
 </div>
 <!--services ends-->
 
+<!--case-studies start-->
+<div class="care-sudies-area pt-95 pt-sm-77 pb-122 pb-sm-103">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="section-title text-center">
+          <h2><span>Our Case Studies</span></h2>
+        </div>
+      </div>
+    </div>
+    <div class="row case-carousel mt-45">
+      <div class="col-lg-4">
+        <div class="blog-single style-2">
+          <div class="blog-thumb">
+            <a href="blog-details.html"><img src="{{asset('front_assets/images/blog/1.jpg')}}" alt="" /></a>
+          </div>
+          <div class="blog-desc">
+            <ul class="blog-category">
+              <li><a href="#">SEO,</a></li>
+              <li><a href="#">Web Development</a></li>
+            </ul>
+            <h3><a href="#">How Rose Generated 230% Revenue</a></h3>
+          </div>
+          <a href="#" class="enter-arrow"><i class="ti-arrow-right"></i></a>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="blog-single style-2">
+          <div class="blog-thumb">
+            <a href="blog-details.html"><img src="{{asset('front_assets/images/blog/2.jpg')}}" alt="" /></a>
+          </div>
+          <div class="blog-desc">
+            <ul class="blog-category">
+              <li><a href="#">Marketing,</a></li>
+              <li><a href="#">SEO</a></li>
+            </ul>
+            <h3><a href="#">How Integriti Bathrooms Achieved 253% Traffic</a></h3>
+          </div>
+          <a href="#" class="enter-arrow"><i class="ti-arrow-right"></i></a>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="blog-single style-2">
+          <div class="blog-thumb">
+            <a href="blog-details.html"><img src="{{asset('front_assets/images/blog/3.jpg')}}" alt="" /></a>
+          </div>
+          <div class="blog-desc">
+            <ul class="blog-category">
+              <li><a href="#">Marketing,</a></li>
+              <li><a href="#">SEO</a></li>
+            </ul>
+            <h3><a href="#">How QualityD Achieved 190% Conversions</a></h3>
+          </div>
+          <a href="#" class="enter-arrow"><i class="ti-arrow-right"></i></a>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="blog-single style-2">
+          <div class="blog-thumb">
+            <a href="blog-details.html"><img src="{{asset('front_assets/images/blog/1.jpg')}}" alt="" /></a>
+          </div>
+          <div class="blog-desc">
+            <ul class="blog-category">
+              <li><a href="#">SEO,</a></li>
+              <li><a href="#">Web Development</a></li>
+            </ul>
+            <h3><a href="#">How Archie Generated 230% More Revenue</a></h3>
+          </div>
+          <a href="#" class="enter-arrow"><i class="ti-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--case-studies end-->
+
+<!--work process starts-->
+<div class="work-process-area bg-1 pb-100 pb-sm-80">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="section-title text-center">
+          <h2><span>Our Work Process</span></h2>
+        </div>
+      </div>
+    </div>
+    <div class="row work-process-inner mt-45">
+      <div class="col-lg-3 col-md-3 col-sm-6">
+        <div class="process-single wow zoomIn" data-wow-delay=".3s">
+          <i class="ti-zoom-in"></i>
+          <h4>Research</h4>
+          <span>01</span>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-3 col-sm-6">
+        <div class="process-single wow zoomIn" data-wow-delay=".4s">
+          <i class="ti-pencil-alt"></i>
+          <h4>Concept</h4>
+          <span>02</span>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-3 col-sm-6">
+        <div class="process-single wow zoomIn" data-wow-delay=".5s">
+          <i class="ti-announcement"></i>
+          <h4>Develop</h4>
+          <span>03</span>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-3 col-sm-6">
+        <div class="process-single wow zoomIn" data-wow-delay=".6s">
+          <i class="ti-bar-chart"></i>
+          <h4>Test</h4>
+          <span>04</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--work process ends-->
 
 <!--testimonial and records start-->
 <div class="testimonial-and-records pt-100 pt-sm-78 pb-100 pb-sm-75">

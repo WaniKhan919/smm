@@ -11,13 +11,13 @@
                     $plus=true;
                 }
             @endphp
-                <li><a href="{{ route('services') }}">{{ $list->name }}@if ($plus==true)
+                <li><a href="">{{ $list->name }}@if ($plus==true)
                     <i class="icon_plus"></i>
                 @endif</a>
                     <ul class="submenu sub-2">
                         
                         @foreach ($types as $type)
-                            <li><a href="">{{ $type->name }}</a></li>
+                            <li><a href="{{ route('service-category',$type->id) }}">{{ $type->name }}</a></li>
                         @endforeach
                     </ul>
                 </li>
