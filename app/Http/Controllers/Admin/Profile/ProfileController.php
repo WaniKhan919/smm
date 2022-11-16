@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Admin\Profile;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
-use App\Models\User;
+use App\Models\Admin;
 use Auth;
 
 class ProfileController extends Controller
@@ -17,14 +17,14 @@ class ProfileController extends Controller
             'email' => 'required | email',
         ]);
 
-        $user = User::where('email', auth()->user()->email)->first();
-        if($user){
-            $user = $user->update([
+        $admin = Admin::where('email', auth()->user()->email)->first();
+        if($admin){
+            $admin = $admin->update([
                 'name' => $request->name,
                 'email' => $request->email,
             ]);
 
-            if($user) {
+            if($admin) {
                 return back()->with(session()->flash('alert', 'Profile Successfully Updated.'));
             }else{
                 return back();
@@ -44,14 +44,14 @@ class ProfileController extends Controller
         ]);
 
         if(Hash::check($request->current_password, auth()->user()->password)){
-            $user = User::where('email', auth()->user()->email);
+            $admin = Admin::where('email', auth()->user()->email);
             
-            if($user){
-                $user = $user->update([
+            if($admin){
+                $admin = $admin->update([
                     'password' => Hash::make($request->password),
                 ]);
 
-                if($user) {
+                if($admin) {
                     return back()->with(session()->flash('alert', 'Password Successfully Changed.'));
                 }else{
                     return back();

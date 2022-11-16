@@ -68,7 +68,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
     });
 
     // Athenticated Routes
-    Route::middleware('auth')->group(function () {
+    Route::middleware(['auth:admin'])->group(function () {
         // Dashboard Routes
         Route::get('/dashboard', [AdminDashboardController::class, 'index'])->name('dashboard');
         // Profile Routes
