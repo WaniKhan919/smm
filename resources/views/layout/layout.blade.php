@@ -78,6 +78,13 @@
 				align-items: center;
 			}
 
+			.goog-te-combo{
+				padding: 8px;
+				border-color: #fb5c71;
+				color: #fb5c71;
+				font-weight: bold;
+			}
+
 		</style>
 	</head>
 	<body>
@@ -137,7 +144,7 @@
 					<div class="row height-100 align-items-center">
 						<div class="col-lg-3 col-md-3 col-4">
 							<div class="logo">
-								<a href="{{ url('/') }}"><img src="{{ asset('front_assets/images/logo.png')}}" alt="logo" /></a>
+								<a href="{{ url('/') }}"><img src="http://admksolutions.com/wp-content/uploads/2020/09/ADMK-LOGO.png" style="height: 50px;" alt="logo" /></a>
 							</div>
 						</div>
 						<div class="col-lg-9 col-md-9 col-8">
