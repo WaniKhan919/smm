@@ -29,32 +29,31 @@
     <div class="row">
       <div class="col-lg-6">
         <div class="section-title mb-50">
-          <h2><span>SEO Agency of The Year </span></h2>
-          <h2><span>Finalist</span></h2>
-          <p class="mt-15">We are offering customize top ranking solutions with impactful web unravelment. Our
-            result-oriented approach in SEO services will take your business to the new horizon. Strategize and plan the
-            streamlining of your website with MSG and get the desired results.</p>
+          <h2><span>Hello, Welcome We are  </span></h2>
+          <h2><span>{{ env('APP_NAME','ADMK') }}!</span></h2>
+          <p class="mt-15">{{ env('APP_NAME','ADMK') }} was founded and developed with the core mission: “Helping your apps to be in the Top apps in the Google Play Store, App Store, and macOS App Store, helping your apps increase revenue sharply and became the most favorite apps”. Proreviewsapp always wants to help each customer achieve their business goals by enhancing their competitive advantage, increasing the ability of potential customers to find Apps and brands on the App Stores.
+
+            In addition, Proreviewsapp has a cross-cutting mission for fellow teammates: “Create the best environment for each member to constantly improve and lead themselves. Besides, every day coming to Proreviewsapp is full of fun at work. And always be happy on the path of pursuing your own aspirations and the meaning of life that Proreviewsapp-er is aiming for.”</p>
         </div>
         <div class="service-single style-2 wow fadeInUp" data-wow-delay=".3s">
           <i class="ti-stats-up"></i>
           <div class="service-single-brief">
-            <h4><span>Increased Traffic</span></h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt utsa.</p>
+            <h4><span>Be a Master of Our Craft</span></h4>
+            <p>Proreviewsapp is constantly improving what we are doing.</p>
           </div>
         </div>
         <div class="service-single style-2 wow fadeInUp" data-wow-delay=".4s">
           <i class="ti-twitter"></i>
           <div class="service-single-brief">
-            <h4><span>Cost-effectiveness</span></h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt utsa.</p>
+            <h4><span>Growth with The Infinitive Mindset</span></h4>
+            <p>Proreviewsapp is not a team with a short-term results mindset. </p>
           </div>
         </div>
         <div class="service-single style-2 wow fadeInUp" data-wow-delay=".5s">
           <i class="ti-desktop"></i>
           <div class="service-single-brief">
-            <h4><span>Increased site usability</span></h4>
-            <p>Excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt mollit anim id est
-              laborum.</p>
+            <h4><span>Do things with fullest</span></h4>
+            <p>Proreviewsapp does everything with its heart, mind, and soul. Not only creating excellent results.</p>
           </div>
         </div>
       </div>
@@ -105,7 +104,7 @@
     <div class="row">
       <div class="col-lg-12">
         <div class="section-title text-center">
-          <h2><span>The Story Of Aseona</span></h2>
+          <h2><span>How does it work?</span></h2>
         </div>
       </div>
     </div>
@@ -115,54 +114,50 @@
           <ul>
             <li>
               <div class="history-start pr-45 text-right wow fadeInUp" data-wow-delay=".3s">
-                <h4>February, 2008</h4>
+                <h4>10 Days Assurance</h4>
               </div>
               <div class="history-year wow zoomIn" data-wow-delay=".4s">
-                <h2>2008</h2>
+                <h2>1</h2>
               </div>
               <div class="history-brief pl-45 wow fadeInUp" data-wow-delay=".5s">
-                <h3>Annual Award for SEO Excellence</h3>
-                <p>Literature admiration frequently indulgence announcing are who you her. Was least quick after six. So
-                  it yourself repeated together cheerful.</p>
+                <h3>Select the service package that you need</h3>
+                <p>Please, send us your app link, the details request and the service package that you want.</p>
               </div>
             </li>
             <li>
               <div class="history-brief pr-50 text-right wow fadeInLeft" data-wow-delay=".6s">
-                <h3>Annual Award for SEO Excellence</h3>
-                <p>Literature admiration frequently indulgence announcing are who you her. Was least quick after six. So
-                  it yourself repeated together cheerful.</p>
+                <h3>Reviews and ranking</h3>
+                <p>Our users will search for your app then they download and install it. After they use it, they will rate it 5 star rating with a positive reviews.</p>
               </div>
               <div class="history-year wow zoomIn" data-wow-delay=".7s">
-                <h2>2011</h2>
+                <h2>2</h2>
               </div>
               <div class="history-start pl-50 wow fadeInRight" data-wow-delay=".8s">
-                <h4>January, 2008</h4>
+                <h4>Quick Start</h4>
               </div>
             </li>
             <li>
               <div class="history-start pr-50 text-right wow fadeInUp" data-wow-delay=".9s">
-                <h4>August, 2008</h4>
+                <h4>Real Users</h4>
               </div>
               <div class="history-year wow zoomIn" data-wow-delay="1s">
-                <h2>2014</h2>
+                <h2>3</h2>
               </div>
               <div class="history-brief pl-50 wow fadeInUp" data-wow-delay="1.1s">
-                <h3>Entrepreneurship Hall of Fame</h3>
-                <p>Literature admiration frequently indulgence announcing are who you her. Was least quick after six. So
-                  it yourself repeated together cheerful.</p>
+                <h3>Reviews and rating</h3>
+                <p>As a result, your app will improve app ranking and more and more users use it. Your app become of popular on App store and Google Play..</p>
               </div>
             </li>
             <li>
               <div class="history-brief text-right pr-50 wow fadeInLeft" data-wow-delay="1.2s">
-                <h3>Entrepreneurship Hall of Fame</h3>
-                <p>Literature admiration frequently indulgence announcing are who you her. Was least quick after six. So
-                  it yourself repeated together cheerful.</p>
+                <h3>Get the result</h3>
+                <p>When your app has high rankings and has many positive reviews, your app become more reputation and attention from users.</p>
               </div>
               <div class="history-year wow zoomIn" data-wow-delay="1.3s">
-                <h2>2018</h2>
+                <h2>4</h2>
               </div>
               <div class="history-start pl-50 wow fadeInRight" data-wow-delay="1.4s">
-                <h4>May, 2018</h4>
+                <h4>Get detailed reports</h4>
               </div>
             </li>
           </ul>
@@ -293,159 +288,4 @@
 </div>
 <!--testimonial ends-->
 
-<!--team start-->
-<div class="team-area bg-f3f8f8 pt-95 pt-sm-77 pb-70 pb-sm-50">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-12">
-        <div class="section-title text-center">
-          <h2><span>Our Team</span></h2>
-        </div>
-      </div>
-    </div>
-    <div class="row team-carousel mt-43">
-      <div class="col-lg-4">
-        <div class="team-single wow fadeInDown" data-wow-delay=".3s">
-          <div class="team-thumb">
-            <img src="{{asset('front_assets/images/team/1.png')}}" alt="" />
-            <div class="social-icons style-2">
-              <a href="#" class="fa fa-twitter"></a>
-              <a href="#" class="fa fa-instagram"></a>
-              <a href="#" class="fa fa-facebook"></a>
-            </div>
-          </div>
-          <div class="team-bio">
-            <h4>Bess Weaver</h4>
-            <h5>SEO Expert</h5>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4">
-        <div class="team-single wow fadeInUp" data-wow-delay=".3s">
-          <div class="team-thumb">
-            <img src="{{asset('front_assets/images/team/2.png')}}" alt="" />
-            <div class="social-icons style-2">
-              <a href="#" class="fa fa-twitter"></a>
-              <a href="#" class="fa fa-instagram"></a>
-              <a href="#" class="fa fa-facebook"></a>
-            </div>
-          </div>
-          <div class="team-bio">
-            <h4>Ralph Simmons</h4>
-            <h5>Marketing Expert</h5>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4">
-        <div class="team-single wow fadeInDown" data-wow-delay=".3s">
-          <div class="team-thumb">
-            <img src="{{asset('front_assets/images/team/3.png')}}" alt="" />
-            <div class="social-icons style-2">
-              <a href="#" class="fa fa-twitter"></a>
-              <a href="#" class="fa fa-instagram"></a>
-              <a href="#" class="fa fa-facebook"></a>
-            </div>
-          </div>
-          <div class="team-bio">
-            <h4>Craig Coleman</h4>
-            <h5>Graphic Designer</h5>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4">
-        <div class="team-single">
-          <div class="team-thumb">
-            <img src="{{asset('front_assets/images/team/1.png')}}" alt="" />
-            <div class="social-icons style-2">
-              <a href="#" class="fa fa-twitter"></a>
-              <a href="#" class="fa fa-instagram"></a>
-              <a href="#" class="fa fa-facebook"></a>
-            </div>
-          </div>
-          <div class="team-bio">
-            <h4>Bess Weaver</h4>
-            <h5>SEO Expert</h5>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<!--team end-->
-
-<!--call-to-action start-->
-<div class="cta-area mt-sm-80 mb-sm-80">
-  <div class="container">
-    <div class="row height-470 align-items-center">
-      <div class="col-lg-6 col-md-6 text-center">
-        <div class="wow rollIn" data-wow-delay=".3s">
-          <img src="{{asset('front_assets/images/cta/1.png')}}" alt="" />
-        </div>
-      </div>
-      <div class="col-lg-6 col-md-6">
-        <div class="section-title mt-sm-40">
-          <div class="wow fadeInUp" data-wow-delay=".3s">
-            <h2><span>We’re Hiring!</span></h2>
-          </div>
-          <div class="wow fadeInUp" data-wow-delay=".4s">
-            <p class="mt-20">We are always looking to hire the right talent to <br /> help us grow</p>
-          </div>
-          <div class="wow fadeInUp" data-wow-delay=".5s">
-            <a href="#" class="btn-common btn-pink radius-50 mt-35">Apply Now</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<!--call-to-action end-->
-
-<!--brands starts-->
-<div class="brands-area bg-f3f8f8">
-  <div class="container">
-    <div class="row height-160 align-items-center">
-      <div class="col-lg-12">
-        <div class="brands-carousel">
-          <div class="brand-item">
-            <a href="#">
-              <img class="brand-static" src="{{asset('front_assets/images/brands/1.png')}}" alt="" />
-              <img class="brand-dynamic" src="{{asset('front_assets/images/brands/1-hover.png')}}" alt="" />
-            </a>
-          </div>
-          <div class="brand-item">
-            <a href="#">
-              <img class="brand-static" src="{{asset('front_assets/images/brands/2.png')}}" alt="" />
-              <img class="brand-dynamic" src="{{asset('front_assets/images/brands/2-hover.png')}}" alt="" />
-            </a>
-          </div>
-          <div class="brand-item">
-            <a href="#">
-              <img class="brand-static" src="{{asset('front_assets/images/brands/3.png')}}" alt="" />
-              <img class="brand-dynamic" src="{{asset('front_assets/images/brands/3-hover.png')}}" alt="" />
-            </a>
-          </div>
-          <div class="brand-item">
-            <a href="#">
-              <img class="brand-static" src="{{asset('front_assets/images/brands/4.png')}}" alt="" />
-              <img class="brand-dynamic" src="{{asset('front_assets/images/brands/4-hover.png')}}" alt="" />
-            </a>
-          </div>
-          <div class="brand-item">
-            <a href="#">
-              <img class="brand-static" src="{{asset('front_assets/images/brands/5.png')}}" alt="" />
-              <img class="brand-dynamic" src="{{asset('front_assets/images/brands/5-hover.png')}}" alt="" />
-            </a>
-          </div>
-          <div class="brand-item">
-            <a href="#">
-              <img class="brand-static" src="{{asset('front_assets/images/brands/1.png')}}" alt="" />
-              <img class="brand-dynamic" src="{{asset('front_assets/images/brands/1-hover.png')}}" alt="" />
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<!--brands ends-->
 @endsection
