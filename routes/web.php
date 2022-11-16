@@ -90,6 +90,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::resource('/packages', AdminPackagesController::class);
         Route::resource('/package-categories', AdminPackageCategoriesController::class);
         Route::resource('/package-types', AdminPackageTypesController::class);
+        Route::get('/package-types/{category_id}/json', [AdminPackageTypesController::class, 'getTypesJSON'])->name('package-types.json');
 
         //FAQ's
         Route::resource('faqs',FaqController::class);

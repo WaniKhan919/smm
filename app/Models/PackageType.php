@@ -16,5 +16,11 @@ class PackageType extends Model
      */
     protected $fillable = [
         'name',
+        'category_id',
     ];
+
+    public function category()
+    {
+        return $this->belongsTo(PackageCategory::class, 'category_id', 'id');
+    }
 }
