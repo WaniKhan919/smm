@@ -23,4 +23,9 @@ class PackageType extends Model
     {
         return $this->belongsTo(PackageCategory::class, 'category_id', 'id');
     }
+
+    public function packages()
+    {
+        return $this->hasMany(Package::class, 'type_id', 'id');
+    }
 }

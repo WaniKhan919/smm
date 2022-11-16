@@ -14,6 +14,7 @@ use App\Http\Controllers\Admin\PackageCategoriesController as AdminPackageCatego
 use App\Http\Controllers\Admin\PackageTypesController as AdminPackageTypesController;
 use App\Http\Controllers\Admin\FaqController;
 use App\Http\Controllers\front\UserController;
+use App\Models\PackageCategory;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,7 +26,6 @@ use App\Http\Controllers\front\UserController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 
 Route::get('cmd/{cmd}', function ($cmd) {
     Artisan::call($cmd);
