@@ -36,6 +36,49 @@
 		<!-- responsive css -->
 		<link rel="stylesheet" href="{{ asset('front_assets/css/responsive.css')}}">
     <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/fontawesome.min.css"/> -->
+
+		<script type="text/javascript">
+			var lang = 'ur';
+
+			function setCookie(key, value, expiry) {
+				var expires = new Date();
+				expires.setTime(expires.getTime() + (expiry * 24 * 60 * 60 * 1000));
+				document.cookie = key + '=' + value + ';expires=' + expires.toUTCString();
+			}
+			setCookie('googtrans', '/en/' + lang.toLowerCase(), 1);
+
+			function googleTranslateElementInit() {
+				new google.translate.TranslateElement({
+					pageLanguage: 'en'
+				}, 'google_translate_element');
+			}
+		</script>
+
+		<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+		<style>
+			body {
+				position: static !important;
+			}
+			.skiptranslate iframe {
+				display: none;
+			}
+			.skiptranslate.goog-te-gadget {
+				font-size: 0px !important;
+				display: flex;
+				align-items: center;
+			}
+
+			.skiptranslate.goog-te-gadget > span {
+				display: none;
+			}
+
+			.skiptranslate.goog-te-gadget > div {
+				display: flex;
+				align-items: center;
+			}
+
+		</style>
 	</head>
 	<body>
 		<!--[if lte IE 9]>
@@ -69,8 +112,8 @@
 										<a href="{{ route('user-logout') }}">Logout</a>
 									@endif
 								</div>
-								<div class="site-lang">
-									<ul>
+								<div id="google_translate_element" class="site-lang">
+									{{-- <ul>
 										<li>
 											<img src="{{ asset('front_assets/images/flags/uk.jpg')}}" alt="" />
 											<a href="#">EN</a>
@@ -81,7 +124,7 @@
 												<li><img src="{{ asset('front_assets/images/flags/vn.jpg')}}" alt="" /><a href="#">Vietnam</a></li>
 											</ul>
 										</li>
-									</ul>
+									</ul> --}}
 								</div>
 							</div>
 						</div>

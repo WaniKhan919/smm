@@ -141,6 +141,17 @@ class PostController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $post = Post::find($id);
+
+        if($post){
+            $post = $post->delete();
+            if($post){
+                return back()->with(session()->flash('alert', 'Post Successfully Deleted'));
+            }else{
+                return back();
+            }
+        }else{
+            return back();
+        }
     }
 }

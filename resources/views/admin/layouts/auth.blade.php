@@ -40,6 +40,15 @@
 <body>
 
   <main>
+    {{-- Success Alert --}}
+    @if (session()->has('alert'))
+            
+    <div class="alert alert-success bg-success text-light border-0 alert-dismissible fade show" role="alert">
+        {{ session('alert') }}
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+
+    @endif
     <div class="container">
 
       <section class="section register min-vh-100 d-flex flex-column align-items-center justify-content-center py-4">

@@ -2,7 +2,7 @@
 
 @push('title')
 
-Admin | Dashboard
+Admin - Dashboard
 
 @endpush
 

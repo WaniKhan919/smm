@@ -29,42 +29,52 @@ Admin | Packages - Categories
                 </div>
             </div>
             @if (session()->has('success'))
-                <div class="alert alert-success bg-success text-light border-0 alert-dismissible fade show" role="alert">
-                    {{ session('success') }}
-                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>
-                </div>
+            <div class="alert alert-success bg-success text-light border-0 alert-dismissible fade show" role="alert">
+                {{ session('success') }}
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert"
+                    aria-label="Close"></button>
+            </div>
             @endif
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Name</th>
-                        <th scope="col">Created At</th>
-                        <th scope="col">Actions</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @forelse ($categories as $i => $category)
+
+            <div class="table-responsive-md">
+
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Created</th>
+                            <th scope="col">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @forelse ($categories as $i => $category)
                         <tr>
                             <th scope="row">{{ $i + 1 }}</th>
                             <td>{{ $category->name }}</td>
                             <td>{{ \Illuminate\Support\Carbon::parse($category->created_at)->format('M j Y') }}</td>
                             <td class="d-flex align-items-center gap-2">
-                                <a href="{{ route('admin.package-categories.edit', $category->id) }}" class="btn btn-warning btn-sm"><i class="bi bi-pencil"></i></a>
-                                <form action="{{ route('admin.package-categories.destroy', $category->id) }}" method="post">
+                                <a href="{{ route('admin.package-categories.edit', $category->id) }}"
+                                    class="btn btn-warning btn-sm"><i class="bi bi-pencil"></i></a>
+                                <form action="{{ route('admin.package-categories.destroy', $category->id) }}"
+                                    method="post">
                                     @method('DELETE')
                                     @csrf
-                                    <button type="submit" class="btn btn-danger btn-sm"><i class="bi bi-trash"></i></button>
+                                    <button type="submit" class="btn btn-danger btn-sm"><i
+                                            class="bi bi-trash"></i></button>
                                 </form>
                             </td>
                         </tr>
-                    @empty
+                        @empty
                         <tr>
                             <td class="text-center" colspan="4">No categories found!</td>
                         </tr>
-                    @endforelse
-                </tbody>
-            </table>
+                        @endforelse
+                    </tbody>
+                </table>
+
+            </div>
+
         </div>
     </div>
 

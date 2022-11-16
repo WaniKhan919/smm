@@ -30,46 +30,55 @@ Admin | Packages - all
             @if (session()->has('success'))
             <div class="alert alert-success bg-success text-light border-0 alert-dismissible fade show" role="alert">
                 {{ session('success') }}
-                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert"
+                    aria-label="Close"></button>
             </div>
             @endif
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Title</th>
-                        <th scope="col">Level</th>
-                        <th scope="col">Price</th>
-                        <th scope="col">Type</th>
-                        <th scope="col">Category</th>
-                        <th scope="col">Created at </th>
-                        <th scope="col">Actions</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @forelse ($packages as $i => $package)
-                    <tr>
-                        <th scope="row">{{ $i + 1 }}</th>
-                        <td>{{ $package->title }}</td>
-                        <td>{{ $package->level_name }}</td>
-                        <td>{{ $package->price }}</td>
-                        <td>{{ $package->type->name }}</td>
-                        <td>{{ $package->category->name }}</td>
-                        <td>{{ \Illuminate\Support\Carbon::parse($package->created_at)->format('M j Y') }}</td>
-                        <td class="d-flex align-items-center gap-2">
-                            <a href="{{ route('admin.packages.edit', $package->id) }}" class="btn btn-warning btn-sm"><i class="bi bi-pencil"></i></a>
-                            <form action="{{ route('admin.packages.destroy', $package->id) }}" method="post">
-                                @method('DELETE')
-                                @csrf
-                                <button type="submit" class="btn btn-danger btn-sm"><i class="bi bi-trash"></i></button>
-                            </form>
-                        </td>
-                    </tr>
-                    @empty
-                        
-                    @endforelse
-                </tbody>
-            </table>
+
+            <div class="table-responsive-md">
+
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Title</th>
+                            <th scope="col">Level</th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Type</th>
+                            <th scope="col">Category</th>
+                            <th scope="col">Created</th>
+                            <th scope="col">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @forelse ($packages as $i => $package)
+                        <tr>
+                            <th scope="row">{{ $i + 1 }}</th>
+                            <td>{{ $package->title }}</td>
+                            <td>{{ $package->level_name }}</td>
+                            <td>{{ $package->price }}</td>
+                            <td>{{ $package->type->name }}</td>
+                            <td>{{ $package->category->name }}</td>
+                            <td>{{ \Illuminate\Support\Carbon::parse($package->created_at)->format('M j Y') }}</td>
+                            <td class="d-flex align-items-center gap-2">
+                                <a href="{{ route('admin.packages.edit', $package->id) }}"
+                                    class="btn btn-warning btn-sm"><i class="bi bi-pencil"></i></a>
+                                <form action="{{ route('admin.packages.destroy', $package->id) }}" method="post">
+                                    @method('DELETE')
+                                    @csrf
+                                    <button type="submit" class="btn btn-danger btn-sm"><i
+                                            class="bi bi-trash"></i></button>
+                                </form>
+                            </td>
+                        </tr>
+                        @empty
+
+                        @endforelse
+                    </tbody>
+                </table>
+
+            </div>
+
         </div>
     </div>
 

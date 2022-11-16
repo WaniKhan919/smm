@@ -2,7 +2,7 @@
 
 @push('title')
 
-Admin | Profile
+Admin - Profile
 
 @endpush
 
@@ -87,7 +87,7 @@ Admin | Profile
                     @csrf
 
                     <div class="row mb-3">
-                      <label for="fullName" class="col-md-4 col-lg-3 col-form-label">Name</label>
+                      <label for="fullName" class="col-md-4 col-lg-2 col-form-label">Name</label>
                       <div class="col-md-8 col-lg-9">
                         <input name="name" type="text" class="form-control" id="fullName" value="{{ auth()->user()->name }}">
                         <span class="text-danger">
@@ -103,7 +103,7 @@ Admin | Profile
                     </div>
 
                     <div class="row mb-3">
-                      <label for="fullName" class="col-md-4 col-lg-3 col-form-label">Email</label>
+                      <label for="fullName" class="col-md-4 col-lg-2 col-form-label">Email</label>
                       <div class="col-md-8 col-lg-9">
                         <input name="email" type="email" class="form-control" id="fullName" value="{{ auth()->user()->email }}">
                         <span class="text-danger">
@@ -132,7 +132,7 @@ Admin | Profile
                     @csrf
 
                     <div class="row mb-3">
-                      <label for="currentPassword" class="col-md-4 col-lg-3 col-form-label">Current Password</label>
+                      <label for="currentPassword" class="col-md-4 col-lg-2 col-form-label">Current Password</label>
                       <div class="col-md-8 col-lg-9">
                         <input name="current_password" type="password" class="form-control" id="currentPassword">
                         <span class="text-danger">
@@ -148,7 +148,7 @@ Admin | Profile
                     </div>
 
                     <div class="row mb-3">
-                      <label for="newPassword" class="col-md-4 col-lg-3 col-form-label">New Password</label>
+                      <label for="newPassword" class="col-md-4 col-lg-2 col-form-label">New Password</label>
                       <div class="col-md-8 col-lg-9">
                         <input name="password" type="password" class="form-control" id="newPassword">
                         <span class="text-danger">
@@ -164,7 +164,7 @@ Admin | Profile
                     </div>
 
                     <div class="row mb-3">
-                      <label for="renewPassword" class="col-md-4 col-lg-3 col-form-label">Confirm New Password</label>
+                      <label for="renewPassword" class="col-md-4 col-lg-2 col-form-label">Confirm New Password</label>
                       <div class="col-md-8 col-lg-9">
                         <input name="password_confirmation" type="password" class="form-control" id="renewPassword">
                         <span class="text-danger">

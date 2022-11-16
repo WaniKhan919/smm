@@ -20,6 +20,11 @@ class PackageCategory extends Model
 
     public function types()
     {
-        return $this->hasMany(PackageType::class, 'id', 'category_id');
+        return $this->hasMany(PackageType::class, 'category_id', 'id');
+    }
+
+    public function packages()
+    {
+        return $this->hasMany(Package::class, 'category_id', 'id');
     }
 }
