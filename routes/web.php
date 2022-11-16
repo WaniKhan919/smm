@@ -13,6 +13,7 @@ use App\Http\Controllers\Admin\Password_Reset\PasswordResetController as AdminPa
 use App\Http\Controllers\Admin\PackagesController as AdminPackagesController;
 use App\Http\Controllers\Admin\PackageCategoriesController as AdminPackageCategoriesController;
 use App\Http\Controllers\Admin\PackageTypesController as AdminPackageTypesController;
+use App\Http\Controllers\Admin\ReviewsController as AdminReviewsController;
 use App\Http\Controllers\Admin\Message\MessageController as AdminMessageController;
 use App\Http\Controllers\front\ContactController as FrontContactController;
 use App\Http\Controllers\Admin\FaqController;
@@ -112,5 +113,8 @@ Route::prefix('admin')->name('admin.')->group(function () {
 
         //FAQ's Crud Routes
         Route::resource('faqs',FaqController::class);
+
+        // Reviews
+        Route::resource('/reviews', AdminReviewsController::class);
     });
 });
