@@ -38,7 +38,7 @@
     <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/fontawesome.min.css"/> -->
 
 		<script type="text/javascript">
-			// var lang = 'ur';
+			var lang = '{{ $userLangCode }}';
 
 			function setCookie(key, value, expiry) {
 				var expires = new Date();
