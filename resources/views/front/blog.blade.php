@@ -38,15 +38,15 @@
             <div class="blog-desc mt-30">
               <ul class="blog-category">
                 <li>
-                  <a href="#">
-                    @php
-                      $catname=DB::table('blog_categories')->where('id',$blog->blog_category_id)->first();
-                    @endphp
+                  @php
+                    $catname=DB::table('blog_categories')->where('id',$blog->blog_category_id)->first();
+                  @endphp
+                  <a href="{{ route('blog',$catname->id) }}">
                     {{ $catname->title }}
                   </a>
                 </li>
               </ul>
-              <h3><a href="#">{{ $blog->title }}</a></h3>
+              <h3><a href="{{ route('blog-detail',$blog->id) }}">{{ $blog->title }}</a></h3>
               <p>{{ $blog->description }}</p>
             </div>
           </div>
