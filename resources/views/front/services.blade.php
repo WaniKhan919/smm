@@ -30,7 +30,7 @@
     <div class="row">
       <div class="col-lg-6">
         <div class="section-title mb-40">
-          <h2><span>Welcome to Aseona</span></h2><br />
+          <h2><span>Welcome to {{ env('APP_NAME', 'ADMK') }}</span></h2><br />
           <h2><span>Digital Marketing</span></h2>
           <p>Having worked with hundreds of companies from small businesses to Fortune 1000’s, we understand your pain
             points. We also understand we aren’t the right agency for every business. We want to work with businesses
@@ -296,7 +296,7 @@
             </div>
             <div class="testimonial-desc">
               <p>"Your continued support and aggressive technology have convinced me that signing another optimization
-                contract with Aseona, Inc. is the best approach in maintaining our edge over the competition”</p>
+                contract with {{ env('APP_NAME', 'ADMK') }}, Inc. is the best approach in maintaining our edge over the competition”</p>
             </div>
           </div>
           <div class="testimonial-single style-2">
@@ -311,7 +311,7 @@
             </div>
             <div class="testimonial-desc">
               <p>"Your continued support and aggressive technology have convinced me that signing another optimization
-                contract with Aseona, Inc. is the best approach in maintaining our edge over the competition”</p>
+                contract with {{ env('APP_NAME', 'ADMK') }}, Inc. is the best approach in maintaining our edge over the competition”</p>
             </div>
           </div>
           <div class="testimonial-single style-2">
@@ -326,7 +326,7 @@
             </div>
             <div class="testimonial-desc">
               <p>"Your continued support and aggressive technology have convinced me that signing another optimization
-                contract with Aseona, Inc. is the best approach in maintaining our edge over the competition”</p>
+                contract with {{ env('APP_NAME', 'ADMK') }}, Inc. is the best approach in maintaining our edge over the competition”</p>
             </div>
           </div>
         </div>

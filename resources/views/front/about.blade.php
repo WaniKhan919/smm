@@ -105,7 +105,7 @@
     <div class="row">
       <div class="col-lg-12">
         <div class="section-title text-center">
-          <h2><span>The Story Of Aseona</span></h2>
+          <h2><span>The Story Of {{ env('APP_NAME', 'ADMK') }}</span></h2>
         </div>
       </div>
     </div>
@@ -248,7 +248,7 @@
               </div>
               <div class="testimonial-desc">
                 <p>"Your continued support and aggressive technology have convinced me that signing another optimization
-                  contract with Aseona, Inc. is the best approach in maintaining our edge over the competition”</p>
+                  contract with {{ env('APP_NAME', 'ADMK') }}, Inc. is the best approach in maintaining our edge over the competition”</p>
               </div>
             </div>
           </div>
@@ -265,7 +265,7 @@
               </div>
               <div class="testimonial-desc">
                 <p>"Your continued support and aggressive technology have convinced me that signing another optimization
-                  contract with Aseona, Inc. is the best approach in maintaining our edge over the competition”</p>
+                  contract with {{ env('APP_NAME', 'ADMK') }}, Inc. is the best approach in maintaining our edge over the competition”</p>
               </div>
             </div>
           </div>
@@ -282,7 +282,7 @@
               </div>
               <div class="testimonial-desc">
                 <p>"Your continued support and aggressive technology have convinced me that signing another optimization
-                  contract with Aseona, Inc. is the best approach in maintaining our edge over the competition”</p>
+                  contract with {{ env('APP_NAME', 'ADMK') }}, Inc. is the best approach in maintaining our edge over the competition”</p>
               </div>
             </div>
           </div>
