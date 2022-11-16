@@ -95,9 +95,8 @@
     <div class="row">
       <div class="col-lg-6">
         <div class="section-title mb-40">
-          <h2><span>Our Services</span></h2>
-          <p>Excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt mollit anim id est
-            laborum. </p>
+          <h2><span>Features</span></h2>
+          <p>Buy Positive App Reviews From Real Users & Boost Your App Ranking </p>
         </div>
         <div class="ds-sm-none">
           <div class="wow fadeIn">
@@ -109,33 +108,29 @@
         <div class="service-single wow fadeInUp mt-05" data-wow-delay=".3s">
           <i class="ti-mobile"></i>
           <div class="service-single-brief">
-            <h4><span>Digital Marketing</span></h4>
-            <p>Excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt mollit anim id est
-              laborum. </p>
+            <h4><span>Fast</span></h4>
+            <p>When users see a lot of positive reviews about your application and your app, this makes increasing their trust about your app, they will download and install your app.</p>
           </div>
         </div>
         <div class="service-single wow fadeInUp" data-wow-delay=".4s">
           <i class="ti-twitter"></i>
           <div class="service-single-brief">
-            <h4><span>Social Media</span></h4>
-            <p>Excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt mollit anim id est
-              laborum. </p>
+            <h4><span>Reputation</span></h4>
+            <p>We work honestly and clearly. Therefore, we get customers’ faith and positive feedback and become their long-term partner. </p>
           </div>
         </div>
         <div class="service-single wow fadeInUp" data-wow-delay=".5s">
           <i class="ti-announcement"></i>
           <div class="service-single-brief">
-            <h4><span>SEO Services</span></h4>
-            <p>Excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt mollit anim id est
-              laborum. </p>
+            <h4><span>Safety</span></h4>
+            <p>We strictly comply with the rules of App Store and Google Play.</p>
           </div>
         </div>
         <div class="service-single wow fadeInUp" data-wow-delay=".6s">
           <i class="ti-desktop"></i>
           <div class="service-single-brief">
-            <h4><span>Web Development</span></h4>
-            <p>Excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt mollit anim id est
-              laborum. </p>
+            <h4><span>Professional</span></h4>
+            <p>We have the professional support Team, they will help you to resolve the problems 24/7.</p>
           </div>
         </div>
       </div>
@@ -144,81 +139,6 @@
 </div>
 <!--services ends-->
 
-<!--benefits and call back starts-->
-<div class="benefit-callback bg-f3f8f8 pt-100 pt-sm-80 pb-62 pb-sm-80">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-6">
-        <div class="section-title mb-40">
-          <h2><span>Top 4 Benefits Of SEO</span></h2>
-          <p>We work with you to transform your organization, driving bold ideas and pragmatic solutions.</p>
-        </div>
-        <div class="service-single style-2 wow fadeInUp" data-wow-delay=".3s">
-          <i class="ti-stats-up"></i>
-          <div class="service-single-brief">
-            <h4><span>Increased Traffic</span></h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt utsa.</p>
-          </div>
-        </div>
-        <div class="service-single style-2 wow fadeInUp" data-wow-delay=".4s">
-          <i class="ti-twitter"></i>
-          <div class="service-single-brief">
-            <h4><span>Cost-effectiveness</span></h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt utsa.</p>
-          </div>
-        </div>
-        <div class="service-single style-2 wow fadeInUp" data-wow-delay=".5s">
-          <i class="ti-desktop"></i>
-          <div class="service-single-brief">
-            <h4><span>Increased site usability</span></h4>
-            <p>Excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt mollit anim id est
-              laborum.</p>
-          </div>
-        </div>
-        <div class="service-single style-2 wow fadeInUp" data-wow-delay=".5s">
-          <i class="ti-apple"></i>
-          <div class="service-single-brief">
-            <h4><span>Brand Awareness</span></h4>
-            <p>Excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt mollit anim id est
-              laborum.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-6">
-        <div class="contact-form style-1 wow fadeIn ml-80 mt-sm-15" data-wow-delay=".6s">
-          <div class="section-title mb-40">
-            <h3><span>Request A Call Back</span></h3>
-          </div>
-          <form>
-            <div class="form-group">
-              <input type="text" class="form-control" placeholder="Your Website:* ">
-            </div>
-            <div class="form-group">
-              <input type="text" class="form-control" placeholder="Name:* ">
-            </div>
-            <div class="form-group">
-              <input type="text" class="form-control" placeholder="Email:* ">
-            </div>
-            <div class="form-group">
-              <input type="text" class="form-control" placeholder="Phone:* ">
-            </div>
-            <div class="form-group">
-              <select class="form-control" id="exampleFormControlSelect1">
-                <option>What kind of service do you want?</option>
-                <option>Social Media Marketing</option>
-                <option>Search Engine Optimization</option>
-                <option>Email Marketing</option>
-                <option>Product Review</option>
-              </select>
-            </div>
-            <button class="btn-common mt-25">Submit Now</button>
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<!--benefits and call back ends-->
 
 <!--work process starts-->
 <div class="work-process-area bg-1 pt-95 pt-sm-75 pb-100 pb-sm-80">
@@ -264,82 +184,6 @@
 </div>
 <!--work process ends-->
 
-<!--pricing-area starts-->
-<div class="pricing-area bg-1 pt-95 pt-sm-75">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-12">
-        <div class="section-title text-center">
-          <h2><span>Pricing Plan</span></h2>
-        </div>
-      </div>
-    </div>
-    <div class="tab-content mt-25">
-      <div id="monthly" class="tab-pane fade in show active">
-        <div class="row pricing-carousel">
-          <div class="col-lg-4">
-            <div class="pricing-table-single wow fadeInUp" data-wow-delay=".3s">
-              <div class="pricing-table-head">
-                <h3>Started</h3>
-                <p>$250 with 20% Special Discount</p>
-                <h4><sup>$</sup>199<span>/per month</span></h4>
-              </div>
-              <div class="pricing-table-body">
-                <ul class="list-sign">
-                  <li>Up to 30 Keywords</li>
-                  <li>Up to 10 Web Pages</li>
-                  <li>Quarterly Ranking Report</li>
-                  <li>Bi-Yearly Link Outreach Campaign</li>
-                  <li>24/7 Support</li>
-                </ul>
-                <a href="#" class="btn-common">Get Started</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4">
-            <div class="pricing-table-single highlight wow fadeInDown" data-wow-delay=".4s">
-              <div class="pricing-table-head">
-                <h3>Professional</h3>
-                <p>$250 with 20% Special Discount</p>
-                <h4><sup>$</sup>259<span>/per month</span></h4>
-              </div>
-              <div class="pricing-table-body">
-                <ul class="list-sign">
-                  <li>Up to 30 Keywords</li>
-                  <li>Up to 10 Web Pages</li>
-                  <li>Quarterly Ranking Report</li>
-                  <li>Bi-Yearly Link Outreach Campaign</li>
-                  <li>24/7 Support</li>
-                </ul>
-                <a href="#" class="btn-common">Get Started</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4">
-            <div class="pricing-table-single wow fadeInUp" data-wow-delay=".5s">
-              <div class="pricing-table-head">
-                <h3>Enterprise</h3>
-                <p>$250 with 20% Special Discount</p>
-                <h4><sup>$</sup>399<span>/per month</span></h4>
-              </div>
-              <div class="pricing-table-body">
-                <ul class="list-sign">
-                  <li>Up to 30 Keywords</li>
-                  <li>Up to 10 Web Pages</li>
-                  <li>Quarterly Ranking Report</li>
-                  <li>Bi-Yearly Link Outreach Campaign</li>
-                  <li>24/7 Support</li>
-                </ul>
-                <a href="#" class="btn-common">Get Started</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<!--pricing-area ends-->
 
 <!--testimonial starta-->
 <div class="testimonial-area bg-f3f8f8 pt-95 pt-sm-75 pb-117 pb-sm-105">
