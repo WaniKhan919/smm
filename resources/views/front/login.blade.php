@@ -18,7 +18,6 @@
                 <div class="section-title">
                   <h3><span>Login</span></h3>
                 </div>
-                {{ $errors }}
                 @if (session()->has('error'))
                   <div class="alert alert-danger alert-dismissible fade show" role="alert">
                     {{ session()->get('error') }}
