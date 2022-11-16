@@ -26,7 +26,8 @@ class PasswordResetController extends Controller
         $status = Password::sendResetLink(
             $request->only('email')
         );
-     
+
+        session()->flash('alert', 'A Password resetting email has been sent to you.');
         return $status === Password::RESET_LINK_SENT? back()->with(['status' => __($status)]): back()->withErrors(['email' => __($status)]);
     }
 
@@ -55,7 +56,7 @@ class PasswordResetController extends Controller
                 event(new PasswordReset($user));
             }
         );
-     
+        
         return $status === Password::PASSWORD_RESET
                     ? redirect()->route('admin.login')->with('status', __($status))
                     : back()->withErrors(['email' => [__($status)]]);
