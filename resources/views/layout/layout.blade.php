@@ -46,6 +46,7 @@
 				expires.setTime(expires.getTime() + (expiry * 24 * 60 * 60 * 1000));
 				document.cookie = key + '=' + value + ';expires=' + expires.toUTCString();
 			}
+			
 			if (selectedLanguage === '')
 				setCookie('googtrans', '/en/' + lang.toLowerCase(), 1);
 
