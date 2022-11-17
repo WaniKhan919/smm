@@ -47,32 +47,36 @@ Route::post('/blog/search/',[FrontController::class,'blogSearch'])->name('blog-s
 Route::get('/faq',[FrontController::class,'faq'])->name('faq');
 Route::get('/pricing',[FrontController::class,'pricing'])->name('pricing');
 Route::get('/service/{id}',[FrontController::class,'servicesCategory'])->name('service-category');
-Route::get('/login',[FrontController::class,'login'])->name('login');
-Route::get('/register',[FrontController::class,'register'])->name('register');
-Route::post('/register',[UserController::class,'register'])->name('user.register');
-Route::post('/user/login',[UserController::class,'login'])->name('user.login');
+Route::middleware('guest:web')->group(function () {
+    Route::get('/login', [FrontController::class, 'login'])->name('login');
+    Route::get('/register', [FrontController::class, 'register'])->name('register');
+    Route::post('/register', [UserController::class, 'register'])->name('user.register');
+    Route::post('/user/login', [UserController::class, 'login'])->name('user.login');
+});
 Route::get('/logout',[UserController::class,'logout'])->name('user-logout');
 Route::post('/user/contact/form', [FrontContactController::class, 'index'])->name('user.contact.form');
 
-//Route::group(['middleware' => ['auth:web']], function() {
+Route::middleware('auth:web')->group(function() {
     Route::get('/user/profile',[UserController::class,'profile'])->name('user-profile');
     Route::get('/user/change/password',[UserController::class,'changepassword'])->name('user-change-password');
     Route::put('/user/update/profile',[UserController::class,'updateprofile'])->name('update.user.profile');
     Route::put('/user/update/password',[UserController::class,'updatepassword'])->name('user-update-password');
     Route::get('/user/dashboard',[UserController::class,'dashbard'])->name('user-dashboard');
     Route::get('/user/orders',[UserController::class,'orders'])->name('user-orders');
-//});
+});
+
+
 /* Admin Route */
 Route::prefix('admin')->name('admin.')->group(function () {
     // Authentication
-    Route::middleware('guest')->group(function () {
+    Route::middleware('guest:admin')->group(function () {
         Route::get('/login', [AdminLoginController::class, 'index'])->name('login');
         Route::post('/login', [AdminLoginController::class, 'authenticate'])->name('login');
     });
     Route::get('/logout', [AdminLoginController::class, 'logout'])->name('logout');
 
     // Password Resetting
-    Route::middleware('guest')->group(function () {
+    Route::middleware('guest:admin')->group(function () {
         Route::get('/password/reset', [AdminPasswordResetController::class, 'index'])->name('password.reset.page');
         Route::post('/password/reset/email', [AdminPasswordResetController::class, 'email'])->name('password.reset.email');
         Route::get('/reset/password/{token}', [AdminPasswordResetController::class, 'reset_page'])->name('password.reset');
