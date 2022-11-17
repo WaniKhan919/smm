@@ -248,10 +248,15 @@
             </div>
             <div class="blog-desc mt-30">
               <ul class="blog-category">
-                <li><a href="{{ route('blog-detail',$blog->id) }}">{{ Str::substr($blog->title, 0, 17) }}...</a></li>
+                <li><a href="{{ route('blog',$blog->category->id) }}">{{ $blog->category->title }}</a></li>
               </ul>
-              <h3><a href="{{ route('blog-detail',$blog->id) }}">{{ Str::substr($blog->description, 0, 54) }}...</a></h3>
-              
+              <h3><a href="{{ route('blog-detail',$blog->id) }}">
+                @if (strlen($blog->title) > 57)
+                  {{ Str::substr($blog->title, 0, 54) }}...
+                @else
+                  {{ $blog->title }}
+                @endif
+              </a></h3>
             </div>
           </div>
         </div>

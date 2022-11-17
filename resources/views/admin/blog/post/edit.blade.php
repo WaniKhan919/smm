@@ -65,7 +65,7 @@ Admin | Blog - Edit Post
                             <div class="row mb-3">
                                 <div class="col-sm-12">
                                     <label for="inputText" class="col-sm-2 col-form-label">Description</label>
-                                    <textarea type="text" name="description" class="form-control" style="height: 100px;">@if($post){{ $post->description ?? '' }}@endif</textarea>
+                                    <textarea type="text" name="description" id="editor" class="form-control" style="height: 100px;">@if($post){{ $post->description ?? '' }}@endif</textarea>
                                     <span class="text-danger mt-3">
 
                                         @error('description')
@@ -129,7 +129,7 @@ Admin | Blog - Edit Post
 
                             <div class="row md-12">
                                 <div class="text-center">
-                                    <button type="submit" class="btn btn-primary">Edit</button>
+                                    <button type="submit" class="btn btn-primary">Update</button>
                                     <button type="reset" class="btn btn-secondary">Reset</button>
                                 </div>
                             </div>
@@ -147,5 +147,10 @@ Admin | Blog - Edit Post
     </div>
 
 </div>
+
+<script src="https://cdn.ckeditor.com/4.20.0/standard/ckeditor.js"></script>
+<script>
+     CKEDITOR.replace( 'editor' );
+</script>
 
 @endsection

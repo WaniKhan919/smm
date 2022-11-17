@@ -63,7 +63,7 @@ Admin | Blog - Add Post
                             <div class="row mb-3">
                                 <div class="col-sm-12">
                                     <label for="inputText" class="col-sm-2 col-form-label">Description</label>
-                                    <textarea type="text" name="description" class="form-control" style="height: 100px;"></textarea>
+                                    <textarea type="text" id="editor" name="description" class="form-control" style="height: 100px;"></textarea>
                                     <span class="text-danger mt-3">
 
                                         @error('description')
@@ -140,5 +140,10 @@ Admin | Blog - Add Post
     </div>
 
 </div>
+
+<script src="https://cdn.ckeditor.com/4.20.0/standard/ckeditor.js"></script>
+<script>
+     CKEDITOR.replace( 'editor' );
+</script>
 
 @endsection
