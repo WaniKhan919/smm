@@ -45,6 +45,7 @@ Admin | Reviews - all
                             <th scope="col">Company</th>
                             <th scope="col">Title</th>
                             <th scope="col">Date</th>
+                            <th scope="col">Published</th>
                             <th scope="col">Actions</th>
                         </tr>
                     </thead>
@@ -56,6 +57,9 @@ Admin | Reviews - all
                             <td>{{ $reviews->company }}</td>
                             <td>{{ $reviews->title }}</td>
                             <td>{{ \Illuminate\Support\Carbon::parse($reviews->created_at)->format('M j Y') }}</td>
+                            <td>{!! $reviews->published? 
+                                    '<span class="badge rounded-pill bg-success">Yes</span>':
+                                    '<span class="badge rounded-pill bg-warning text-dark">No</span>' !!}</td>
                             <td class="d-flex align-items-center gap-2">
                                 <a href="{{ route('admin.reviews.edit', $reviews->id) }}"
                                     class="btn btn-warning btn-sm"><i class="bi bi-pencil"></i></a>
