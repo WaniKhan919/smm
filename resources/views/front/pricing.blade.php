@@ -82,14 +82,15 @@
 													<span aria-hidden="true">&times;</span>
 												</button>
 											</div>
-											<div class="modal-body">
-												<form action="" method="post">
-													<input type="text" class="form-control" required>
-												</form>
-											</div>
-											<div class="modal-footer">
-												<button type="submit" class="btn-sm btn-common">Click to Proceed</button>
-											</div>
+											<form action="" method="post">
+												@csrf
+												<div class="modal-body">
+														<input type="text" class="form-control" required placeholder="Insert campaign Url">
+												</div>
+												<div class="modal-footer">
+													<button type="submit" class="btn-sm btn-common">Click to Proceed</button>
+												</div>
+											</form>
 										</div>
 									</div>
 								</div>
