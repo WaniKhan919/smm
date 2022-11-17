@@ -12,6 +12,8 @@ use App\Models\Admin;
 
 class PasswordResetController extends Controller
 {
+    protected $isAdmin = true;
+    
     public function __construct()
     {
         $this->middleware('guest:admin');

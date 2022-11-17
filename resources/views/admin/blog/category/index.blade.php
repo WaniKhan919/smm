@@ -50,7 +50,7 @@ Admin | Blog - Categories
                 <div class="card">
                     <div class="card-body">
                         <div class="d-flex align-items-center justify-content-between">
-                            <h5 class="card-title">Categories</h5>
+                            <h5 class="card-title">All Blog Categories</h5>
                             <div>
                                 <a href="{{ route('admin.blog.category.create') }}" class="btn btn-primary">Add New</a>
                             </div>

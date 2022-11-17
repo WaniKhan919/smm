@@ -10,6 +10,8 @@ use Auth;
 
 class ProfileController extends Controller
 {
+    protected $isAdmin = true;
+    
     public function profile_update(Request $request)
     {
         $request->validate([
@@ -25,7 +27,7 @@ class ProfileController extends Controller
             ]);
 
             if($admin) {
-                return back()->with(session()->flash('alert', 'Profile Successfully Updated.'));
+                return back()->with(session()->flash('alert', 'Profile edited successfully!'));
             }else{
                 return back();
             }
@@ -52,7 +54,7 @@ class ProfileController extends Controller
                 ]);
 
                 if($admin) {
-                    return back()->with(session()->flash('alert', 'Password Successfully Changed.'));
+                    return back()->with(session()->flash('alert', 'Category changed successfully!'));
                 }else{
                     return back();
                 }
@@ -60,7 +62,7 @@ class ProfileController extends Controller
                 return back();
             }
         }else{
-            return back()->with(session()->flash('error', 'Invalid Current Password.'));
+            return back()->with(session()->flash('error', 'Invalid current password!'));
         }
     }
 }

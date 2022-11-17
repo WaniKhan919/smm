@@ -13,6 +13,9 @@ use App\Http\Controllers\Admin\Password_Reset\PasswordResetController as AdminPa
 use App\Http\Controllers\Admin\PackagesController as AdminPackagesController;
 use App\Http\Controllers\Admin\PackageCategoriesController as AdminPackageCategoriesController;
 use App\Http\Controllers\Admin\PackageTypesController as AdminPackageTypesController;
+use App\Http\Controllers\Admin\ReviewsController as AdminReviewsController;
+use App\Http\Controllers\Admin\Message\MessageController as AdminMessageController;
+use App\Http\Controllers\front\ContactController as FrontContactController;
 use App\Http\Controllers\Admin\FaqController;
 use App\Http\Controllers\front\UserController;
 use App\Models\PackageCategory;
@@ -49,6 +52,7 @@ Route::get('/register',[FrontController::class,'register'])->name('register');
 Route::post('/register',[UserController::class,'register'])->name('user.register');
 Route::post('/user/login',[UserController::class,'login'])->name('user.login');
 Route::get('/logout',[UserController::class,'logout'])->name('user-logout');
+Route::post('/user/contact/form', [FrontContactController::class, 'index'])->name('user.contact.form');
 
 Route::group(['middleware' => ['auth:web']], function() {
     Route::get('/user/profile',[UserController::class,'profile'])->name('user-profile');
@@ -78,16 +82,20 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::middleware(['auth:admin'])->group(function () {
         // Dashboard Routes
         Route::get('/dashboard', [AdminDashboardController::class, 'index'])->name('dashboard');
+
         // Profile Routes
         Route::get('/profile', [AdminDashboardController::class, 'profile'])->name('profile');
         Route::post('/profile/update', [AdminProfileController::class, 'profile_update'])->name('profile.update');
         Route::post('/profile/change/password', [AdminProfileController::class, 'change_password'])->name('profile.change.password');
+
         // Category Crud Routes
         Route::resource('user', AdminUserController::class);
+
         // User Crud Routes
         Route::resource('/blog/category', AdminCategoryController::class, [
             'as' => 'blog'
         ]);
+
         // Post Crud Routes
         Route::resource('/blog/post', AdminPostController::class, [
             'as' => 'blog'
@@ -101,7 +109,13 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::resource('/package-types', AdminPackageTypesController::class);
         Route::get('/package-types/{category_id}/json', [AdminPackageTypesController::class, 'getTypesJSON'])->name('package-types.json');
 
+        // Messages Crud Routes
+        Route::resource('message', AdminMessageController::class);
+
         //FAQ's Crud Routes
         Route::resource('faqs',FaqController::class);
+
+        // Reviews
+        Route::resource('/reviews', AdminReviewsController::class);
     });
 });

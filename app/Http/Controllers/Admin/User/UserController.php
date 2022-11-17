@@ -9,6 +9,8 @@ use App\Models\User;
 
 class UserController extends Controller
 {
+    protected $isAdmin = true;
+    
     /**
      * Display a listing of the resource.
      *

@@ -243,7 +243,7 @@
               </div>
               <div class="testimonial-desc">
                 <p>"Your continued support and aggressive technology have convinced me that signing another optimization
-                  contract with Aseona, Inc. is the best approach in maintaining our edge over the competition”</p>
+                  contract with {{ env('APP_NAME', 'ADMK') }}, Inc. is the best approach in maintaining our edge over the competition”</p>
               </div>
             </div>
           </div>
@@ -260,7 +260,7 @@
               </div>
               <div class="testimonial-desc">
                 <p>"Your continued support and aggressive technology have convinced me that signing another optimization
-                  contract with Aseona, Inc. is the best approach in maintaining our edge over the competition”</p>
+                  contract with {{ env('APP_NAME', 'ADMK') }}, Inc. is the best approach in maintaining our edge over the competition”</p>
               </div>
             </div>
           </div>
@@ -277,7 +277,7 @@
               </div>
               <div class="testimonial-desc">
                 <p>"Your continued support and aggressive technology have convinced me that signing another optimization
-                  contract with Aseona, Inc. is the best approach in maintaining our edge over the competition”</p>
+                  contract with {{ env('APP_NAME', 'ADMK') }}, Inc. is the best approach in maintaining our edge over the competition”</p>
               </div>
             </div>
           </div>
