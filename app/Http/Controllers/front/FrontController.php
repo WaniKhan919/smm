@@ -13,12 +13,13 @@ use Illuminate\Support\Facades\Auth;
 class FrontController extends Controller
 {
     public function index(){
+        $reviews=Review::where('published', true)->orderBy('id', 'Desc')->limit(3)->get();
         $blogs=BlogPost::orderBy('id','Desc')->limit(6)->get();
-        $reviews = Review::where('published', true)->orderBy('id', 'Desc')->limit(12)->get();
         return view('front.index',compact('blogs', 'reviews'));
     }
     public function about(){
-        return view('front.about');
+        $reviews=Review::limit(3)->get();
+        return view('front.about',compact('reviews'));
     }
     public function faq(){
         $faqs=Faq::where('status',1)->get();

@@ -62,6 +62,7 @@ Route::middleware('auth:web')->group(function() {
     Route::put('/user/update/profile',[UserController::class,'updateprofile'])->name('update.user.profile');
     Route::put('/user/update/password',[UserController::class,'updatepassword'])->name('user-update-password');
     Route::get('/user/dashboard',[UserController::class,'dashbard'])->name('user-dashboard');
+    Route::get('/user/orders',[UserController::class,'orders'])->name('user-orders');
 });
 
 
