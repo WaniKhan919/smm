@@ -49,13 +49,14 @@ Route::get('/register',[FrontController::class,'register'])->name('register');
 Route::post('/register',[UserController::class,'register'])->name('user.register');
 Route::post('/user/login',[UserController::class,'login'])->name('user.login');
 Route::get('/logout',[UserController::class,'logout'])->name('user-logout');
-Route::get('/user/profile',[UserController::class,'profile'])->name('user-profile');
-Route::get('/user/change/password',[UserController::class,'changepassword'])->name('user-change-password');
-Route::put('/user/update/profile',[UserController::class,'updateprofile'])->name('update.user.profile');
-Route::put('/user/update/password',[UserController::class,'updatepassword'])->name('user-update-password');
 
-Route::get('/user/dashboard',[UserController::class,'dashbard'])->name('user-dashboard');
-
+Route::group(['middleware' => ['auth:web']], function() {
+    Route::get('/user/profile',[UserController::class,'profile'])->name('user-profile');
+    Route::get('/user/change/password',[UserController::class,'changepassword'])->name('user-change-password');
+    Route::put('/user/update/profile',[UserController::class,'updateprofile'])->name('update.user.profile');
+    Route::put('/user/update/password',[UserController::class,'updatepassword'])->name('user-update-password');
+    Route::get('/user/dashboard',[UserController::class,'dashbard'])->name('user-dashboard');
+});
 /* Admin Route */
 Route::prefix('admin')->name('admin.')->group(function () {
     // Authentication
