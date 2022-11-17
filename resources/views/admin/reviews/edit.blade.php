@@ -74,7 +74,7 @@ Admin | Reviews - edit
                     </div>
                 </div>
                 <div class="text-center">
-                    <button type="submit" class="btn btn-primary">Edit</button>
+                    <button type="submit" class="btn btn-primary">Update</button>
                     <button type="reset" class="btn btn-secondary">Reset</button>
                 </div>
             </form>
