@@ -49,7 +49,7 @@ Admin | Reviews - all
                         </tr>
                     </thead>
                     <tbody>
-                        @forelse ($reviews=[] as $i => $reviews)
+                        @forelse ($reviews as $i => $reviews)
                         <tr>
                             <th scope="row">{{ $i + 1 }}</th>
                             <td>{{ $reviews->name }}</td>

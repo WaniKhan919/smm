@@ -20,21 +20,6 @@ Admin | Reviews - create
         </nav>
     </div>
 
-    {{-- <div class="card">
-        <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
-
-            <img src="assets/img/profile-img.jpg" alt="Profile" class="rounded-circle">
-            <h2>Kevin Anderson</h2>
-            <h3>Web Designer</h3>
-            <div class="social-links mt-2">
-            <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
-            <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-            <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-            <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
-            </div>
-        </div>
-    </div> --}}
-
     <div class="card">
         <div class="card-body">
             <h5 class="card-title">Create New Review</h5>
@@ -60,7 +45,7 @@ Admin | Reviews - create
                 </div>
                 <div class="col-md-6">
                     <label for="company" class="form-label">Company</label>
-                    <input type="number" class="form-control" id="company" name="company" value="{{ old('company') }}">
+                    <input type="text" class="form-control" id="company" name="company" value="{{ old('company') }}">
                     @error('company')
                     <div class="invalid-feedback d-block">{{ $message }}</div>
                     @enderror
@@ -79,6 +64,14 @@ Admin | Reviews - create
                     <div class="invalid-feedback d-block">{{ $message }}</div>
                     @enderror
                 </div>
+                <div class="col-md-12">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" id="published">
+                      <label class="form-check-label" for="published">
+                        Publish
+                      </label>
+                    </div>
+                </div>
                 <div class="text-center">
                     <button type="submit" class="btn btn-primary">Create</button>
                     <button type="reset" class="btn btn-secondary">Reset</button>
@@ -91,7 +84,9 @@ Admin | Reviews - create
 <script>
     function previewImage(self) {
         const imagePreview = self.parentNode.querySelector('.imagePreview');
-        
+        let url = URL.createObjectURL(self.files[0]);
+        imagePreview.src = url;
+        imagePreview.addEventListener('load', () => URL.revokeObjectURL(url));
     }
 </script>
 @endsection
