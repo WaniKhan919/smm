@@ -82,14 +82,16 @@
 													<span aria-hidden="true">&times;</span>
 												</button>
 											</div>
-											<div class="modal-body">
-												<form action="" method="post">
-													<input type="text" class="form-control" required>
+												<form action="{{ route('buy_package') }}" method="post">
+													@csrf
+													<div class="modal-body">
+															<input type="text" class="form-control" required>
+															<input type="hidden" name="package_id" value="{{ $pakage->id }}">
+													</div>
+													<div class="modal-footer">
+														<button type="submit" class="btn-sm btn-common">Click to Proceed</button>
+													</div>
 												</form>
-											</div>
-											<div class="modal-footer">
-												<button type="submit" class="btn-sm btn-common">Click to Proceed</button>
-											</div>
 										</div>
 									</div>
 								</div>

@@ -61,6 +61,9 @@ Route::post('/user/contact/form', [FrontContactController::class, 'index'])->nam
     Route::put('/user/update/password',[UserController::class,'updatepassword'])->name('user-update-password');
     Route::get('/user/dashboard',[UserController::class,'dashbard'])->name('user-dashboard');
     Route::get('/user/orders',[UserController::class,'orders'])->name('user-orders');
+    Route::post('/user/buy',[UserController::class,'buypackage'])->name('buy_package');
+    Route::get('/user/success',[UserController::class,'success'])->name('user.payment.success');
+    Route::get('/user/cancel',[UserController::class,'cancel'])->name('user.payment.cancel');
 //});
 /* Admin Route */
 Route::prefix('admin')->name('admin.')->group(function () {

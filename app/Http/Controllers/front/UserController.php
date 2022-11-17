@@ -3,10 +3,12 @@
 namespace App\Http\Controllers\front;
 
 use App\Http\Controllers\Controller;
+use App\Models\Package;
 use Illuminate\Foundation\Auth\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Stripe\Stripe;
 
 class UserController extends Controller
 {
@@ -96,5 +98,27 @@ class UserController extends Controller
     }
     public function orders(){
         return view('user.order');
+    }
+    public function buypackage(Request $request){
+        Stripe::setApiKey('sk_test_4eC39HqLyjWDarjtT1zdp7dc');
+        $user=Auth::guard('web')->user();
+        $package=Package::findOrFail($request->package_id);
+        $session = \Stripe\Checkout\Session::create([
+            'payment_method_types' => ['card'],
+            'line_items' => [[
+              'price' => 100,
+              'quantity' => 1,
+              ]],
+            'mode' => 'subscription',
+            'success_url' => route('user.payment.success'),
+            'cancel_url' => route('user.payment.cancel'),
+          ]);
+          return redirect($session->url);
+    }
+    public function success(Request $request){
+        return $request->all();
+    }
+    public function cancel(Request $request){
+        return $request->all();
     }
 }
