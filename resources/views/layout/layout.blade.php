@@ -39,13 +39,17 @@
 
 		<script type="text/javascript">
 			var lang = '{{ $userLangCode }}';
+			var selectedLanguage = '{{ isset($_COOKIE['googtrans']) && !empty($_COOKIE['googtrans'])? $_COOKIE['googtrans']: '' }}';
 
 			function setCookie(key, value, expiry) {
 				var expires = new Date();
 				expires.setTime(expires.getTime() + (expiry * 24 * 60 * 60 * 1000));
 				document.cookie = key + '=' + value + ';expires=' + expires.toUTCString();
 			}
-			setCookie('googtrans', '/en/' + lang.toLowerCase(), 1);
+			if (selectedLanguage !== '')
+				setCookie('googtrans', selectedLanguage, 1);
+			else
+				setCookie('googtrans', '/en/' + lang.toLowerCase(), 1);
 
 			function googleTranslateElementInit() {
 				new google.translate.TranslateElement({
