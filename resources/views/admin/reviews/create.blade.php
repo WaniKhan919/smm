@@ -64,6 +64,14 @@ Admin | Reviews - create
                     <div class="invalid-feedback d-block">{{ $message }}</div>
                     @enderror
                 </div>
+                <div class="col-md-12">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" id="published">
+                      <label class="form-check-label" for="published">
+                        Publish
+                      </label>
+                    </div>
+                </div>
                 <div class="text-center">
                     <button type="submit" class="btn btn-primary">Create</button>
                     <button type="reset" class="btn btn-secondary">Reset</button>
