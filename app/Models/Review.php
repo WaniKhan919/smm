@@ -20,5 +20,6 @@ class Review extends Model
         'title',
         'description',
         'image_url',
+        'published',
     ];
 }
