@@ -65,8 +65,16 @@ Admin | Reviews - edit
                     <div class="invalid-feedback d-block">{{ $message }}</div>
                     @enderror
                 </div>
+                <div class="col-md-12">
+                    <div class="form-check">
+                      <input class="form-check-input" name="published" type="checkbox" id="published" @if($review->published == true) checked @endif>
+                      <label class="form-check-label" for="published">
+                        Publish
+                      </label>
+                    </div>
+                </div>
                 <div class="text-center">
-                    <button type="submit" class="btn btn-primary">Create</button>
+                    <button type="submit" class="btn btn-primary">Edit</button>
                     <button type="reset" class="btn btn-secondary">Reset</button>
                 </div>
             </form>

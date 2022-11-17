@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\BlogPost;
 use App\Models\Faq;
 use App\Models\Package;
+use App\Models\Review;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -13,7 +14,8 @@ class FrontController extends Controller
 {
     public function index(){
         $blogs=BlogPost::orderBy('id','Desc')->limit(6)->get();
-        return view('front.index',compact('blogs'));
+        $reviews = Review::orderBy('id', 'Desc')->limit(12)->get();
+        return view('front.index',compact('blogs', 'reviews'));
     }
     public function about(){
         return view('front.about');

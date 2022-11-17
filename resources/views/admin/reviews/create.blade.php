@@ -66,7 +66,7 @@ Admin | Reviews - create
                 </div>
                 <div class="col-md-12">
                     <div class="form-check">
-                      <input class="form-check-input" type="checkbox" id="published">
+                      <input class="form-check-input" name="published" type="checkbox" id="published">
                       <label class="form-check-label" for="published">
                         Publish
                       </label>
