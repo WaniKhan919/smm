@@ -18,7 +18,7 @@ class FrontController extends Controller
         return view('front.index',compact('blogs', 'reviews'));
     }
     public function about(){
-        $reviews=Review::limit(3)->get();
+        $reviews=Review::where('published', 1)->limit(3)->get();
         return view('front.about',compact('reviews'));
     }
     public function faq(){
