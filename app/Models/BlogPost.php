@@ -16,8 +16,8 @@ class BlogPost extends Model
         'img',
     ];
 
-    public function blog_category()
+    public function category()
     {
-        return $this->hasOne(BlogCategory::class, 'id');
+        return $this->belongsTo(BlogCategory::class, 'blog_category_id', 'id');
     }
 }

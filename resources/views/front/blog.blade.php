@@ -46,8 +46,20 @@
                   </a>
                 </li>
               </ul>
-              <h3><a href="{{ route('blog-detail',$blog->id) }}">{{ $blog->title }}</a></h3>
-              <p>{{ $blog->description }}</p>
+              <h3><a href="{{ route('blog-detail',$blog->id) }}">
+                @if (isset($isSingle) && $isSingle)
+                  {{ $blog->title }}
+                @else
+                  @if (strlen($blog->title) > 57)
+                    {{ Str::substr($blog->title, 0, 54) }}...
+                  @else
+                    {{ $blog->title }}
+                  @endif
+                @endif
+              </a></h3>
+              @if (isset($isSingle) && $isSingle)
+              <p>{!! $blog->description !!}</p>
+              @endif
             </div>
           </div>
         @endforeach

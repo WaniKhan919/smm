@@ -26,7 +26,13 @@
                 <a href="{{ route('blog-detail',$list->id) }}"><img src="{{asset('/assets/admin/img/post/'.$list->img)}}" alt="" /></a>
                 </div>
                 <div class="popular-desc table-cell">
-                <h4><a href="{{ route('blog-detail',$list->id) }}">{{ $list->title }}</a></h4>
+                <h4><a href="{{ route('blog-detail',$list->id) }}">
+                  @if (strlen($list->title) > 57)
+                    {{ Str::substr($list->title, 0, 54) }}...
+                  @else
+                    {{ $list->title }}
+                  @endif
+                </a></h4>
                 <small><i class="fa fa-clock-o"></i> 18th Jan, 2020</small>
                 </div>
             </li>

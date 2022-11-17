@@ -65,7 +65,7 @@ Admin | Blog - Edit Category
 
                             <div class="row md-12">
                                 <div class="text-center">
-                                    <button type="submit" class="btn btn-primary">Edit</button>
+                                    <button type="submit" class="btn btn-primary">Update</button>
                                     <button type="reset" class="btn btn-secondary">Reset</button>
                                 </div>
                             </div>
