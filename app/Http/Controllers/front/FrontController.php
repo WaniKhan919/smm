@@ -14,7 +14,7 @@ class FrontController extends Controller
 {
     public function index(){
         $blogs=BlogPost::orderBy('id','Desc')->limit(6)->get();
-        $reviews = Review::orderBy('id', 'Desc')->limit(12)->get();
+        $reviews = Review::where('published', true)->orderBy('id', 'Desc')->limit(12)->get();
         return view('front.index',compact('blogs', 'reviews'));
     }
     public function about(){
