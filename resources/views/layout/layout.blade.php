@@ -207,7 +207,7 @@
 					<div class="col-lg-3 col-sm-6">
 						<div class="footer-widget footer-logo">
 							<div class="footer-logo">
-								<img src="{{ asset('front_assets/images/logo.png')}}" alt="" />
+								<img src="http://admksolutions.com/wp-content/uploads/2020/09/ADMK-LOGO.png" style="max-height: 60px;" alt="" />
 							</div>
 							<ul class="list-none">
 								<li>Mon - Fri: 9:00 - 19:00</li>
