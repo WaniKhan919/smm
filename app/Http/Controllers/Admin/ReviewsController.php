@@ -47,12 +47,18 @@ class ReviewsController extends Controller
             $image_url = str_replace('public/', '', $image_url);
         }
 
+        $published = false;
+        if ($request->published == "on"){
+            $published = true;
+        }
+
         Review::create([
             'name' => $request->name,
             'company' => $request->company,
             'title' => $request->title,
             'description' => $request->description,
             'image_url' => $image_url,
+            'published' => $published,
         ]);
 
         return back()->with('success', 'New review added successfully!');
@@ -100,6 +106,11 @@ class ReviewsController extends Controller
             $image_url = str_replace('public/', '', $image_url);
         }
 
+        $published = false;
+        if ($request->published == "on"){
+            $published = true;
+        }
+
         $review = Review::find($id);
         $review->name = $request->name;
         $review->company = $request->company;
@@ -107,6 +118,7 @@ class ReviewsController extends Controller
         $review->description = $request->description;
         if ($image_url)
             $review->image_url = $image_url;
+        $review->published = $published;
         $review->save();
 
         return back()->with('success', 'Review updated successfully!');

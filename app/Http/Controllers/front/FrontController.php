@@ -13,9 +13,9 @@ use Illuminate\Support\Facades\Auth;
 class FrontController extends Controller
 {
     public function index(){
-        $reviews=Review::limit(3)->get();
+        $reviews=Review::where('published', true)->orderBy('id', 'Desc')->limit(3)->get();
         $blogs=BlogPost::orderBy('id','Desc')->limit(6)->get();
-        return view('front.index',compact('blogs','reviews'));
+        return view('front.index',compact('blogs', 'reviews'));
     }
     public function about(){
         $reviews=Review::limit(3)->get();
