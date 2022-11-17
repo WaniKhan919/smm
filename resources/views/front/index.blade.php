@@ -57,14 +57,14 @@
     <div class="row mt-90 mt-sm-70 align-items-center">
       <div class="col-lg-3 col-md-3 col-sm-6">
         <div class="counter-single">
-          <i class="ti-heart-broken"></i>
+          <i class="ti-user"></i>
           <span class="count1">920</span>
           <h4>Customers</h4>
         </div>
       </div>
       <div class="col-lg-3 col-md-3 col-sm-6">
         <div class="counter-single">
-          <i class="ti-bar-chart"></i>
+          <i class="ti-star"></i>
           <span class="count2">8630</span>
           <h4>App reviewed</h4>
         </div>
