@@ -60,6 +60,7 @@ Route::post('/user/contact/form', [FrontContactController::class, 'index'])->nam
     Route::put('/user/update/profile',[UserController::class,'updateprofile'])->name('update.user.profile');
     Route::put('/user/update/password',[UserController::class,'updatepassword'])->name('user-update-password');
     Route::get('/user/dashboard',[UserController::class,'dashbard'])->name('user-dashboard');
+    Route::get('/user/orders',[UserController::class,'orders'])->name('user-orders');
 //});
 /* Admin Route */
 Route::prefix('admin')->name('admin.')->group(function () {

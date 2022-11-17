@@ -198,62 +198,30 @@
     <div class="row mt-50">
       <div class="col-xl-5">
         <div class="ds-sm-none wow fadeIn">
-          <img src="{{ asset('front_assets/images/testimonials/review.png')}}" alt="" />
+          <img src="{{ asset('front_assets/images/testimonials/2.png')}}" alt="" />
         </div>
       </div>
       <div class="col-xl-7">
         <div class="row testimonial-carousel">
-          <div class="col-lg-6">
-            <div class="testimonial-single">
-              <div class="testimonial-info">
-                <div class="testimonial-thumb">
-                  <img src="{{ asset('front_assets/images/testimonials/thumb-1.png')}}" alt="" />
+          @foreach ($reviews as $list)
+            <div class="col-lg-6">
+              <div class="testimonial-single">
+                <div class="testimonial-info">
+                  <div class="testimonial-thumb">
+                    <img src="{{ $list->image_url ? asset('storage/'.$list->image_url): asset('front_assets/images/testimonials/thumb-1.png')}}" alt="" />
+                  </div>
+                  <div class="testimonial-name">
+                    <h5>{{ $list->name ?? '' }}</h5>
+                    <span>{{ $list->company ?? '' }}</span>
+                  </div>
                 </div>
-                <div class="testimonial-name">
-                  <h5>Essie Rice</h5>
-                  <span>CEO deercreative</span>
+                <div class="testimonial-desc">
+                  <h5>{{ $list->title ?? '' }}</h5>
+                  <p>"{{ $list->description ?? '' }}”</p>
                 </div>
-              </div>
-              <div class="testimonial-desc">
-                <p>"Your continued support and aggressive technology have convinced me that signing another optimization
-                  contract with {{ env('APP_NAME', 'ADMK') }}, Inc. is the best approach in maintaining our edge over the competition”</p>
               </div>
             </div>
-          </div>
-          <div class="col-lg-6">
-            <div class="testimonial-single">
-              <div class="testimonial-info">
-                <div class="testimonial-thumb">
-                  <img src="{{ asset('front_assets/images/testimonials/thumb-2.png')}}" alt="" />
-                </div>
-                <div class="testimonial-name">
-                  <h5>Flora Cummings</h5>
-                  <span>CEO LionsBite</span>
-                </div>
-              </div>
-              <div class="testimonial-desc">
-                <p>"Your continued support and aggressive technology have convinced me that signing another optimization
-                  contract with {{ env('APP_NAME', 'ADMK') }}, Inc. is the best approach in maintaining our edge over the competition”</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-6">
-            <div class="testimonial-single">
-              <div class="testimonial-info">
-                <div class="testimonial-thumb">
-                  <img src="{{ asset('front_assets/images/testimonials/thumb-1.png')}}" alt="" />
-                </div>
-                <div class="testimonial-name">
-                  <h5>Essie Rice</h5>
-                  <span>Larry Page</span>
-                </div>
-              </div>
-              <div class="testimonial-desc">
-                <p>"Your continued support and aggressive technology have convinced me that signing another optimization
-                  contract with {{ env('APP_NAME', 'ADMK') }}, Inc. is the best approach in maintaining our edge over the competition”</p>
-              </div>
-            </div>
-          </div>
+          @endforeach
         </div>
       </div>
     </div>

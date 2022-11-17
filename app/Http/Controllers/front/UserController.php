@@ -94,4 +94,7 @@ class UserController extends Controller
     public function changepassword(){
         return view('user.changepassword');
     }
+    public function orders(){
+        return view('user.order');
+    }
 }

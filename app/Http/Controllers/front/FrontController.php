@@ -6,17 +6,20 @@ use App\Http\Controllers\Controller;
 use App\Models\BlogPost;
 use App\Models\Faq;
 use App\Models\Package;
+use App\Models\Review;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class FrontController extends Controller
 {
     public function index(){
+        $reviews=Review::limit(3)->get();
         $blogs=BlogPost::orderBy('id','Desc')->limit(6)->get();
-        return view('front.index',compact('blogs'));
+        return view('front.index',compact('blogs','reviews'));
     }
     public function about(){
-        return view('front.about');
+        $reviews=Review::limit(3)->get();
+        return view('front.about',compact('reviews'));
     }
     public function faq(){
         $faqs=Faq::where('status',1)->get();

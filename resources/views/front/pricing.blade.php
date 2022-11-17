@@ -49,7 +49,7 @@
 												$price=$pakage->price;
 												$discount=100-($sale_price/$price*100)
 											@endphp
-											<p>${{ $pakage->sale_price }} with {{ number_format($discount,2, '.', '') }}% Special Discount</p>
+											<p>${{ $pakage->price }} with {{ number_format($discount,0, '.', '') }}% Special Discount</p>
 											<h4><sup>$</sup>{{ $pakage->sale_price }}<span>/per month</span></h4>
 											@else
 											<p>${{ $pakage->price }}</p>
