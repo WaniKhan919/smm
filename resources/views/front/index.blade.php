@@ -57,14 +57,14 @@
     <div class="row mt-90 mt-sm-70 align-items-center">
       <div class="col-lg-3 col-md-3 col-sm-6">
         <div class="counter-single">
-          <i class="ti-heart-broken"></i>
+          <i class="ti-user"></i>
           <span class="count1">920</span>
           <h4>Customers</h4>
         </div>
       </div>
       <div class="col-lg-3 col-md-3 col-sm-6">
         <div class="counter-single">
-          <i class="ti-bar-chart"></i>
+          <i class="ti-star"></i>
           <span class="count2">8630</span>
           <h4>App reviewed</h4>
         </div>
@@ -198,27 +198,30 @@
     <div class="row mt-50">
       <div class="col-xl-5">
         <div class="ds-sm-none wow fadeIn">
-          <img src="{{ asset('front_assets/images/testimonials/review.png')}}" alt="" />
+          <img src="{{ asset('front_assets/images/testimonials/2.png')}}" alt="" />
         </div>
       </div>
       <div class="col-xl-7">
         <div class="row testimonial-carousel">
-         @foreach ($reviews as $review)
-         <div class="col-lg-6">
-          <div class="testimonial-single">
-            <div class="testimonial-info">
-              <div class="testimonial-thumb">
-                <img src="{{ $review->image_url? asset('storage/'.$review->image_url): asset('assets/admin/img/avatar.png') }}" alt="" />
-              </div>
-              <div class="testimonial-name">
-                <h5>{{ $review->name ?? '' }}</h5>
-                <span>{{ $review->company ?? '' }}</span>
+          @foreach ($reviews as $list)
+            <div class="col-lg-6">
+              <div class="testimonial-single">
+                <div class="testimonial-info">
+                  <div class="testimonial-thumb">
+                    <img src="{{ $list->image_url ? asset('storage/'.$list->image_url): asset('front_assets/images/testimonials/thumb-1.png')}}" alt="" />
+                  </div>
+                  <div class="testimonial-name">
+                    <h5>{{ $list->name ?? '' }}</h5>
+                    <span>{{ $list->company ?? '' }}</span>
+                  </div>
+                </div>
+                <div class="testimonial-desc">
+                  <h5>{{ $list->title ?? '' }}</h5>
+                  <p>"{{ $list->description ?? '' }}”</p>
+                </div>
               </div>
             </div>
-            <div class="testimonial-desc">
-              <p>{{ $review->description ?? '' }}</p>
-            </div>
-          </div>
+          @endforeach
         </div>
          @endforeach
         </div>
