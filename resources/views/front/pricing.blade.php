@@ -64,7 +64,32 @@
 													@endforeach
 												@endif
 											</ul>
-											<a href="#" class="btn-common">Get Started</a>
+											@if (Auth::check())
+												<a href="#" class="btn-common" data-toggle="modal" data-target="#exampleModal" type="button">Get Started</a>
+											@else
+												<a href="{{ route('login') }}" class="btn-common">Get Started</a>
+											@endif
+										</div>
+									</div>
+								</div>
+								<!-- Modal -->
+								<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+									<div class="modal-dialog modal-dialog-centered" role="document">
+										<div class="modal-content">
+											<div class="modal-header">
+												<h5 class="modal-title" id="exampleModalLabel">Add Campaign</h5>
+												<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+													<span aria-hidden="true">&times;</span>
+												</button>
+											</div>
+											<div class="modal-body">
+												<form action="" method="post">
+													<input type="text" class="form-control" required>
+												</form>
+											</div>
+											<div class="modal-footer">
+												<button type="submit" class="btn-sm btn-common">Click to Proceed</button>
+											</div>
 										</div>
 									</div>
 								</div>

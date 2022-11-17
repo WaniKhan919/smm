@@ -850,6 +850,10 @@ h6 {
   color: #ff771d;
   background: #ffecdf;
 }
+.dashboard .blogs-card .card-icon {
+  color: #a83dff;
+  background: #bf78fa49;
+}
 
 /* Activity */
 .dashboard .activity {
