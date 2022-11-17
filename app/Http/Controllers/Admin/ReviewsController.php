@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
+use App\Models\Review;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class ReviewsController extends Controller
 {
@@ -14,7 +15,8 @@ class ReviewsController extends Controller
      */
     public function index()
     {
-        return view('admin.reviews.index');
+        $reviews = Review::all();
+        return view('admin.reviews.index', compact('reviews'));
     }
 
     /**
@@ -35,7 +37,25 @@ class ReviewsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => 'required'
+        ]);
+
+        $image_url = null;
+        if ($request->hasFile('image')) {
+            $image_url = $request->file('image')->store('public/reviews');
+            $image_url = str_replace('public/', '', $image_url);
+        }
+
+        Review::create([
+            'name' => $request->name,
+            'company' => $request->company,
+            'title' => $request->title,
+            'description' => $request->description,
+            'image_url' => $image_url,
+        ]);
+
+        return back()->with('success', 'New review added successfully!');
     }
 
     /**
@@ -57,7 +77,8 @@ class ReviewsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $review = Review::find($id);
+        return view('admin.reviews.edit', compact('review'));
     }
 
     /**
@@ -69,7 +90,26 @@ class ReviewsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'name' => 'required'
+        ]);
+
+        $image_url = null;
+        if ($request->hasFile('image')) {
+            $image_url = $request->file('image')->store('public/reviews');
+            $image_url = str_replace('public/', '', $image_url);
+        }
+
+        $review = Review::find($id);
+        $review->name = $request->name;
+        $review->company = $request->company;
+        $review->title = $request->title;
+        $review->description = $request->description;
+        if ($image_url)
+            $review->image_url = $image_url;
+        $review->save();
+
+        return back()->with('success', 'Review updated successfully!');
     }
 
     /**
@@ -80,6 +120,9 @@ class ReviewsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $review = Review::find($id);
+        $review->delete();
+
+        return back()->with('success', 'Review deleted successfully!');
     }
 }
