@@ -34,7 +34,8 @@ class FrontController extends Controller
     }
     public function blogDetail($id){
         $blogs=BlogPost::where('id',$id)->get();
-        return view('front.blog',compact('blogs'));
+        $isSingle = true;
+        return view('front.blog',compact('blogs', 'isSingle'));
     }
     public function blogSearch(Request $request){
         $blogs=BlogPost::where('title','like','%'.$request->search.'%')
