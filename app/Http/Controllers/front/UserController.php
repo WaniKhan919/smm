@@ -38,7 +38,7 @@ class UserController extends Controller
             'password'=>'required',
         ]);
         if (Auth::guard('web')->attempt($request->only(['email','password']))) {
-            return redirect()->route('index');
+            return redirect()->intended(route('index'));
         }else{
             return back()->with('error','Failed to login');
         }
