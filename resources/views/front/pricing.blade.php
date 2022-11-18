@@ -85,7 +85,7 @@
 												<form action="{{ route('buy_package') }}" method="post">
 													@csrf
 													<div class="modal-body">
-															<input type="text" class="form-control" required>
+															<input type="text" class="form-control" required name="url">
 															<input type="hidden" name="package_id" value="{{ $pakage->id }}">
 													</div>
 													<div class="modal-footer">
