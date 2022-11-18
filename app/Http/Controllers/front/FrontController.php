@@ -61,4 +61,8 @@ class FrontController extends Controller
             return view('front.register');
         }
     }
+
+    public function thankyou() {
+        return view('front.thankyou');
+    }
 }
