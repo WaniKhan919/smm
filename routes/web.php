@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\admin\AdminOrderController;
 use App\Http\Controllers\front\FrontController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Artisan;
@@ -101,7 +102,9 @@ Route::prefix('admin')->name('admin.')->group(function () {
 
         // Category Crud Routes
         Route::resource('user', AdminUserController::class);
-
+        
+        Route::resource('order', AdminOrderController::class);
+        Route::get('order/{id}/{status}',[AdminOrderController::class,'status'])->name('order.status');
         // User Crud Routes
         Route::resource('/blog/category', AdminCategoryController::class, [
             'as' => 'blog'
