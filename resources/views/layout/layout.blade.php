@@ -158,10 +158,19 @@
                       <a href="{{ url('/') }}">Home</a>
 										</li>
 										<x-navbar-services></x-navbar-services>
-										<x-navbar-blogs></x-navbar-blogs>
-										<li><a href="{{ route('about-us') }}">About</a></li>
-										<li><a href="{{ route('contact') }}">Contact</a></li>
-										<li><a href="{{ route('faq') }}">FAQ</a></li>
+										<li>
+											<a href="javascript:void(0)">About Us</a>
+											<ul class="submenu">
+												<li>
+													<a href="{{ route('about-us') }}">Company</a>
+												</li>
+												<li>
+													<a href="{{ route('faq') }}">FAQ</a>
+												</li>
+												<x-navbar-blogs></x-navbar-blogs>
+											</ul>
+										</li>
+										<li><a href="{{ route('contact') }}">Contact Us</a></li>
 										<li class="mobile-icon"><a href="#mobile-menu"><i class="ti-menu"></i></a></li>
 									</ul>
 								</nav>
@@ -173,15 +182,20 @@
 											<li><a href="{{ url('/') }}">Home</a>
 											</li>
 											<x-navbar-services></x-navbar-services>
-											<x-navbar-blogs></x-navbar-blogs>
 											<li>
-												<a href="{{ route('about-us') }}">About Us</a>
+												<a href="javascript:void(0)">About Us</a>
+												<ul class="submenu">
+													<li>
+														<a href="{{ route('about-us') }}">Company</a>
+													</li>
+													<li>
+														<a href="{{ route('faq') }}">FAQ</a>
+													</li>
+													<x-navbar-blogs></x-navbar-blogs>
+												</ul>
 											</li>
 											<li>
 												<a href="{{ route('contact') }}">Contact Us</a>
-											</li>
-											<li>
-												<a href="{{ route('faq') }}">FAQ</a>
 											</li>
 										</ul>
 									</div>

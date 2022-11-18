@@ -1,7 +1,7 @@
 
-    <li>
+    {{-- <li>
         <a href="#">Services</a>
-        <ul class="submenu">
+        <ul class="submenu"> --}}
             @foreach ($categories as $list)
             @php
                 $types=DB::table('package_types')->where('category_id',$list->id)->get();
@@ -11,10 +11,10 @@
                     $plus=true;
                 }
             @endphp
-                <li><a href="">{{ $list->name }}@if ($plus==true)
-                    <i class="icon_plus"></i>
+                <li><a href="javascript:void(0)">{{ $list->name }}@if ($plus==true)
+                    {{-- <i class="icon_plus"></i> --}}
                 @endif</a>
-                    <ul class="submenu sub-2">
+                    <ul class="submenu">
                         
                         @foreach ($types as $type)
                             <li><a href="{{ route('service-category',$type->id) }}">{{ $type->name }}</a></li>
@@ -22,5 +22,5 @@
                     </ul>
                 </li>
             @endforeach
-        </ul>
-    </li>
+        {{-- </ul>
+    </li> --}}
