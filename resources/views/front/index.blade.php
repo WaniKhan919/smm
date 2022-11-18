@@ -6,20 +6,23 @@
     <div class="row banner-caption align-items-center">
       <div class="col-lg-7 col-md-6">
         <div class="wow fadeInUp">
-          <h5>Digital Business</h5>
+          <h5>NO.1 APP MARKETING </h5>
         </div>
         <div class="wow fadeInUp" data-wow-delay=".3s">
           <h1><span>Buy App Reviews</span></h1>
         </div>
         <div class="wow fadeInUp" data-wow-delay=".4s">
-          <h1 class="mb-20"><span>From Real Users</span></h1>
+          <h1 class="mb-20"><span>Buy Installs for</span></h1>
+        </div>
+        <div class="wow fadeInUp" data-wow-delay=".4s">
+          <h1 class="mb-20"><span>IOS & Android</span></h1>
         </div>
         <div class="wow fadeInUp" data-wow-delay=".5s">
           <p>Our iOS, Android, and macOS high professional reviewers will install, rate, and review your app only in a positive manner. Just make your order and see the fantastic results.</p>
         </div>
       </div>
-      <div class="col-lg-5 col-md-6">
-        <div class="banner-image wow fadeIn d-md-flex justify-content-center" data-wow-delay=".6s">
+      <div class="col-lg-5 col-md-6 py-4 rounded-lg d-none d-md-block" style="background-color: #e1e9fd; border-radius: 30px!important;">
+        <div class="banner-image wow fadeIn d-md-flex justify-content-center align-items center" data-wow-delay=".6s">
           <img src="{{ asset('front_assets/images/banner/main_banner.gif')}}" style="max-width: 250px;" alt="" />
         </div>
       </div>
