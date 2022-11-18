@@ -16,7 +16,7 @@ class AdminOrderController extends Controller
         ->get();
         return view('admin.order.index',compact('orders'));
     }
-    public function vieworder($id){
+    public function orderDetail($id){
         return 'ad';
         $orders=DB::table('subscriptions')
         ->select('subscriptions.*','subscriptions.id as sub_id','users.*','packages.*')
