@@ -114,7 +114,7 @@ Admin | Users Orders
                                         </td>
                                         <td class="d-flex align-items-center gap-2">
                                           <a href="{{ route('admin.order.detail',$order->id) }}" class="btn btn-warning btn-sm"><i class="bi bi-eye"></i></a>
-                                            <form action="{{ route('admin.order.destroy', $order->id) }}" method="post">
+                                            <form action="{{ route('admin.order.delete', $order->id) }}" method="post">
                                                 @method('DELETE')
                                                 @csrf
                                                 <button type="submit" class="btn btn-danger btn-sm"><i class="bi bi-trash"></i></button>
