@@ -101,9 +101,11 @@ class UserController extends Controller
     }
     public function orders(){
         $id=Auth::guard('web')->user()->id;
-        $orders=DB::table('orders')
-        ->select('orders.*','subscriptions.*')
-        ->join('subscriptions', 'subscriptions.user_id', '=', 'orders.user_id')->where('orders.id',$id)
+        $orders=DB::table('subscriptions')
+        ->select('subscriptions.*','subscriptions.id as sub_id','users.*','packages.*')
+        ->join('users', 'users.id', '=', 'subscriptions.user_id')
+        ->join('packages', 'packages.id', '=', 'subscriptions.package_id')->orderBy('subscriptions.id','Desc')->
+        where('subscriptions.user_id',$id)
         ->get();
         return view('user.order',compact('orders'));
     }
