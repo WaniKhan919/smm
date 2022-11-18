@@ -3,9 +3,7 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\Order;
 use App\Models\Subscription;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 class AdminOrderController extends Controller
@@ -14,9 +12,19 @@ class AdminOrderController extends Controller
         $orders=DB::table('subscriptions')
         ->select('subscriptions.*','subscriptions.id as sub_id','users.*','packages.*')
         ->join('users', 'users.id', '=', 'subscriptions.user_id')
-        ->join('packages', 'packages.id', '=', 'subscriptions.package_id')
+        ->join('packages', 'packages.id', '=', 'subscriptions.package_id')->orderBy('subscriptions.id','Desc')
         ->get();
         return view('admin.order.index',compact('orders'));
+    }
+    public function vieworder($id){
+        return 'ad';
+        $orders=DB::table('subscriptions')
+        ->select('subscriptions.*','subscriptions.id as sub_id','users.*','packages.*')
+        ->join('users', 'users.id', '=', 'subscriptions.user_id')
+        ->join('packages', 'packages.id', '=', 'subscriptions.package_id')->orderBy('subscriptions.id','Desc')
+        ->first();
+        dd($orders);
+        return view('admin.order.view',compact('orders'));
     }
     public function status($id,$status){
         $order=Subscription::findOrFail($id);

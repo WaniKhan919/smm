@@ -75,14 +75,10 @@ Admin | Users Orders
                                     <tr>
                                         <th>{{ $loop->iteration }}</th>
                                         <td>
-                                            <a href="{{ route('admin.order.edit', $order->id) }}" class="admin-post-links">
-                                                {{ $order->name ?? '' }}    
-                                            </a>
+                                          {{ $order->name ?? '' }}
                                         </td>
                                         <td>
-                                            <a href="{{ route('admin.order.edit', $order->id) }}" class="admin-post-links">
-                                                {{ $order->email }}
-                                            </a>
+                                          {{ $order->email }}
                                         </td>
                                           @php
                                             $category=DB::table('package_types')->where('id',$order->type_id)->first();
@@ -116,7 +112,8 @@ Admin | Users Orders
                                             </div>
                                           </div>
                                         </td>
-                                        <td>
+                                        <td class="d-flex align-items-center gap-2">
+                                          <a href="{{ route('admin.order.detail',$order->id) }}" class="btn btn-warning btn-sm"><i class="bi bi-eye"></i></a>
                                             <form action="{{ route('admin.order.destroy', $order->id) }}" method="post">
                                                 @method('DELETE')
                                                 @csrf

@@ -65,7 +65,7 @@
 												@endif
 											</ul>
 											@if (Auth::check())
-												<a href="#" class="btn-common" data-toggle="modal" data-target="#exampleModal" type="button">Get Started</a>
+												<a href="#" class="btn-common" data-toggle="modal" data-target="#exampleModal{{ $pakage->id }}" type="button">Get Started</a>
 											@else
 												<a href="{{ route('login') }}" class="btn-common">Get Started</a>
 											@endif
@@ -73,7 +73,7 @@
 									</div>
 								</div>
 								<!-- Modal -->
-								<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+								<div class="modal fade" id="exampleModal{{ $pakage->id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 									<div class="modal-dialog modal-dialog-centered" role="document">
 										<div class="modal-content">
 											<div class="modal-header">
