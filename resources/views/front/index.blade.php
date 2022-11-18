@@ -19,8 +19,8 @@
         </div>
       </div>
       <div class="col-lg-5 col-md-6">
-        <div class="banner-image wow fadeIn" data-wow-delay=".6s">
-          <img src="{{ asset('front_assets/images/banner/rating.png')}}" alt="" />
+        <div class="banner-image wow fadeIn d-md-flex justify-content-center" data-wow-delay=".6s">
+          <img src="{{ asset('front_assets/images/banner/main_banner.gif')}}" style="max-width: 250px;" alt="" />
         </div>
       </div>
     </div>
