@@ -70,6 +70,12 @@
           <span>Users</span>
         </a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link {{ Route::is('admin.order*')? '': 'collapsed' }}" href="{{ route('admin.order.index') }}">
+          <i class="bi bi-card-list"></i>
+          <span>Orders</span>
+        </a>
+      </li>
 
       <li class="nav-item">
         <a class="nav-link {{ Route::is('admin.message*')? '': 'collapsed' }}" href="{{ route('admin.message.index') }}">
