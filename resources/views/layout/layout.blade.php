@@ -154,9 +154,7 @@
 							<div class="mainmenu pull-right">
 								<nav>
 									<ul class="list-none">
-										<li>
-                      <a href="{{ url('/') }}">Home</a>
-										</li>
+										
 										<x-navbar-services></x-navbar-services>
 										<li>
 											<a href="javascript:void(0)">About Us</a>
