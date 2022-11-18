@@ -36,6 +36,9 @@ Route::get('cmd/{cmd}', function ($cmd) {
     echo "<pre style='color:white;background-color:black;padding:20px;'>";
     return Artisan::output();
 });
+
+Route::get('thankyou', [FrontController::class, 'thankyou']);
+
 //Front Route//
 Route::get('/',[FrontController::class,'index'])->name('index');
 Route::get('/about',[FrontController::class,'about'])->name('about-us');
