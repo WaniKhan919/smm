@@ -8,6 +8,7 @@ use App\Models\Package;
 use Illuminate\Foundation\Auth\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Laravel\Cashier\Subscription;
 use Stripe\Stripe;
@@ -99,7 +100,12 @@ class UserController extends Controller
         return view('user.changepassword');
     }
     public function orders(){
-        return view('user.order');
+        $id=Auth::guard('web')->user()->id;
+        $orders=DB::table('orders')
+        ->select('orders.*','subscriptions.*')
+        ->join('subscriptions', 'subscriptions.user_id', '=', 'orders.user_id')->where('orders.id',$id)
+        ->get();
+        return view('user.order',compact('orders'));
     }
     public function buypackage(Request $request){
         Stripe::setApiKey('sk_test_4eC39HqLyjWDarjtT1zdp7dc');
@@ -120,17 +126,16 @@ class UserController extends Controller
             'cancel_url' => route('user.payment.cancel'),
           ]);
           $subscription=new Subscription();
-          $order=new Order();
           $subscription->user_id=$user->id;
           $subscription->name=$user->name;
           $subscription->stripe_id=$session->id;
           $subscription->stripe_status=$session->payment_status;
           $subscription->stripe_price=$price;
           $subscription->quantity=1;
-          $order->user_id=$user->id;
-          $order->url=$request->url;
-          $order->status="pending";
-          if($subscription->save() && $order->save()){
+          $subscription->package_id=$request->package_id;
+          $subscription->url=$request->url;
+          $subscription->status="Pending";
+          if($subscription->save()){
                 return redirect($session->url);
           }
     }
