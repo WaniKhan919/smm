@@ -105,8 +105,8 @@ Route::prefix('admin')->name('admin.')->group(function () {
         
         //Order Routes
         Route::resource('order', AdminOrderController::class);
+        Route::get('order/detail/{id}', [AdminOrderController::class, 'orderDetail'])->name('order.detail');
         Route::get('order/{id}/{status}',[AdminOrderController::class,'status'])->name('order.status');
-        Route::get('order/detail/{id}',[AdminOrderController::class,'orderDetail'])->name('order.detail');
         
         // User Crud Routes
         Route::resource('/blog/category', AdminCategoryController::class, [

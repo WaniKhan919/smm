@@ -68,17 +68,17 @@
           <p class="mt-15">We provide direct installs, keyword installs, App ranking, ratings and reviews, etc. Our main strenght is App optimization for guaranteed ranking!</p>
         </div>
       </div>
-      <div class="col-12 col-md-4 col-lg-3">
-        <div class="service-card bg-white text-center">
+      <div class="col-12 col-sm-6 col-lg-3 mb-3">
+        <div class="service-card bg-white text-center h-100">
           <div class="icon mb-3">
-            <i class="ti ti-search"></i>
+            <i class="ti ti-download"></i>
           </div>
           <h4>Direct Installs</h4>
           <p>Buy app installs for rapid growth of app downloand counter. App installs can increase organic traffics for your app. Get +10M Installs just in 20 days!</p>
         </div>
       </div>
-      <div class="col-12 col-md-4 col-lg-3">
-        <div class="service-card bg-white text-center">
+      <div class="col-12 col-sm-6 col-lg-3 mb-3">
+        <div class="service-card bg-white text-center h-100">
           <div class="icon mb-3">
             <i class="ti ti-search"></i>
           </div>
@@ -86,19 +86,19 @@
           <p>Keyword installs can push your app to Rank No.1 on any keyword you wish. We can service for over 110 countries over the world by each language.</p>
         </div>
       </div>
-      <div class="col-12 col-md-4 col-lg-3">
-        <div class="service-card bg-white text-center">
+      <div class="col-12 col-sm-6 col-lg-3 mb-3">
+        <div class="service-card bg-white text-center h-100">
           <div class="icon mb-3">
-            <i class="ti ti-search"></i>
+            <i class="ti ti-star"></i>
           </div>
           <h4>Ratings & Reviews</h4>
           <p>App review helps your app increase brand rating and reputation. We are delivering 4/5 Star Ratings and positive Reviews by based on different languages.</p>
         </div>
       </div>
-      <div class="col-12 col-md-4 col-lg-3">
-        <div class="service-card bg-white text-center">
+      <div class="col-12 col-sm-6 col-lg-3 mb-3">
+        <div class="service-card bg-white text-center h-100">
           <div class="icon mb-3">
-            <i class="ti ti-search"></i>
+            <i class="ti ti-bar-chart"></i>
           </div>
           <h4>Guaranteed Ranking</h4>
           <p>We can make your app rank on Top 1~5 on any keywords just in 2 or 3 weeks. Send us your keyword and App url, we will analyze your app and send you Ranking offer!</p>
