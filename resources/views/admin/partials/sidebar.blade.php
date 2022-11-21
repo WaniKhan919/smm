@@ -36,7 +36,7 @@
         </ul>
       </li>
 
-      <li>
+      {{-- <li>
         <a class="nav-link {{ Route::is('admin.package*')? '': 'collapsed' }}" data-bs-target="#packages-nav" data-bs-toggle="collapse" href="#">
           <i class="bi bi-box"></i><span>Packages</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
@@ -62,7 +62,7 @@
             </a>
           </li>
         </ul>
-      </li>
+      </li> --}}
 
       <li>
         <a class="nav-link {{ Route::is('admin.service*')? '': 'collapsed' }}" data-bs-target="#services-nav" data-bs-toggle="collapse" href="#">

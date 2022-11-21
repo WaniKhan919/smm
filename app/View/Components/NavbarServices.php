@@ -2,7 +2,7 @@
 
 namespace App\View\Components;
 
-use App\Models\PackageCategory;
+use App\Models\Service;
 use Illuminate\View\Component;
 
 class NavbarServices extends Component
@@ -24,7 +24,7 @@ class NavbarServices extends Component
      */
     public function render()
     {
-        $data['categories']=PackageCategory::all();
+        $data['services']=Service::all();
         return view('components.navbar-services',$data);
     }
 }

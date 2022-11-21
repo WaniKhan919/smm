@@ -22,7 +22,7 @@ class Service extends Model
 
     public function categories()
     {
-        return $this->hasMany(ServiceCategory::class, 'service_id', 'id');
+        return $this->hasMany(ServicePackageCategory::class, 'service_id', 'id');
     }
 
     public function packages()
