@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class ServiceCategory extends Model
+class ServicePackageCategory extends Model
 {
     use HasFactory;
 
@@ -26,6 +26,6 @@ class ServiceCategory extends Model
 
     public function packages()
     {
-        return $this->hasMany(ServicePackage::class, 'service_category_id', 'id');
+        return $this->hasMany(ServicePackage::class, 'service_package_category_id', 'id');
     }
 }

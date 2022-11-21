@@ -2,7 +2,7 @@
 
 @push('title')
 
-Admin | Packages - Categories
+Admin | Services
 
 @endpush
 
@@ -10,12 +10,11 @@ Admin | Packages - Categories
 <div id="main">
 
     <div class="pagetitle">
-        <h1>Package Categories</h1>
+        <h1>Services</h1>
         <nav>
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}">Home</a></li>
-                <li class="breadcrumb-item"><a href="{{ route('admin.packages.index') }}">Packages</a></li>
-                <li class="breadcrumb-item active">Categories</li>
+                <li class="breadcrumb-item active">Services</li>
             </ol>
         </nav>
     </div>
@@ -23,9 +22,9 @@ Admin | Packages - Categories
     <div class="card">
         <div class="card-body">
             <div class="d-flex align-items-center justify-content-between">
-                <h5 class="card-title">All Categories</h5>
+                <h5 class="card-title">All Services</h5>
                 <div>
-                    <a href="{{ route('admin.package-categories.create') }}" class="btn btn-primary">Add New</a>
+                    <a href="{{ route('admin.services.create') }}" class="btn btn-primary">Add New</a>
                 </div>
             </div>
             @if (session()->has('success'))
@@ -43,20 +42,20 @@ Admin | Packages - Categories
                         <tr>
                             <th scope="col">#</th>
                             <th scope="col">Name</th>
-                            <th scope="col">Created</th>
+                            <th scope="col">Created On</th>
                             <th scope="col">Actions</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @forelse ($categories as $i => $category)
+                        @forelse ($services as $i => $service)
                         <tr>
                             <th scope="row">{{ $i + 1 }}</th>
-                            <td>{{ $category->name }}</td>
-                            <td>{{ \Illuminate\Support\Carbon::parse($category->created_at)->format('M j Y') }}</td>
+                            <td>{{ $service->name }}</td>
+                            <td>{{ \Illuminate\Support\Carbon::parse($service->created_at)->format('M j Y') }}</td>
                             <td class="d-flex align-items-center gap-2">
-                                <a href="{{ route('admin.package-categories.edit', $category->id) }}"
+                                <a href="{{ route('admin.services.edit', $service->id) }}"
                                     class="btn btn-warning btn-sm"><i class="bi bi-pencil"></i></a>
-                                <form action="{{ route('admin.package-categories.destroy', $category->id) }}"
+                                <form action="{{ route('admin.services.destroy', $service->id) }}"
                                     method="post">
                                     @method('DELETE')
                                     @csrf
@@ -67,7 +66,7 @@ Admin | Packages - Categories
                         </tr>
                         @empty
                         <tr>
-                            <td class="text-center" colspan="4">No categories found!</td>
+                            <td class="text-center" colspan="4">No services found!</td>
                         </tr>
                         @endforelse
                     </tbody>

@@ -65,17 +65,17 @@
       </li>
 
       <li>
-        <a class="nav-link {{ Route::is('admin.package*')? '': 'collapsed' }}" data-bs-target="#services-nav" data-bs-toggle="collapse" href="#">
+        <a class="nav-link {{ Route::is('admin.service*')? '': 'collapsed' }}" data-bs-target="#services-nav" data-bs-toggle="collapse" href="#">
           <i class="bi bi-box"></i><span>Services</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
-        <ul id="services-nav" class="nav-content collapse {{ Route::is('admin.package*')? 'show': '' }}" data-bs-parent="#sidebar-nav">
+        <ul id="services-nav" class="nav-content collapse {{ Route::is('admin.service*')? 'show': '' }}" data-bs-parent="#sidebar-nav">
           <li>
-            <a href="{{ route('admin.packages.index') }}" class="{{ Route::is('admin.packages.index')? 'active': '' }}">
-              <i class="bi bi-circle"></i><span>All Packages</span>
+            <a href="{{ route('admin.services.index') }}" class="{{ Route::is('admin.services.index')? 'active': '' }}">
+              <i class="bi bi-circle"></i><span>All Services</span>
             </a>
           </li>
           <li>
-            <a href="{{ route('admin.packages.create') }}" class="{{ Route::is('admin.packages.create')? 'active': '' }}">
+            <a href="{{ route('admin.services.create') }}" class="{{ Route::is('admin.services.create')? 'active': '' }}">
               <i class="bi bi-circle"></i><span>Add New</span>
             </a>
           </li>

@@ -2,11 +2,14 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
+use App\Models\Service;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class ServicesController extends Controller
 {
+    protected $isAdmin = true;
+
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +17,8 @@ class ServicesController extends Controller
      */
     public function index()
     {
-        //
+        $services = Service::all();
+        return view('admin.services.index', compact('services'));
     }
 
     /**
@@ -24,7 +28,7 @@ class ServicesController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.services.create');
     }
 
     /**
@@ -35,7 +39,17 @@ class ServicesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => 'required'
+        ]);
+
+        Service::create([
+            'name' => $request->name,
+            'title' => $request->title,
+            'description' => $request->description,
+        ]);
+
+        return back()->with('success', 'New service added successfully!');
     }
 
     /**
@@ -57,7 +71,8 @@ class ServicesController extends Controller
      */
     public function edit($id)
     {
-        //
+        $service = Service::find($id);
+        return view('admin.services.edit', compact('service'));
     }
 
     /**
@@ -69,7 +84,17 @@ class ServicesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'name' => 'required'
+        ]);
+
+        $service = Service::find($id);
+        $service->name = $request->name;
+        $service->title = $request->title;
+        $service->description = $request->description;
+        $service->save();
+
+        return back()->with('success', 'Service updated successfully!');
     }
 
     /**
@@ -80,6 +105,9 @@ class ServicesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $service = Service::find($id);
+        $service->delete();
+
+        return back()->with('success', 'Service deleted successfully!');
     }
 }

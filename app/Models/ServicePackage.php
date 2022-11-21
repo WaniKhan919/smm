@@ -23,7 +23,7 @@ class ServicePackage extends Model
         'sale_price',
         'features',
         'service_id',
-        'service_category_id',
+        'service_package_category_id',
     ];
     
     public function service()
@@ -33,7 +33,7 @@ class ServicePackage extends Model
     
     public function category()
     {
-        return $this->belongsTo(ServiceCategory::class, 'service_category_id', 'id');
+        return $this->belongsTo(ServiceCategory::class, 'service_package_category_id', 'id');
     }
 
 }
