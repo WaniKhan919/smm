@@ -23,6 +23,8 @@
         <div class="mb-4">
           <a href="#" class="btn btn-primary mb-2"><i class="ti ti-apple"></i> IOS Promotion</a>
           <a href="#" class="btn btn-success mb-2"><i class="ti ti-android"></i> Android Promotion</a>
+          <a href="#" class="btn btn-primary mb-2"><i class="ti ti-apple"></i> MAC-OS</a>
+
         </div>
         <div>
           <img src="{{ asset('front_assets/images/banner/android-rating.webp')}}" alt="" style="max-height: 140px; object-fit: contain;">
