@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Models\Package;
 use App\Models\PackageCategory;
 use App\Models\PackageType;
+use App\Models\ServicePackage;
+use App\Models\ServicePackageCategory;
 use App\Models\Subscription;
 use App\Models\User;
 use Illuminate\Support\Facades\DB;
@@ -14,19 +16,18 @@ class AdminOrderController extends Controller
 {
     public function index(){
         $orders=DB::table('subscriptions')
-        ->select('subscriptions.*','subscriptions.id as sub_id','users.*','packages.*')
+        ->select('subscriptions.*','subscriptions.id as sub_id','users.*','service_packages.*')
         ->join('users', 'users.id', '=', 'subscriptions.user_id')
-        ->join('packages', 'packages.id', '=', 'subscriptions.package_id')->orderBy('subscriptions.id','Desc')
+        ->join('service_packages', 'service_packages.id', '=', 'subscriptions.package_id')->orderBy('subscriptions.id','Desc')
         ->get();
         return view('admin.order.index',compact('orders'));
     }
     public function orderDetail($id){
         $order=Subscription::where('id',$id)->first();
-        $package=Package::where('id',$order->package_id)->first();
-        $category=PackageCategory::where('id',$package->category_id)->first();
-        $type=PackageType::where('id',$package->type_id)->first();
+        $package=ServicePackage::where('id',$order->package_id)->first();
+        $category=ServicePackageCategory::where('id',$package->service_id)->first();
         $user=User::where('id',$order->user_id)->first();
-        return view('admin.order.view',compact('order','package','category','type','user'));
+        return view('admin.order.view',compact('order','package','category','user'));
     }
     public function status($id,$status){
         $order=Subscription::findOrFail($id);

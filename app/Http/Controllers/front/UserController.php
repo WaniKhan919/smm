@@ -3,8 +3,7 @@
 namespace App\Http\Controllers\front;
 
 use App\Http\Controllers\Controller;
-use App\Models\Order;
-use App\Models\Package;
+use App\Models\ServicePackage;
 use Illuminate\Foundation\Auth\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -102,10 +101,9 @@ class UserController extends Controller
     public function orders(){
         $id=Auth::guard('web')->user()->id;
         $orders=DB::table('subscriptions')
-        ->select('subscriptions.*','subscriptions.id as sub_id','users.*','packages.*')
+        ->select('subscriptions.*','subscriptions.id as sub_id','users.*','service_packages.*')
         ->join('users', 'users.id', '=', 'subscriptions.user_id')
-        ->join('packages', 'packages.id', '=', 'subscriptions.package_id')->orderBy('subscriptions.id','Desc')->
-        where('subscriptions.user_id',$id)
+        ->join('service_packages', 'service_packages.id', '=', 'subscriptions.package_id')->orderBy('subscriptions.id','Desc')->where('subscriptions.user_id',$id)
         ->get();
         return view('user.order',compact('orders'));
     }
@@ -113,7 +111,7 @@ class UserController extends Controller
         Stripe::setApiKey(env('STRIPE_KEY', 'STRIPE_KEY'));
         $user=Auth::guard('web')->user();
         $stripe_customer=$user->createOrGetStripeCustomer();
-        $package=Package::findOrFail($request->package_id);
+        $package=ServicePackage::findOrFail($request->service_id);
         $price= $package->price;
         if($package->sale_price){
             $price= $package->sale_price;
@@ -129,8 +127,9 @@ class UserController extends Controller
           $subscription->stripe_status=$session->payment_status;
           $subscription->stripe_price=$price;
           $subscription->quantity=1;
-          $subscription->package_id=$request->package_id;
+          $subscription->package_id=$request->service_id;
           $subscription->url=$request->url;
+          $subscription->country=$request->country;
           $subscription->status="Pending";
           if($subscription->save()){
                 return redirect($session->url);
