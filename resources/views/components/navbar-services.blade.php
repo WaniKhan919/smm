@@ -10,15 +10,17 @@
                         $plus=true;
                     }
                 @endphp
-                <li><a href="javascript:void(0)">{{ $service->name }}@if ($plus==true)
+                <li><a href="{{ $plus === true? 'javascript:void(0)': route('service', $service->id) }}">{{ $service->name }}@if ($plus==true)
                     {{-- <i class="icon_plus"></i> --}}
                 @endif</a>
-                    <ul class="submenu">
-                        
-                        @foreach ($service->categories as $category)
-                            <li><a href="{{ route('service-category',$category->id) }}">{{ $category->name }}</a></li>
-                        @endforeach
-                    </ul>
+                    @if ($plus === true)
+                        <ul class="submenu">
+                            
+                            @foreach ($service->categories as $category)
+                                <li><a href="{{ route('service-category',$category->id) }}">{{ $category->name }}</a></li>
+                            @endforeach
+                        </ul>
+                    @endif
                 </li>
             @endforeach
         {{-- </ul>
