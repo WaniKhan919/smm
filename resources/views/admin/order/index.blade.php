@@ -63,6 +63,7 @@ Admin | Users Orders
                                 <th scope="col">Email</th>
                                 <th scope="col">Package</th>
                                 <th scope="col">Price</th>
+                                <th scope="col">Country</th>
                                 <th scope="col">Url</th>
                                 <th scope="col">status</th>
                                 <th scope="col">Action</th>
@@ -85,6 +86,7 @@ Admin | Users Orders
                                           @endphp
                                         <td>{{ $category->name }}</td>
                                         <td>{{ $order->stripe_price }}</td>
+                                        <td>{{ $order->country }}</td>
                                         <td><a href="{{ $order->url }}" target="_blank">{{ $order->url }}</a></td>
                                         <td>
                                           @php

@@ -62,6 +62,7 @@ Admin | Orders Detail
                               <p class="h5">Stripe Status :  <span class="h6">{{ $order->stripe_status }}</span> </p> 
                               <p class="h5">Price :  <span class="h6">{{ $order->stripe_price }}</span> </p> 
                               <p class="h5">URL :  <span class="h6">{{ $order->url }}</span> </p> 
+                              <p class="h5">Country :  <span class="h6">{{ $order->country }}</span> </p> 
                               <p class="h5">Status :  <span class="h6">{{ $order->status }}</span> </p> 
                             </div>
                           </div>
