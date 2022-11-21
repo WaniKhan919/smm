@@ -1,5 +1,25 @@
 @extends('layout.layout')
 @section('container')
+<style>
+  .ios-cta-btn {
+    background: linear-gradient(90deg,#03baff 0,#55c9ff 42%,#00d4ff 100%);
+    box-shadow: 7px 14px 31px -8px rgb(87 202 255 / 66%);
+    border: none;
+  }
+
+  .ios-cta-btn:hover {
+    background: linear-gradient(90deg,#03baff 0,#28b2f3 42%,#04bbe0 100%);
+  }
+
+  .android-cta-btn {
+    background: linear-gradient(90deg,#60c78a 0,#75cc81 60%,#8cd178 100%);
+    box-shadow: 7px 6px 31px -8px #69c986;
+    border: none;
+  }
+  .android-cta-btn:hover {
+    background: linear-gradient(90deg,#60c78a 0,#3ecc51 60%,#89c179 100%);
+  }
+</style>
 <!--banner starts-->
 <div class="banner-area pt-60 pt-sm-55 pb-100 pb-sm-80">
   <div class="container">
@@ -20,11 +40,15 @@
         <div class="wow fadeInUp" data-wow-delay=".5s">
           <p>Our iOS, Android, and macOS high professional reviewers will install, rate, and review your app only in a positive manner. Just make your order and see the fantastic results.</p>
         </div>
-        <div class="mb-4">
-          <a href="#" class="btn btn-primary mb-2"><i class="ti ti-apple"></i> IOS Promotion</a>
-          <a href="#" class="btn btn-success mb-2"><i class="ti ti-android"></i> Android Promotion</a>
-          <a href="#" class="btn btn-primary mb-2"><i class="ti ti-apple"></i> MAC-OS</a>
-
+        <div class="mb-4 d-block d-sm-flex flex-wrap justify-content-sm-between">
+          <!-- Desktop -->
+          <a href="#" class="btn btn-primary mb-2 d-none d-sm-block btn-lg ios-cta-btn" style="width: 48.5%;"><i class="ti ti-apple"></i> IOS Promotion</a>
+          <!-- Mobile -->
+          <a href="#" class="btn btn-primary mb-2 w-100 w-sm-auto d-block d-sm-none btn-lg ios-cta-btn" style="width: 48.5%;"><i class="ti ti-apple"></i> IOS Promotion</a>
+          <!-- Desktop -->
+          <a href="#" class="btn btn-success mb-2 d-none d-sm-block btn-lg android-cta-btn" style="width: 48.5%;"><i class="ti ti-android"></i> Android Promotion</a>
+          <!-- Mobile -->
+          <a href="#" class="btn btn-success mb-2 w-100 w-sm-auto d-block d-sm-none btn-lg android-cta-btn" style="width: 48.5%; width: 48.5%;"><i class="ti ti-android"></i> Android Promotion</a>
         </div>
         <div>
           <img src="{{ asset('front_assets/images/banner/android-rating.webp')}}" alt="" style="max-height: 140px; object-fit: contain;">
