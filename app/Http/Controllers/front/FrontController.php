@@ -5,7 +5,10 @@ namespace App\Http\Controllers\front;
 use App\Models\Faq;
 use App\Models\Review;
 use App\Models\Package;
+use App\Models\Service;
+use App\Models\BlogPost;
 use Illuminate\Http\Request;
+use App\Models\ServicePackage;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 
@@ -49,8 +52,8 @@ class FrontController extends Controller
     public function service($id)
     {
         $service = Service::find($id);
-        $packages = $service->packages;
-        return view('front.pricing', compact('service', 'packages'));
+        $service_packages = $service->packages;
+        return view('front.pricing', compact('service', 'service_packages'));
     }
     public function login(){
         if(Auth::check()){
