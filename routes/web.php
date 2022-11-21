@@ -14,6 +14,9 @@ use App\Http\Controllers\Admin\Password_Reset\PasswordResetController as AdminPa
 use App\Http\Controllers\Admin\PackagesController as AdminPackagesController;
 use App\Http\Controllers\Admin\PackageCategoriesController as AdminPackageCategoriesController;
 use App\Http\Controllers\Admin\PackageTypesController as AdminPackageTypesController;
+use App\Http\Controllers\Admin\ServicesController as AdminServicesController;
+use App\Http\Controllers\Admin\ServiceCategoriesController as AdminServiceCategoriesController;
+use App\Http\Controllers\Admin\ServicePackagesController as AdminServicePackagesController;
 use App\Http\Controllers\Admin\ReviewsController as AdminReviewsController;
 use App\Http\Controllers\Admin\Message\MessageController as AdminMessageController;
 use App\Http\Controllers\front\ContactController as FrontContactController;
@@ -126,6 +129,11 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::resource('/package-categories', AdminPackageCategoriesController::class);
         Route::resource('/package-types', AdminPackageTypesController::class);
         Route::get('/package-types/{category_id}/json', [AdminPackageTypesController::class, 'getTypesJSON'])->name('package-types.json');
+
+        // Services Crud Routes
+        Route::resource('/services', AdminServicesController::class);
+        Route::resource('service-categories', AdminServiceCategoriesController::class);
+        Route::resource('service-packages', AdminServicePackagesController::class);
 
         // Messages Crud Routes
         Route::resource('message', AdminMessageController::class);
