@@ -33,6 +33,7 @@
 		<link rel="stylesheet" href="{{ asset('front_assets/css/helper.css')}}">
 		<!-- style css -->
 		<link rel="stylesheet" href="{{ asset('front_assets/style.css')}}">
+		<link rel="stylesheet" href="{{ asset('front_assets/custom.css')}}">
 		<!-- responsive css -->
 		<link rel="stylesheet" href="{{ asset('front_assets/css/responsive.css')}}">
     <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/fontawesome.min.css"/> -->
