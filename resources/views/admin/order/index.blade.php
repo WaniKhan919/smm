@@ -81,7 +81,7 @@ Admin | Users Orders
                                           {{ $order->email }}
                                         </td>
                                           @php
-                                            $category=DB::table('package_types')->where('id',$order->type_id)->first();
+                                            $category=DB::table('service_package_categories')->where('id',$order->service_id)->first();
                                           @endphp
                                         <td>{{ $category->name }}</td>
                                         <td>{{ $order->stripe_price }}</td>
@@ -113,7 +113,7 @@ Admin | Users Orders
                                           </div>
                                         </td>
                                         <td class="d-flex align-items-center gap-2">
-                                          <a href="{{ route('admin.order.detail',$order->id) }}" class="btn btn-warning btn-sm"><i class="bi bi-eye"></i></a>
+                                          <a href="{{ route('admin.order.detail',$order->sub_id) }}" class="btn btn-warning btn-sm"><i class="bi bi-eye"></i></a>
                                             <form action="{{ route('admin.order.delete', $order->id) }}" method="post">
                                                 @method('DELETE')
                                                 @csrf

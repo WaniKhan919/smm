@@ -41,7 +41,6 @@ Admin | Orders Detail
                             <h5 class="card-title">Pakage Detail</h5>
                             <div>
                               <p class="h5">Pakage : <span class="h6">{{ $package->title }}</span> </p>  </p> 
-                              <p class="h5">Package Type :  <span class="h6">{{ $type->name }}</span> </p> 
                               <p class="h5">Price :  <span class="h6">{{ $package->price }}</span> </p> 
                               <p class="h5">Sale Price :  <span class="h6">{{ $package->sale_price }}</span> </p> 
                               <p class="h4">Features</p>

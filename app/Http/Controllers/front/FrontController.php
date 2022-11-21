@@ -7,6 +7,7 @@ use App\Models\BlogPost;
 use App\Models\Faq;
 use App\Models\Package;
 use App\Models\Review;
+use App\Models\ServicePackage;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -44,8 +45,8 @@ class FrontController extends Controller
         return view('front.blog',compact('blogs'));
     }
     public function servicesCategory($id){
-        $packages=Package::where('type_id',$id)->get();
-        return view('front.pricing',compact('packages'));
+        $service_packages=ServicePackage::where('service_id',$id)->orderBy('level','asc')->get();
+        return view('front.pricing',compact('service_packages'));
     }
     public function login(){
         if(Auth::check()){
