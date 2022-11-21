@@ -22,7 +22,7 @@ class CreateServicePackagesTable extends Migration
             $table->double('price');
             $table->double('sale_price')->nullable();
             $table->json('features')->nullable();
-            $table->unsignedBigInteger('service_id');
+            $table->unsignedBigInteger('service_id')->nullable();
             $table->unsignedBigInteger('service_package_category_id')->nullable();
             $table->timestamps();
         });

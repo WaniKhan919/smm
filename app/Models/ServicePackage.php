@@ -33,7 +33,7 @@ class ServicePackage extends Model
     
     public function category()
     {
-        return $this->belongsTo(ServiceCategory::class, 'service_package_category_id', 'id');
+        return $this->belongsTo(ServicePackageCategory::class, 'service_package_category_id', 'id');
     }
 
 }

@@ -85,8 +85,8 @@
             </a>
           </li>
           <li>
-            <a href="{{ route('admin.package-types.index') }}" class="{{ Route::is('admin.package-types.index')? 'active': '' }}">
-              <i class="bi bi-circle"></i><span>Types</span>
+            <a href="{{ route('admin.service-packages.index') }}" class="{{ Route::is('admin.service-packages.index')? 'active': '' }}">
+              <i class="bi bi-circle"></i><span>Packages</span>
             </a>
           </li>
         </ul>

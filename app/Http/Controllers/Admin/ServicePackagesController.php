@@ -2,11 +2,15 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
+use App\Models\Service;
 use Illuminate\Http\Request;
+use App\Models\ServicePackage;
+use App\Http\Controllers\Controller;
 
 class ServicePackagesController extends Controller
 {
+    protected $isAdmin = true;
+
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +18,8 @@ class ServicePackagesController extends Controller
      */
     public function index()
     {
-        //
+        $packages = ServicePackage::all();
+        return view('admin.service-packages.index', compact('packages'));
     }
 
     /**
@@ -24,7 +29,8 @@ class ServicePackagesController extends Controller
      */
     public function create()
     {
-        //
+        $services = Service::all();
+        return view('admin.service-packages.create', compact('services'));
     }
 
     /**
@@ -35,7 +41,24 @@ class ServicePackagesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'title' => 'required',
+            'price' => 'required',
+        ]);
+
+        ServicePackage::create([
+            'title' => $request->title,
+            'service_id' => $request->service_id,
+            'service_package_category_id' => $request->category_id,
+            'level' => $request->level ?? 1,
+            'level_name' => $request->level_name,
+            'price' => $request->price,
+            'sale_price' => $request->sale_price,
+            'quantity' => $request->quantity,
+            'features' => $request->features ? json_encode($request->features) : null,
+        ]);
+
+        return back()->with('success', 'New package added successfully!');
     }
 
     /**
@@ -57,7 +80,9 @@ class ServicePackagesController extends Controller
      */
     public function edit($id)
     {
-        //
+        $package = ServicePackage::find($id);
+        $services = Service::all();
+        return view('admin.service-packages.edit', compact('package', 'services'));
     }
 
     /**
@@ -69,7 +94,24 @@ class ServicePackagesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'title' => 'required',
+            'price' => 'required',
+        ]);
+
+        $package = ServicePackage::find($id);
+        $package->title = $request->title;
+        $package->service_id = $request->service_id;
+        $package->service_package_category_id = $request->category_id;
+        $package->level = $request->level;
+        $package->level_name = $request->level_name;
+        $package->price = $request->price;
+        $package->sale_price = $request->sale_price;
+        $package->quantity = $request->quantity;
+        $package->features = $request->features ? json_encode($request->features) : null;
+        $package->save();
+
+        return back()->with('success', 'Package updated successfully!');
     }
 
     /**
@@ -80,6 +122,9 @@ class ServicePackagesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $package = ServicePackage::find($id);
+        $package->delete();
+
+        return back()->with('success', 'Package deleted successfully!');
     }
 }
