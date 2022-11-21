@@ -80,7 +80,7 @@
             </a>
           </li>
           <li>
-            <a href="{{ route('admin.package-categories.index') }}" class="{{ Route::is('admin.package-categories.index')? 'active': '' }}">
+            <a href="{{ route('admin.service-package-categories.index') }}" class="{{ Route::is('admin.service-package-categories.index')? 'active': '' }}">
               <i class="bi bi-circle"></i><span>Categories</span>
             </a>
           </li>

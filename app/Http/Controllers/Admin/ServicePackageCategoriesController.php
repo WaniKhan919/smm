@@ -2,11 +2,15 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
+use App\Models\Service;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use App\Models\ServicePackageCategory;
 
 class ServicePackageCategoriesController extends Controller
 {
+    protected $isAdmin = true;
+
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +18,8 @@ class ServicePackageCategoriesController extends Controller
      */
     public function index()
     {
-        //
+        $categories = ServicePackageCategory::all();
+        return view('admin.service-package-categories.index', compact('categories'));
     }
 
     /**
@@ -24,7 +29,8 @@ class ServicePackageCategoriesController extends Controller
      */
     public function create()
     {
-        //
+        $services = Service::all();
+        return view('admin.service-package-categories.create', compact('services'));
     }
 
     /**
@@ -35,7 +41,17 @@ class ServicePackageCategoriesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => 'required',
+            'service_id' => 'required'
+        ]);
+
+        ServicePackageCategory::create([
+            'name' => $request->name,
+            'service_id' => $request->service_id,
+        ]);
+
+        return back()->with('success', 'New category added successfully!');
     }
 
     /**
@@ -57,7 +73,9 @@ class ServicePackageCategoriesController extends Controller
      */
     public function edit($id)
     {
-        //
+        $category = ServicePackageCategory::find($id);
+        $services = Service::all();
+        return view('admin.service-package-categories.edit', compact('category', 'services'));
     }
 
     /**
@@ -69,7 +87,17 @@ class ServicePackageCategoriesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'name' => 'required',
+            'service_id' => 'required'
+        ]);
+
+        $category = ServicePackageCategory::find($id);
+        $category->name = $request->name;
+        $category->service_id = $request->service_id;
+        $category->save();
+
+        return back()->with('success', 'Category updated successfully!');
     }
 
     /**
@@ -80,6 +108,15 @@ class ServicePackageCategoriesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $category = ServicePackageCategory::find($id);
+        $category->delete();
+
+        return back()->with('success', 'Category deleted successfully!');
+    }
+
+    public function getCategoriesJSON($service_id)
+    {
+        $categories = ServicePackageCategory::where('service_id', $service_id)->get();
+        return $categories;
     }
 }

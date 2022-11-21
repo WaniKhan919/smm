@@ -134,6 +134,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::resource('services', AdminServicesController::class);
         Route::resource('service-package-categories', AdminServicePackageCategoriesController::class);
         Route::resource('service-packages', AdminServicePackagesController::class);
+        Route::get('/service-package-categories/{service_id}/json', [AdminServicePackageCategoriesController::class, 'getCategoriesJSON'])->name('service-package-categories.json');
 
         // Messages Crud Routes
         Route::resource('message', AdminMessageController::class);
