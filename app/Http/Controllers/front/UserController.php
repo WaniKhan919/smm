@@ -110,23 +110,18 @@ class UserController extends Controller
         return view('user.order',compact('orders'));
     }
     public function buypackage(Request $request){
-        Stripe::setApiKey('sk_test_4eC39HqLyjWDarjtT1zdp7dc');
+        Stripe::setApiKey(env('STRIPE_KEY', 'STRIPE_KEY'));
         $user=Auth::guard('web')->user();
+        $stripe_customer=$user->createOrGetStripeCustomer();
         $package=Package::findOrFail($request->package_id);
         $price= $package->price;
         if($package->sale_price){
             $price= $package->sale_price;
         }
-        $session = \Stripe\Checkout\Session::create([
-            'payment_method_types' => ['card'],
-            'line_items' => [[
-              'price' => 100,
-              'quantity' => 1,
-              ]],
-            'mode' => 'subscription',
+        $session= $user->checkoutCharge($price,$package->title,1,[
             'success_url' => route('user.payment.success'),
-            'cancel_url' => route('user.payment.cancel'),
-          ]);
+            'cancel_url' => route('user.payment.cancel')
+        ]);
           $subscription=new Subscription();
           $subscription->user_id=$user->id;
           $subscription->name=$user->name;
@@ -142,11 +137,11 @@ class UserController extends Controller
           }
     }
     public function success(Request $request){
-        return $message['success']='Payment Success';
+        $message['success']='Payment Success';
         return view('front.thankyou',$message);
     }
     public function cancel(Request $request){
-        return $message['error']='Payment Failed';
+        $message['error']='Payment Failed';
         return view('front.thankyou',$message);
     }
 }
