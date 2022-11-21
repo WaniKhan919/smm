@@ -2,13 +2,11 @@
 
 namespace App\Http\Controllers\front;
 
-use App\Http\Controllers\Controller;
-use App\Models\BlogPost;
 use App\Models\Faq;
-use App\Models\Package;
 use App\Models\Review;
-use App\Models\ServicePackage;
+use App\Models\Package;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 
 class FrontController extends Controller
@@ -47,6 +45,12 @@ class FrontController extends Controller
     public function servicesCategory($id){
         $service_packages=ServicePackage::where('service_id',$id)->orderBy('level','asc')->get();
         return view('front.pricing',compact('service_packages'));
+    }
+    public function service($id)
+    {
+        $service = Service::find($id);
+        $packages = $service->packages;
+        return view('front.pricing', compact('service', 'packages'));
     }
     public function login(){
         if(Auth::check()){
