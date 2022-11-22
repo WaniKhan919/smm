@@ -23,6 +23,8 @@
     <link href="{{ asset('assets/admin/vendor/remixicon/remixicon.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/admin/vendor/simple-datatables/style.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/admin/css/style.css') }}" rel="stylesheet">
+    {{-- Sweet Alert --}}
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
     {{-- Custom --}}
     <link href="{{ asset('assets/css/admin/style.css') }}" rel="stylesheet">
