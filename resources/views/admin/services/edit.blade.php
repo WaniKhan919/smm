@@ -68,6 +68,8 @@ Admin | Service - Edit
 
 <script src="https://cdn.ckeditor.com/4.20.0/standard/ckeditor.js"></script>
 <script>
-     CKEDITOR.replace( 'description' );
+     CKEDITOR.replace( 'description', {
+        allowedContent: true
+     } );
 </script>
 @endsection
