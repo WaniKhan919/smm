@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Models\Service;
+use App\Models\ServicePackageCategory;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -106,6 +107,8 @@ class ServicesController extends Controller
     public function destroy($id)
     {
         $service = Service::find($id);
+        $service->categories()->delete();
+        $service->packages()->delete();
         $service->delete();
 
         return back()->with('success', 'Service deleted successfully!');
