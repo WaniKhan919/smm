@@ -45,7 +45,7 @@ Admin | Services Packages - edit
                         <option disabled selected>Choose...</option>
                         @foreach ($services as $service)
                             <option value="{{ $service->id }}" 
-                                    {{ $service->id === $package->service_id? 'selected': '' }}
+                                    {{ (int) $service->id === (int) $package->service_id? 'selected': '' }}
                                     data-categories-url="{{ route('admin.service-package-categories.json', $service->id) }}"
                                     >{{ $service->name }}</option>
                         @endforeach
