@@ -168,13 +168,14 @@
   padding: 10px;
   -webkit-box-shadow: 0 11px 21px rgb(0 0 0 / 5%);
   -moz-box-shadow: 0 11px 21px rgba(0,0,0,.05);
-  box-shadow: 0 11px 21px rgb(0 0 0 / 5%);
+  /* box-shadow: 0 11px 21px rgb(0 0 0 / 5%); */
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   border-radius: 10px;
 }
 .pricing-container .col-lg-3 .card{
   border: none;
+  box-shadow: 0px 0px 20px -2px rgb(0 0 0 / 40%);
 }
 .pricing-container .col-lg-3 .card .card-body ul li{
   color: #3a3a3a;

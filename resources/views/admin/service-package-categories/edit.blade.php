@@ -47,7 +47,7 @@ Admin | Service Package Categories - Edit
                             <select id="service" class="form-select" name="service_id">
                                 <option disabled selected>Choose...</option>
                                 @foreach ($services as $service)
-                                    <option value="{{ $service->id }}" {{ $service->id === $category->service_id? 'selected': '' }}>{{ $service->name }}</option>
+                                    <option value="{{ $service->id }}" {{ (int) $service->id === (int) $category->service_id? 'selected': '' }}>{{ $service->name }}</option>
                                 @endforeach
                             </select>
                             @error('service_id')
