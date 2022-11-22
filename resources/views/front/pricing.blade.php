@@ -186,14 +186,17 @@
 						<div class="d-flex">
 							<h5 class="card-title text-light">{{ ucfirst($pakage->level_name) }}</h5>
 							@php
-							$price=$pakage->price;
+							$price='';
 							if($pakage->sale_price!=''){
-							$price=$pakage->sale_price;
+								$price=(($pakage->price - $pakage->sale_price)/$pakage->price)*100;
 							}
 							@endphp
-							<span class="position-absolute price-span text-light">${{ $price }}</span>
+							<span class="position-absolute price-span text-light">${{ $pakage->price }} @if($price!='') off {{ round($price,0) }}% @endif</span>
 						</div>
-						<p class="text-light p-0 m-0">{{ ucfirst($pakage->title) }}</p>
+						<div class="d-flex">
+							<p class="text-light p-0 m-0">{{ ucfirst($pakage->title) }}</p>
+							<span class="position-absolute price-span text-light"> @if($price!='')${{ $pakage->sale_price }} @endif</span>
+						</div>
 					</div>
 					<div class="card-body">
 						<ul class="list-sign">
