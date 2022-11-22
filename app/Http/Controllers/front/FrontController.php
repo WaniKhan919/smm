@@ -53,7 +53,11 @@ class FrontController extends Controller
     {
         $service = Service::find($id);
         $service_packages = $service->packages;
-        return view('front.pricing', compact('service', 'service_packages'));
+        if($service_packages->count()>0){
+            return view('front.pricing', compact('service', 'service_packages'));
+        }else{
+            return view('front.pricing', compact('service'));
+        }
     }
     public function login(){
         if(Auth::check()){

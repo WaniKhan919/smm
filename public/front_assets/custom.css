@@ -1,3 +1,103 @@
+.bg-banner{
+  background-image: url('https://proreviewsapp.com/uploads/banner-top-key-booth.webp');
+}
+.bg-banner h4{
+  font-size: 40px;
+  margin-bottom: 10px;
+  color: #fff !important;
+}
+.bg-banner p{
+  font-size: 18px;
+  margin-bottom: 30px;
+  margin-bottom: 10px;
+  color: #fff !important;
+}
+.contact-h{
+  font-size: 36px;
+  font-weight: bold;
+}
+.contact-form-h .form-control {
+  color: #495057 !important;
+  border: 1px solid #ced4da !important;
+  border-radius: 0.25rem !important;
+}
+.section_how_to_buy{
+  padding: 5rem 0;
+  background-color: #f5f5f5;
+}
+.section_how_to_buy .icon {
+  width: 7.875rem;
+  height: 7.875rem;
+  border-radius: 100%;
+  background: #fff;
+  border: 3px solid #34cc99;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  margin-right: 0.9375rem;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+.section_how_to_buy .title-small__all {
+  font-size: 20px;
+  font-weight: 700;
+}
+.item-to-buy .title-small__all {
+  font-size: 20px;
+  font-weight: 700;
+}
+.text-box{
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+}
+.title-big__all{
+  font-weight: 700;
+  font-size: 30px;
+}
+.get-top {
+  margin-top: 5rem;
+  background: #fff;
+  padding: 6.25rem 5rem;
+}
+.get-top .title-big__all {
+  padding-bottom: 1.5625rem;
+}
+.s-content p span{
+  color: #212529;
+}
+.ranking{
+  background-image: url('../front_assets/images/footer_bg.png');
+}
+.footer-top__text p{
+  font-size: 36px;
+  font-weight: bold;
+  color: #fff;
+}
+.footer-top__text{
+  height: 400px;
+}
+.start-btn-foo{
+  font-size: 16px;
+  font-weight: bold;
+  display: inline-block;
+  background-image: -o-linear-gradient(9deg, #498203 0, #7bd405 100%);
+  background-image: linear-gradient(81deg, #498203 0, #7bd405 100%);
+  padding: 15px 0;
+  width: 285px;
+  border-radius: 25px;
+  outline: 0;
+  text-align: center;
+  z-index: 1;
+  cursor: pointer;
+  color: white;
+}
 .online-chat-main{
   background-image: url();
   width: 100%;
