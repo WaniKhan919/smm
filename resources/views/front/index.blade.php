@@ -156,9 +156,8 @@
       <div class="col-lg-3 col-md-3 col-sm-6">
         <div class="counter-single">
           <i class="ti-crown"></i>
-          <span class="count4">40</span>
-          <span>+</span>
-          <h4>Reviews websites</h4>
+          <span class="count4">325</span>
+          <h4>Apps Ranked Top 1~5</h4>
         </div>
       </div>
     </div>
@@ -230,7 +229,7 @@
     <div class="row work-process-inner mt-45">
       <div class="col-lg-3 col-md-3 col-sm-6">
         <div class="process-single wow zoomIn" data-wow-delay=".3s">
-          <i class="ti-zoom-in"></i>
+          <i class="ti-shopping-cart-full"></i>
           <h4>Service Order</h4>
           <span>01</span>
         </div>
@@ -284,9 +283,11 @@
             <div class="col-lg-6">
               <div class="testimonial-single">
                 <div class="testimonial-info">
-                  <div class="testimonial-thumb">
-                    <img src="{{ $list->image_url ? asset('storage/'.$list->image_url): asset('front_assets/images/testimonials/thumb-1.png')}}" alt="" />
-                  </div>
+                  @if ($list->image_url)
+                    <div class="testimonial-thumb">
+                      <img src="{{ $list->image_url ? asset('storage/'.$list->image_url): asset('front_assets/images/testimonials/thumb-1.png')}}" alt="" />
+                    </div>
+                  @endif
                   <div class="testimonial-name">
                     <h5>{{ $list->name ?? '' }}</h5>
                     <span>{{ $list->company ?? '' }}</span>
