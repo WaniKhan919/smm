@@ -56,12 +56,13 @@ Admin | Services
                                 <a href="{{ route('admin.services.edit', $service->id) }}"
                                     class="btn btn-warning btn-sm"><i class="bi bi-pencil"></i></a>
                                 <form action="{{ route('admin.services.destroy', $service->id) }}"
-                                    method="post">
+                                    method="post" id="delete_form{{ $service->id }}">
                                     @method('DELETE')
                                     @csrf
-                                    <button type="submit" class="btn btn-danger btn-sm"><i
+                                    <button type="button" data-delete-id="delete_form{{ $service->id }}" onclick="delete_confirmation(this)" class="btn btn-danger btn-sm"><i
                                             class="bi bi-trash"></i></button>
                                 </form>
+                                <input style="display: none;" type="submit" id="delete_form_submitter" form="delete_form" value="Update"/>
                             </td>
                         </tr>
                         @empty
@@ -78,4 +79,31 @@ Admin | Services
     </div>
 
 </div>
+<script>
+
+    function delete_confirmation(e){
+       var delete_id = $(e).data("delete-id");
+        var delete_handler = document.getElementById("delete_form_submitter");
+        delete_handler.setAttribute("form", delete_id);
+
+        swal({
+            title: "Are you sure?",
+            text: "All the types and categories releated with this service will also be deleted!",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+            })
+            .then((willDelete) => {
+            if (willDelete) {
+                document.getElementById("delete_form_submitter").click();
+                swal("Service deleted successfully!", {
+                icon: "success",
+                });
+            } else {
+                
+            }
+        });
+    }
+
+</script>
 @endsection
