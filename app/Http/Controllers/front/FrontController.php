@@ -46,7 +46,7 @@ class FrontController extends Controller
         return view('front.blog',compact('blogs'));
     }
     public function servicesCategory($id){
-        $service_packages=ServicePackage::where('service_id',$id)->orderBy('level','asc')->get();
+        $service_packages=ServicePackage::where('service_package_category_id',$id)->orderBy('level','asc')->get();
         return view('front.pricing',compact('service_packages'));
     }
     public function service($id)
