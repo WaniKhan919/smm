@@ -40,7 +40,7 @@ Admin | Orders Detail
                           <div class="card-body">
                             <h5 class="card-title">Pakage Detail</h5>
                             <div>
-                              <p class="h5">Pakage : <span class="h6">{{ $package->title }}</span> </p>  </p> 
+                              <p class="h5">Pakage : <span class="h6">{{ $package->title }}</span> </p>  </p>
                               <p class="h5">Price :  <span class="h6">{{ $package->price }}</span> </p> 
                               <p class="h5">Sale Price :  <span class="h6">{{ $package->sale_price }}</span> </p> 
                               <p class="h4">Features</p>
@@ -58,12 +58,13 @@ Admin | Orders Detail
                           <div class="card-body">
                             <h5 class="card-title">Stripe Detail</h5>
                             <div>
-                              <p class="h5">Stripe Id :  <span class="h6">{{ $order->stripe_id }}</span> </p> 
-                              <p class="h5">Stripe Status :  <span class="h6">{{ $order->stripe_status }}</span> </p> 
-                              <p class="h5">Price :  <span class="h6">{{ $order->stripe_price }}</span> </p> 
-                              <p class="h5">URL :  <span class="h6">{{ $order->url }}</span> </p> 
-                              <p class="h5">Country :  <span class="h6">{{ $order->country }}</span> </p> 
-                              <p class="h5">Status :  <span class="h6">{{ $order->status }}</span> </p> 
+                              <p class="h5">Stripe Id :  <span class="h6">{{ $order->stripe_id ?? ''}}</span> </p> 
+                              <p class="h5">Stripe Status :  <span class="h6">{{ $order->stripe_status ?? ''}}</span> </p> 
+                              <p class="h5">Price :  <span class="h6">{{ $order->stripe_price ?? ''}}</span> </p> 
+                              <p class="h5">URL :  <span class="h6">{{ $order->url ?? ''}}</span> </p> 
+                              <p class="h5">Daily Speed :  <span class="h6">{{ $order->daily_speed ?? '' }}</span> </p> 
+                              <p class="h5">Country :  <span class="h6">{{ $order->country ?? ''}}</span> </p> 
+                              <p class="h5">Status :  <span class="h6">{{ $order->status ?? ''}}</span> </p> 
                             </div>
                           </div>
                         </div>

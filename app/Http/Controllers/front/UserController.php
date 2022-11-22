@@ -129,6 +129,7 @@ class UserController extends Controller
           $subscription->quantity=1;
           $subscription->package_id=$request->service_id;
           $subscription->url=$request->url;
+          $subscription->daily_speed=$request->daily_speed;
           $subscription->country=$request->country;
           $subscription->status="Pending";
           if($subscription->save()){
