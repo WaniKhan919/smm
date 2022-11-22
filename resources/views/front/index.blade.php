@@ -185,29 +185,29 @@
         <div class="service-single wow fadeInUp mt-05" data-wow-delay=".3s">
           <i class="ti-mobile"></i>
           <div class="service-single-brief">
-            <h4><span>Fast</span></h4>
-            <p>When users see a lot of positive reviews about your application and your app, this makes increasing their trust about your app, they will download and install your app.</p>
+            <h4><span>Best Prices</span></h4>
+            <p>We provide all in one app marketing services. Enjoy the best services at the lowest price.</p>
           </div>
         </div>
         <div class="service-single wow fadeInUp" data-wow-delay=".4s">
           <i class="ti-twitter"></i>
           <div class="service-single-brief">
-            <h4><span>Reputation</span></h4>
-            <p>We work honestly and clearly. Therefore, we get customers’ faith and positive feedback and become their long-term partner. </p>
+            <h4><span>Worldwide</span></h4>
+            <p>Our app installs, app review, app ranking services are available in 110+ countries. We provide the best app marketing for App store and Google play.</p>
           </div>
         </div>
         <div class="service-single wow fadeInUp" data-wow-delay=".5s">
           <i class="ti-announcement"></i>
           <div class="service-single-brief">
             <h4><span>Safety</span></h4>
-            <p>We strictly comply with the rules of App Store and Google Play.</p>
+            <p>Our services are safe from App store and Google play policies and restrictions. You can enjoy rapid profit growth in Admob as well</p>
           </div>
         </div>
         <div class="service-single wow fadeInUp" data-wow-delay=".6s">
           <i class="ti-desktop"></i>
           <div class="service-single-brief">
             <h4><span>Professional</span></h4>
-            <p>We have the professional support Team, they will help you to resolve the problems 24/7.</p>
+            <p>We have the professional app marketing support Team. Our ASO specialists will help you to resolve the problems 24/7.</p>
           </div>
         </div>
       </div>
@@ -223,7 +223,7 @@
     <div class="row">
       <div class="col-lg-12">
         <div class="section-title text-center">
-          <h2><span>Our Work Process</span></h2>
+          <h2><span>How it works?</span></h2>
         </div>
       </div>
     </div>
@@ -231,28 +231,28 @@
       <div class="col-lg-3 col-md-3 col-sm-6">
         <div class="process-single wow zoomIn" data-wow-delay=".3s">
           <i class="ti-zoom-in"></i>
-          <h4>Research</h4>
+          <h4>Service Order</h4>
           <span>01</span>
         </div>
       </div>
       <div class="col-lg-3 col-md-3 col-sm-6">
         <div class="process-single wow zoomIn" data-wow-delay=".4s">
           <i class="ti-pencil-alt"></i>
-          <h4>Concept</h4>
+          <h4>Confirm Order</h4>
           <span>02</span>
         </div>
       </div>
       <div class="col-lg-3 col-md-3 col-sm-6">
         <div class="process-single wow zoomIn" data-wow-delay=".5s">
           <i class="ti-announcement"></i>
-          <h4>Develop</h4>
+          <h4>Boost your App</h4>
           <span>03</span>
         </div>
       </div>
       <div class="col-lg-3 col-md-3 col-sm-6">
         <div class="process-single wow zoomIn" data-wow-delay=".6s">
           <i class="ti-bar-chart"></i>
-          <h4>Test</h4>
+          <h4>Send Report</h4>
           <span>04</span>
         </div>
       </div>
@@ -305,6 +305,16 @@
   </div>
 </div>
 <!--testimonial ends-->
+<div class="d-flex position-relative">
+  <img src="{{ asset('front_assets/images/chat-bg.gif') }}" class="h-100 w-100 position-absolute" alt="">
+  <div class="online-chat-main d-block justify-content-center">
+    <h1 class="text-center">Any Questions for App Marketing?</h1>
+    <p class="text-center">You can ask questions right now by online chat.<br> Our ASO Specialists will offer free consultation for app marketing 24/7</p>
+    <div class="d-flex justify-content-center">
+      <a href="https://direct.lc.chat/13266588/" target="_blank" class="online-chat">Free Consultation</a>
+    </div>
+  </div>
+</div>
 
 <!--blog starts-->
 <div class="blog-area pt-95 pt-sm-77 pb-90 pb-sm-70">
