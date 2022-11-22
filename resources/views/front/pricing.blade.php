@@ -1,6 +1,10 @@
 @extends('layout.layout')
 @section('container')
 
+
+@if (isset($service) && !isset($service_packages))
+{!! $service->description ?? '' !!}
+@else
 <!--page-title starts-->
 <div class="page-title-area">
 	<div class="container">
@@ -43,10 +47,10 @@
 						<div class="d-flex">
 							<h5 class="card-title text-light">{{ ucfirst($pakage->title) }}</h5>
 							@php
-								$price=$pakage->price;
-								if($pakage->sale_price!=''){
-									$price=$pakage->sale_price;
-								}
+							$price=$pakage->price;
+							if($pakage->sale_price!=''){
+							$price=$pakage->sale_price;
+							}
 							@endphp
 							<span class="position-absolute price-span text-light">${{ $price }}</span>
 						</div>
@@ -55,9 +59,9 @@
 					<div class="card-body">
 						<ul class="list-sign">
 							@if($pakage->features!='')
-								@foreach (json_decode($pakage->features) as $feature)
-								<li>{{ $feature }}</li>
-								@endforeach
+							@foreach (json_decode($pakage->features) as $feature)
+							<li>{{ $feature }}</li>
+							@endforeach
 							@endif
 						</ul>
 						<form action="{{ route('buy_package') }}" method="post" class="pricing-form">
@@ -319,5 +323,5 @@
 	</div>
 </div>
 <!--pricing-area ends-->
-
+@endif
 @endsection
