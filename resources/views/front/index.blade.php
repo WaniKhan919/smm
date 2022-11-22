@@ -199,13 +199,13 @@
           <i class="ti-announcement"></i>
           <div class="service-single-brief">
             <h4><span>Safety</span></h4>
-            <p>Our services are safe from App store and Google play policies and restrictions. You can enjoy rapid profit growth in Admob as well.</p>
+            <p>Our services are safe from App store and Google play policies and restrictions. You can enjoy rapid profit growth in Admob as well</p>
           </div>
         </div>
         <div class="service-single wow fadeInUp" data-wow-delay=".6s">
           <i class="ti-desktop"></i>
           <div class="service-single-brief">
-            <h4><span>Professional </span></h4>
+            <h4><span>Professional</span></h4>
             <p>We have the professional app marketing support Team. Our ASO specialists will help you to resolve the problems 24/7.</p>
           </div>
         </div>
@@ -306,6 +306,16 @@
   </div>
 </div>
 <!--testimonial ends-->
+<div class="d-flex position-relative">
+  <img src="{{ asset('front_assets/images/chat-bg.gif') }}" class="h-100 w-100 position-absolute" alt="">
+  <div class="online-chat-main d-block justify-content-center">
+    <h1 class="text-center">Any Questions for App Marketing?</h1>
+    <p class="text-center">You can ask questions right now by online chat.<br> Our ASO Specialists will offer free consultation for app marketing 24/7</p>
+    <div class="d-flex justify-content-center">
+      <a href="https://direct.lc.chat/13266588/" target="_blank" class="online-chat">Free Consultation</a>
+    </div>
+  </div>
+</div>
 
 <!--blog starts-->
 <div class="blog-area pt-95 pt-sm-77 pb-90 pb-sm-70">

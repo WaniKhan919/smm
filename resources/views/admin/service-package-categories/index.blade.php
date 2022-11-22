@@ -52,8 +52,8 @@ Admin | Services - Package Categories
                         @forelse ($categories as $i => $category)
                         <tr>
                             <th scope="row">{{ $i + 1 }}</th>
-                            <td>{{ $category->name }}</td>
-                            <td>{{ $category->service->name }}</td>
+                            <td>{{ $category->name ?? '' }}</td>
+                            <td>{{ $category->service->name ?? '' }}</td>
                             <td>{{ \Illuminate\Support\Carbon::parse($category->created_at)->format('M j Y') }}</td>
                             <td class="d-flex align-items-center gap-2">
                                 <a href="{{ route('admin.service-package-categories.edit', $category->id) }}"
