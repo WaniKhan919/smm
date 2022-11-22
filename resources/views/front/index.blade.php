@@ -157,8 +157,7 @@
         <div class="counter-single">
           <i class="ti-crown"></i>
           <span class="count4">325</span>
-          <span>+</span>
-          <h4>Reviews websites</h4>
+          <h4>Apps Ranked Top 1~5</h4>
         </div>
       </div>
     </div>
