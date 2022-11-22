@@ -234,9 +234,11 @@
             <div class="col-lg-6">
               <div class="testimonial-single">
                 <div class="testimonial-info">
-                  <div class="testimonial-thumb">
-                    <img src="{{ $list->image_url ? asset('storage/'.$list->image_url): asset('front_assets/images/testimonials/thumb-1.png')}}" alt="" />
-                  </div>
+                  @if ($list->image_url)
+                    <div class="testimonial-thumb">
+                      <img src="{{ $list->image_url ? asset('storage/'.$list->image_url): asset('front_assets/images/testimonials/thumb-1.png')}}" alt="" />
+                    </div>
+                  @endif
                   <div class="testimonial-name">
                     <h5>{{ $list->name ?? '' }}</h5>
                     <span>{{ $list->company ?? '' }}</span>
