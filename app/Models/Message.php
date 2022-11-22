@@ -12,6 +12,9 @@ class Message extends Model
         'name',
         'email',
         'subject',
+        'link',
+        'keyword',
+        'country',
         'message',
     ];
 }

@@ -69,6 +69,18 @@ Admin | View - message
                       <div class="col-lg-3 col-md-4 col-4 label message-view-field">Subject</div>
                       <div class="col-lg-9 col-md-8 col-8">{{ $message->subject ?? '' }}</div>
                     </div>
+                    <div class="row mb-2">
+                      <div class="col-lg-3 col-md-4 col-4 label message-view-field">Link</div>
+                      <div class="col-lg-9 col-md-8 col-8">{{ $message->link ?? '' }}</div>
+                    </div>
+                    <div class="row mb-2">
+                      <div class="col-lg-3 col-md-4 col-4 label message-view-field">Keyword</div>
+                      <div class="col-lg-9 col-md-8 col-8">{{ $message->keyword ?? '' }}</div>
+                    </div>
+                    <div class="row mb-2">
+                      <div class="col-lg-3 col-md-4 col-4 label message-view-field">Country</div>
+                      <div class="col-lg-9 col-md-8 col-8">{{ $message->country ?? '' }}</div>
+                    </div>
 
                     <div class="row mb-2">
                       <div class="col-lg-3 col-md-4 col-4 label message-view-field">Message</div>

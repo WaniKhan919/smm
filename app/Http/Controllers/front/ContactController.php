@@ -10,20 +10,15 @@ class ContactController extends Controller
 {
     public function index(Request $request)
     {
-        $request->validate([
-            'name' => 'required',
-            'email' => 'required | email',
-            'subject' => 'required',
-            'message' => 'required',
-        ]);
-
         $message = Message::create([
             'name' => $request->name,
             'email' => $request->email,
             'subject' => $request->subject,
+            'link' => $request->link,
+            'country' => $request->country,
+            'keyword' => $request->keyword,
             'message' => $request->message,
         ]);
-
         if($message){
             return back()->with(session()->flash('alert', 'Message successfully sent!'));
         }else{

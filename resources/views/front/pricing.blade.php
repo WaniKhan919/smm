@@ -3,7 +3,146 @@
 
 
 @if (isset($service) && !isset($service_packages))
-{!! $service->description ?? '' !!}
+<div class="bg-banner mb-5">
+	<div class="row">
+		<div class="col-lg-6">
+			<h4 class="pt-5 pl-5">If you've released the app, <br> get it on the app market faster! </h4>
+			<p class="pt-5 pl-5">We can make your app rank Top 1~5 position of any keywords within 25days. We provide the best
+				price for guaranteed app ranking service! Please contact us by filling out the form below 😊 </p>
+		</div>
+		<div class="col-lg-6 ">
+			<div id="carouselExampleSlidesOnly" class="carousel slide pr-3" data-ride="carousel">
+				<div class="carousel-inner">
+					<div class="carousel-item active">
+						<img class="d-block w-100" src="/front_assets/images/slider1.png" alt="First slide">
+					</div>
+					<div class="carousel-item">
+						<img class="d-block w-100" src="/front_assets/images/slider2.png" alt="Second slide">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="container">
+	<div class="row align-items-stretch">
+		<div class="col-lg-6">
+			<h4 class="contact-h text-center mb-2">Contact with us</h4>
+			@if (session()->has('alert'))
+				<h4 class="text-center text-success mb-4">{{ session('alert') }}</h4>
+			@endif
+			<form method="POST" action="{{ route('user.contact.form') }}" class="contact-form-h">
+				@csrf
+				<div class="form-group">
+					<input type="email" name="email" class="form-control" placeholder="Your email address">
+				</div>
+				<div class="form-group">
+					<input type="text" name="link" class="form-control" placeholder="Your app link">
+				</div>
+				<div class="form-group">
+					<input type="text" name="country" class="form-control" placeholder="Your targeted country">
+				</div>
+				<div class="form-group">
+					<input type="text" name="keyword" class="form-control" placeholder="Your targeted keyword">
+				</div>
+				<div class="form-group">
+					<textarea name="message" id="" class="form-control" cols="20" rows="6" placeholder="Message"></textarea>
+				</div>
+				<button class="btn btn-success" type="submit">Submit to Get Plan </button>
+			</form>
+		</div>
+		<div class="col-lg-6">
+			<div class="bg-banner h-100">
+				<div class="pt-5">
+					<h4 class="pl-3 pt-5 text-white">Guaranteed Keyword <br> Ranking (Top 1-5) Services</h4>
+					<ul class="list-group pl-3 pt-1 text-white">
+						<li class="list-group-item border-0 bg-transparent text-white">For iOS and Android apps </li>
+						<li class="list-group-item border-0 bg-transparent text-white">Price starts at $500 </li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="clearfix m-5"></div>
+<div class="container-fluid section_how_to_buy">
+	<div class="container">
+		<h3 class="title-big__all text-uppercase text-center mb-3">How to buy Guaranteed App Ranking Service?</h3>
+		<div class="row row-md-nowrap">
+			<div class="col-8 col-sm-5 col-md-5 col-lg-4 mb-25 wow fadeInUp" data-wow-delay="0s"
+				style="visibility: visible; animation-delay: 0s; animation-name: fadeInUp;">
+				<div class="item-to-buy d-flex align-items-center"> <span class="icon d-flex"> <img
+							src="/front_assets/images/group.png" title="ENTER YOUR INFO" alt="ENTER YOUR INFO"
+							class="img-fluid smooth"> </span>
+					<div class="text-box">
+						<p class="title-small__all f-bold cl-green mb-10 text-uppercase">SUBMIT YOUR REQUEST</p>
+						<div class="desc"> Please fill out the form and note what you want </div>
+					</div>
+				</div>
+			</div>
+			<div class="col-8 col-sm-5 col-md-5 col-lg-4 mb-25 wow fadeInUp" data-wow-delay="0.1s"
+				style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
+				<div class="item-to-buy d-flex align-items-center"> <span class="icon d-flex"> <img
+							src="/front_assets/images/group2.png" title="SEND YOUR INFO" alt="SEND YOUR INFO"
+							class="img-fluid smooth"> </span>
+					<div class="text-box">
+						<p class="title-small__all f-bold cl-green mb-10 text-uppercase">WE WILL CONTACT YOU IN 24H</p>
+						<div class="desc"> We will contact you in 24h with pricing and details for app ranking service process.
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-8 col-sm-5 col-md-5 col-lg-4 mb-25 wow fadeInUp" data-wow-delay="0.2s"
+				style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
+				<div class="item-to-buy d-flex align-items-center"> <span class="icon d-flex"> <img
+							src="/front_assets/images/group3.png" title="WE WILL CONTACT YOU"
+							alt="WE WILL CONTACT YOU" class="img-fluid smooth"> </span>
+					<div class="text-box">
+						<p class="title-small__all f-bold cl-green mb-10 text-uppercase">PAY & START RANKING!</p>
+						<div class="desc">We will send custom online payment by stripe (support VISA,Master Cards). Easy to complete
+							payment and just wait 20~30days! Your app will be ranked Top 1~5. </div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="container get-top">
+			<div class="row align-items-center">
+				<div class="col-lg-4 wow fadeInLeft" style="visibility: visible; animation-name: fadeInLeft;">
+					<h3 class="title-big__all f-bold cl-title text-uppercase position-relative">Get Your App in No.1 Position by
+						any Keyword !</h3>
+				</div>
+				<div class="col-lg-8 mt-3 mt-lg-0 wow fadeInRight" style="visibility: visible; animation-name: fadeInRight;">
+					<div class="s-content">
+						<p><span style="font-family: 'times new roman', times, serif; font-size: 20px;">If your app is already
+								ranked within 300 rankings for the keyword, you can make your app in No.1 Ranking in super short
+								period.</span></p>
+						<p><span style="font-family: 'times new roman', times, serif; font-size: 20px;">We can help to boost your
+								app by any keywords and in any countries.</span></p>
+						<p><span style="font-family: 'times new roman', times, serif; font-size: 20px;">Don’t worry about if not get
+								it to your targeted rank, our guaranteed app ranking service is reaching 98% success result! Buy
+								guaranteed Keyword Ranking is super easy, All you need to do is send us your request!</span></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="container-fluid ranking">
+	<div class="row d-flex align-items-center">
+		<div class="footer-top__text col-lg-7 mb30 wow fadeInLeft" style="visibility: visible; animation-name: fadeInLeft;">
+			<p class="ml-5 pt-5">Promote your App with Fast Ranking Service
+			</p>
+			<p class="ml-5">
+				Ask for the Cheapest Price! 
+			</p>
+		</div>
+		<div class="col-lg-5 mb30 text-center">
+			<div class="popup_foo">
+				<a href="{{ route('contact') }}" class="start-btn-foo wow fadeInRight" style="visibility: visible; animation-name: fadeInRight;">Contact Us</a>
+			</div>
+		</div>
+	</div>
+</div>
 @else
 <!--page-title starts-->
 <div class="page-title-area">
@@ -45,7 +184,7 @@
 				<div class="card">
 					<div class="card-header pricing-header-{{ $loop->index%4+1 }}">
 						<div class="d-flex">
-							<h5 class="card-title text-light">{{ ucfirst($pakage->title) }}</h5>
+							<h5 class="card-title text-light">{{ ucfirst($pakage->level_name) }}</h5>
 							@php
 							$price=$pakage->price;
 							if($pakage->sale_price!=''){
@@ -54,7 +193,7 @@
 							@endphp
 							<span class="position-absolute price-span text-light">${{ $price }}</span>
 						</div>
-						<p class="text-light p-0 m-0">{{ $pakage->quantity }} Positive reviews</p>
+						<p class="text-light p-0 m-0">{{ ucfirst($pakage->title) }}</p>
 					</div>
 					<div class="card-body">
 						<ul class="list-sign">
@@ -68,7 +207,8 @@
 							@csrf
 							<input type="hidden" name="service_id" value="{{ $pakage->id }}">
 							<input type="text" placeholder="Your app URL" name='url'>
-							<input type="email" placeholder="Your email">
+							<input type="email" placeholder="Your email" name='email'>
+							<input type="number" placeholder="Set the daily speed" name="daily_speed">
 							<select name="country">
 								<option value="Afghanistan">Afghanistan</option>
 								<option value="Albania">Albania</option>
