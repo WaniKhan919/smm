@@ -326,3 +326,6 @@
   background: #fff;
   position: relative;
 }
+.pakage_title p, .pakage_title span{
+  font-weight: 900;
+}
