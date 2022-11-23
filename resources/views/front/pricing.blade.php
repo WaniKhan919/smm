@@ -144,27 +144,6 @@
 	</div>
 </div>
 @else
-<!--page-title starts-->
-<div class="page-title-area">
-	<div class="container">
-		<div class="row height-200 align-items-center">
-			<div class="col-lg-12">
-				<div class="page-title section-title text-center">
-					<h1><span>Pricing Plan</span></h1>
-					<div class="site-breadcrumb">
-						<nav aria-label="breadcrumb">
-							<ol class="breadcrumb">
-								<li class="breadcrumb-item"><a href="{{ url('/') }}">Home</a></li>
-								<li class="breadcrumb-item active" aria-current="page">Pricing Plan</li>
-							</ol>
-						</nav>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-<!--page-title ends-->
 
 <!--pricing-area starts-->
 <div class="pricing-area pt-95 pt-sm-77 pb-100 pb-sm-80">
@@ -173,7 +152,7 @@
 			<div class="col-lg-12">
 				<div class="pricing-nav text-center">
 					<ul class="nav nav-tabs align-items-center">
-						<li><a class="active" data-toggle="tab" href="#monthly">Packages</a></li>
+						<li><a class="active" data-toggle="tab" href="#monthly">{{ $pkg_name ?? $service->title ?? '' }}</a></li>
 					</ul>
 				</div>
 			</div>
@@ -193,7 +172,7 @@
 							@endphp
 							<span class="position-absolute price-span text-light">${{ $pakage->price }} @if($price!='') off {{ round($price,0) }}% @endif</span>
 						</div>
-						<div class="d-flex">
+						<div class="d-flex pakage_title text-uppercase">
 							<p class="text-light p-0 m-0">{{ ucfirst($pakage->title) }}</p>
 							<span class="position-absolute price-span text-light"> @if($price!='')${{ $pakage->sale_price }} @endif</span>
 						</div>

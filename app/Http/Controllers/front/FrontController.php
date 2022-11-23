@@ -10,6 +10,7 @@ use App\Models\BlogPost;
 use Illuminate\Http\Request;
 use App\Models\ServicePackage;
 use App\Http\Controllers\Controller;
+use App\Models\ServicePackageCategory;
 use Illuminate\Support\Facades\Auth;
 
 class FrontController extends Controller
@@ -46,8 +47,9 @@ class FrontController extends Controller
         return view('front.blog',compact('blogs'));
     }
     public function servicesCategory($id){
+        $pkg_name= ServicePackageCategory::findOrFail($id)->name;
         $service_packages=ServicePackage::where('service_package_category_id',$id)->orderBy('level','asc')->get();
-        return view('front.pricing',compact('service_packages'));
+        return view('front.pricing',compact('service_packages','pkg_name'));
     }
     public function service($id)
     {
