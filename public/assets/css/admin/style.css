@@ -1,0 +1,10 @@
+.edit-post-img {
+    max-width: 100%;
+    max-height: 13vh;
+}
+.admin-post-links {
+    color: black;
+}
+.message-view-field {
+    font-weight: 600;
+}
