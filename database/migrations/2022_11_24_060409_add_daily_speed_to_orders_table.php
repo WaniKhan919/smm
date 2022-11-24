@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddDailySpeedToServicePackagesTable extends Migration
+class AddDailySpeedToOrdersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class AddDailySpeedToServicePackagesTable extends Migration
      */
     public function up()
     {
-        Schema::table('service_packages', function (Blueprint $table) {
+        Schema::table('orders', function (Blueprint $table) {
             $table->string('daily_speed')->nullable();
         });
     }
@@ -25,7 +25,7 @@ class AddDailySpeedToServicePackagesTable extends Migration
      */
     public function down()
     {
-        Schema::table('service_packages', function (Blueprint $table) {
+        Schema::table('orders', function (Blueprint $table) {
             $table->dropColumn('daily_speed');
         });
     }
