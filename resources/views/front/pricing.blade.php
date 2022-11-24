@@ -444,18 +444,3 @@
 <!--pricing-area ends-->
 @endif
 @endsection
-
-<script>
-
-	// console.log(document.getElementsByClassName("package-card"));
-
-	document.querySelectorAll(".package-card").forEach(element => {
-		console.log(true);
-	});
-	
-	// document.getElementsByClassName("package-card")[0].classList.remove("blue-bg");
-	// document.getElementsByClassName("package-card")[0].classList.add("blue-special-bg");
-	// document.getElementsByClassName("package-card")[0].classList.add("package-card bg-package-card blue-special-bgpackage-blue");
-	// console.log(3 % 2 == 0);
-
-</script>
