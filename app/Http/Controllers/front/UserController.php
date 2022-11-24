@@ -116,6 +116,7 @@ class UserController extends Controller
         if($package->sale_price){
             $price= $package->sale_price;
         }
+        $price=floatval($price)*100;
         $session= $user->checkoutCharge($price,$package->title,1,[
             'success_url' => route('user.payment.success'),
             'cancel_url' => route('user.payment.cancel')
