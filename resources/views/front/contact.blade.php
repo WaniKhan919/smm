@@ -70,7 +70,7 @@
           <form id="contactForm" method="POST" action="{{ route('user.contact.form') }}">
             @csrf
             <div class="form-group">
-              <input type="text" name="name" value="{{ old('name') }}" class="form-control" placeholder="Name:*">
+              <input type="text" name="name" value="{{ old('name') }}" class="form-control" placeholder="Name:*" required>
               <span class="text-danger">
 
                 @error('name')
@@ -82,7 +82,7 @@
               </span>
             </div>
             <div class="form-group">
-              <input type="email" name="email" value="{{ old('email') }}" class="form-control" placeholder="Email:*">
+              <input type="email" name="email" value="{{ old('email') }}" class="form-control" placeholder="Email:*" required>
               <span class="text-danger">
 
                 @error('email')
@@ -94,7 +94,7 @@
               </span>
             </div>
             <div class="form-group">
-              <input type="text" name="subject" value="{{ old('subject') }}" class="form-control" placeholder="Subject:*">
+              <input type="text" name="subject" value="{{ old('subject') }}" class="form-control" placeholder="Subject:*" required>
               <span class="text-danger">
 
                 @error('subject')
@@ -106,7 +106,7 @@
               </span>
             </div>
             <div class="form-group">
-              <textarea class="form-control" name="message" placeholder="Message">{{ old('message') }}</textarea>
+              <textarea class="form-control" name="message" placeholder="Message" required>{{ old('message') }}</textarea>
               <span class="text-danger">
 
                 @error('message')
