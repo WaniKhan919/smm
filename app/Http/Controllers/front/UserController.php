@@ -132,16 +132,28 @@ class UserController extends Controller
           $subscription->url=$request->url;
           $subscription->daily_speed=$request->daily_speed;
           $subscription->country=$request->country;
+          $subscription->keyword=$request->keyword;
           $subscription->status="Pending";
           if($subscription->save()){
-                return redirect($session->url);
+            session()->put('SUB_ID',$subscription->id);
+            return redirect($session->url);
           }
     }
     public function success(Request $request){
+        $sub_id=session()->get('SUB_ID');
+        $subscription=Subscription::findOrFail($sub_id);
+        $subscription->stripe_status='paid';
+        $subscription->update();
+        session()->forget('SUB_ID');
         $message['success']='Payment Success';
         return view('front.thankyou',$message);
     }
     public function cancel(Request $request){
+        $sub_id=session()->get('SUB_ID');
+        $subscription=Subscription::findOrFail($sub_id);
+        $subscription->stripe_status='cancel';
+        $subscription->update();
+        session()->forget('SUB_ID');
         $message['error']='Payment Failed';
         return view('front.thankyou',$message);
     }

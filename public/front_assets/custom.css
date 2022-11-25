@@ -1,5 +1,7 @@
 .bg-banner{
-  background-image: url('https://proreviewsapp.com/uploads/banner-top-key-booth.webp');
+  background-image: url('images/banner/contact-us.png');
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .bg-banner h4{
   font-size: 40px;
@@ -11,6 +13,7 @@
   margin-bottom: 30px;
   margin-bottom: 10px;
   color: #fff !important;
+  text-shadow: 2px 2px black;
 }
 .contact-h{
   font-size: 36px;

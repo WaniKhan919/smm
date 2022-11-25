@@ -126,8 +126,8 @@ a,a:hover {color:#fb5c71;}
 	transition: all .2s ease-in-out 0s;
 	position: fixed;
 	z-index: 99;
-	bottom: 50px;
-	right: 50px;
+	bottom: 20px;
+	right: 100px;
 	display: inline-block;
 	color: #fff;
 	width: 45px;
