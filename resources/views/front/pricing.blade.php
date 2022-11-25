@@ -14,10 +14,10 @@
 			<div id="carouselExampleSlidesOnly" class="carousel slide pr-3" data-ride="carousel">
 				<div class="carousel-inner">
 					<div class="carousel-item active">
-						<img class="d-block w-100" src="/front_assets/images/slider1.png" alt="First slide">
+						<img class="d-block w-100" src="/front_assets/images/banner/rating.png" style="height: 483px" alt="First slide">
 					</div>
 					<div class="carousel-item">
-						<img class="d-block w-100" src="/front_assets/images/slider2.png" alt="Second slide">
+						<img class="d-block w-100" src="/front_assets/images/banner/rating.png" style="height: 483px" alt="Second slide">
 					</div>
 				</div>
 			</div>
@@ -31,24 +31,24 @@
 			@if (session()->has('alert'))
 				<h4 class="text-center text-success mb-4">{{ session('alert') }}</h4>
 			@endif
-			<form method="POST" action="{{ route('user.contact.form') }}" class="contact-form-h">
+			<form method="POST" action="{{ route('user.contact.form') }}" required class="contact-form-h">
 				@csrf
 				<div class="form-group">
-					<input type="email" name="email" class="form-control" placeholder="Your email address">
+					<input type="email" name="email" class="form-control" required placeholder="Your email address">
 				</div>
 				<div class="form-group">
-					<input type="text" name="link" class="form-control" placeholder="Your app link">
+					<input type="text" name="link" class="form-control" required placeholder="Your app link">
 				</div>
 				<div class="form-group">
-					<input type="text" name="country" class="form-control" placeholder="Your targeted country">
+					<input type="text" name="country" class="form-control" required placeholder="Your targeted country">
 				</div>
 				<div class="form-group">
-					<input type="text" name="keyword" class="form-control" placeholder="Your targeted keyword">
+					<input type="text" name="keyword" class="form-control" required placeholder="Your targeted keyword">
 				</div>
 				<div class="form-group">
-					<textarea name="message" id="" class="form-control" cols="20" rows="6" placeholder="Message"></textarea>
+					<textarea name="message" id="" class="form-control" cols="20" rows="6" required placeholder="Message"></textarea>
 				</div>
-				<button class="btn btn-success" type="submit">Submit to Get Plan </button>
+				<button class="start-btn-foo wow fadeInRight border-0" type="submit">Submit to Get Plan </button>
 			</form>
 		</div>
 		<div class="col-lg-6">
@@ -171,10 +171,10 @@
 								$price=(($pakage->price - $pakage->sale_price)/$pakage->price)*100;
 							}
 							@endphp
-						<span class="price-tag" style="font-size: 22px;"><del class="">${{ $pakage->price }} @if($price!='') off {{ round($price,0) }}% @endif</span>
+						<span class="price-tag" style="font-size: 22px;">${{ $pakage->price }} @if($price!='') off {{ round($price,0) }}% @endif</span>
 					</div>
 					<div class="pakage-header-div">
-						<span class="price" style="font-size: 31px;">{{ ucfirst($pakage->title) }}</span>
+						<span class="price" style="font-size: 28px;">{{ ucfirst($pakage->title) }}</span>
 						<span class="discount-price" style="font-size: 22px;">@if($price!='')${{ $pakage->sale_price }} @endif</span>
 					</div>
 					<ul>
@@ -189,6 +189,7 @@
 							<input type="hidden" name="service_id" value="{{ $pakage->id }}">
 							<input type="text" placeholder="Your app URL" name='url'>
 							<input type="email" placeholder="Your email" name='email'>
+							<input type="text" placeholder="Keyword" name='keyword'>
 							<input type="number" placeholder="Set the daily speed" name="daily_speed">
 							<select class="country_dropdown" name="country" id=""
 							class="form-control">
