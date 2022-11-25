@@ -65,7 +65,7 @@ Admin | Users Orders
                                 <th scope="col">Price</th>
                                 <th scope="col">Country</th>
                                 <th scope="col">Url</th>
-                                <th scope="col">status</th>
+                                <th scope="col">Status</th>
                                 <th scope="col">Action</th>
                               </tr>
                             </thead>

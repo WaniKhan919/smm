@@ -63,6 +63,7 @@ Admin | Orders Detail
                               <p class="h5">Price :  <span class="h6">{{ $order->stripe_price ?? ''}}</span> </p> 
                               <p class="h5">URL :  <span class="h6">{{ $order->url ?? ''}}</span> </p> 
                               <p class="h5">Daily Speed :  <span class="h6">{{ $order->daily_speed ?? '' }}</span> </p> 
+                              <p class="h5">Keyword :  <span class="h6">{{ $order->keyword ?? '' }}</span> </p> 
                               <p class="h5">Country :  <span class="h6">{{ $order->country ?? ''}}</span> </p> 
                               <p class="h5">Status :  <span class="h6">{{ $order->status ?? ''}}</span> </p> 
                             </div>

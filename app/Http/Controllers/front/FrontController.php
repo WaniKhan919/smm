@@ -16,9 +16,11 @@ use Illuminate\Support\Facades\Auth;
 class FrontController extends Controller
 {
     public function index(){
+        $ios=Service::where('name','like','ios%')->first();
+        $android=Service::where('name','like','android%')->first();
         $reviews=Review::where('published', true)->orderBy('id', 'Desc')->limit(3)->get();
         $blogs=BlogPost::orderBy('id','Desc')->limit(6)->get();
-        return view('front.index',compact('blogs', 'reviews'));
+        return view('front.index',compact('blogs', 'reviews','ios','android'));
     }
     public function about(){
         $reviews=Review::where('published', 1)->limit(3)->get();

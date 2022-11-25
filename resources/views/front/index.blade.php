@@ -42,13 +42,13 @@
         </div>
         <div class="mb-4 d-block d-sm-flex flex-wrap justify-content-sm-between">
           <!-- Desktop -->
-          <a href="#" class="btn btn-primary mb-2 d-none d-sm-block btn-lg ios-cta-btn" style="width: 48.5%;"><i class="ti ti-apple"></i> IOS Promotion</a>
+          <a href="{{ isset($ios->id) ? route('service', $ios->id) : 'javascript:void(0)' }}" class="btn btn-primary mb-2 d-none d-sm-block btn-lg ios-cta-btn" style="width: 48.5%;"><i class="ti ti-apple"></i> IOS Promotion</a>
           <!-- Mobile -->
-          <a href="#" class="btn btn-primary mb-2 w-100 w-sm-auto d-block d-sm-none btn-lg ios-cta-btn" style="width: 48.5%;"><i class="ti ti-apple"></i> IOS Promotion</a>
+          <a href="{{ isset($ios->id) ? route('service', $ios->id) : 'javascript:void(0)' }}" class="btn btn-primary mb-2 w-100 w-sm-auto d-block d-sm-none btn-lg ios-cta-btn" style="width: 48.5%;"><i class="ti ti-apple"></i> IOS Promotion</a>
           <!-- Desktop -->
-          <a href="#" class="btn btn-success mb-2 d-none d-sm-block btn-lg android-cta-btn" style="width: 48.5%;"><i class="ti ti-android"></i> Android Promotion</a>
+          <a href="{{ isset($android->id) ? route('service', $android->id) : 'javascript:void(0)' }}" class="btn btn-success mb-2 d-none d-sm-block btn-lg android-cta-btn" style="width: 48.5%;"><i class="ti ti-android"></i> Android Promotion</>
           <!-- Mobile -->
-          <a href="#" class="btn btn-success mb-2 w-100 w-sm-auto d-block d-sm-none btn-lg android-cta-btn" style="width: 48.5%; width: 48.5%;"><i class="ti ti-android"></i> Android Promotion</a>
+          <a href="{{ isset($android->id) ? route('service', $android->id) : 'javascript:void(0)' }}" class="btn btn-success mb-2 w-100 w-sm-auto d-block d-sm-none btn-lg android-cta-btn" style="width: 48.5%; width: 48.5%;"><i class="ti ti-android"></i> Android Promotion</a>
         </div>
         <div>
           <img src="{{ asset('front_assets/images/banner/android-rating.webp')}}" alt="" style="max-height: 140px; object-fit: contain;">
@@ -274,7 +274,9 @@
     <div class="row mt-50">
       <div class="col-xl-5">
         <div class="ds-sm-none wow fadeIn">
-          <img src="{{ asset('front_assets/images/testimonials/2.png')}}" alt="" />
+          {{-- <img src="{{ asset('front_assets/images/testimonials/2.png')}}" alt="" /> --}}
+          <video src="https://cdnl.iconscout.com/lottie/premium/preview-watermark/product-review-5315364-4453017.mp4" autoplay="autoplay" muted="muted" loop="loop" playsinline="" type="video/mp4" style="height: 500px;
+          width: 100%;"></video>
         </div>
       </div>
       <div class="col-xl-7">

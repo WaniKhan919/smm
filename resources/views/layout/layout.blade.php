@@ -157,7 +157,7 @@
 					<div class="row height-100 align-items-center">
 						<div class="col-lg-3 col-md-3 col-4">
 							<div class="logo">
-								<a href="{{ url('/') }}"><img src="http://admksolutions.com/wp-content/uploads/2020/09/ADMK-LOGO.png" style="height: 50px;" alt="logo" /></a>
+								<a href="{{ url('/') }}"><img src="{{ asset('front_assets/images/applay.png') }}" style="height: 50px;" alt="logo" /></a>
 							</div>
 						</div>
 						<div class="col-lg-9 col-md-9 col-8">
@@ -231,7 +231,7 @@
 					<div class="col-lg-3 col-sm-6">
 						<div class="footer-widget footer-logo">
 							<div class="footer-logo">
-								<img src="http://admksolutions.com/wp-content/uploads/2020/09/ADMK-LOGO.png" style="max-height: 60px;" alt="" />
+								<img src="{{ asset('front_assets/images/applay.png') }}" style="max-height: 60px;" alt="" />
 							</div>
 							<ul class="list-none">
 								<li>Mon - Fri: 9:00 - 19:00</li>
@@ -331,6 +331,18 @@
 		<script src="{{ asset('front_assets/js/main.js')}}"></script>
 		<!-- Service-Pricing -->
 		<script src="{{ asset('front_assets/services_pricing/main.js') }}"></script>
-
+		<!--Start of Tawk.to Script-->
+		<script type="text/javascript">
+			var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+			(function(){
+			var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+			s1.async=true;
+			s1.src='https://embed.tawk.to/63806e5ab0d6371309d104f3/1gimqu4og';
+			s1.charset='UTF-8';
+			s1.setAttribute('crossorigin','*');
+			s0.parentNode.insertBefore(s1,s0);
+			})();
+			</script>
+			<!--End of Tawk.to Script-->
 	</body>
 </html>
