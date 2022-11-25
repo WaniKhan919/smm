@@ -308,11 +308,11 @@
 <!--testimonial ends-->
 <div class="d-flex position-relative">
   <img src="{{ asset('front_assets/images/chat-bg.gif') }}" class="h-100 w-100 position-absolute" alt="">
-  <div class="online-chat-main d-block justify-content-center">
+  <div class="online-chat-main d-block justify-content-center" style="background: rgba(0, 0, 0, 0.6);">
     <h1 class="text-center">Any Questions for App Marketing?</h1>
     <p class="text-center">You can ask questions right now by online chat.<br> Our ASO Specialists will offer free consultation for app marketing 24/7</p>
     <div class="d-flex justify-content-center">
-      <a href="https://direct.lc.chat/13266588/" target="_blank" class="online-chat">Free Consultation</a>
+      <a href="https://direct.lc.chat/13266588/" target="_blank" class="online-chat" style="color: #fb5c71;">Free Consultation</a>
     </div>
   </div>
 </div>
