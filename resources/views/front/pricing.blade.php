@@ -72,7 +72,7 @@
 			<div class="col-8 col-sm-5 col-md-5 col-lg-4 mb-25 wow fadeInUp" data-wow-delay="0s"
 				style="visibility: visible; animation-delay: 0s; animation-name: fadeInUp;">
 				<div class="item-to-buy d-flex align-items-center"> <span class="icon d-flex"> <img
-							src="/front_assets/images/group.png" title="ENTER YOUR INFO" alt="ENTER YOUR INFO"
+							src="{{ asset('/front_assets/images/icon1.gif') }}" style="border-radius: 50%;" title="ENTER YOUR INFO" alt="ENTER YOUR INFO"
 							class="img-fluid smooth"> </span>
 					<div class="text-box">
 						<p class="title-small__all f-bold cl-green mb-10 text-uppercase">SUBMIT YOUR REQUEST</p>
@@ -83,7 +83,7 @@
 			<div class="col-8 col-sm-5 col-md-5 col-lg-4 mb-25 wow fadeInUp" data-wow-delay="0.1s"
 				style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
 				<div class="item-to-buy d-flex align-items-center"> <span class="icon d-flex"> <img
-							src="/front_assets/images/group2.png" title="SEND YOUR INFO" alt="SEND YOUR INFO"
+							src="{{ asset('/front_assets/images/icon2.gif') }}" style="border-radius: 50%;"  title="SEND YOUR INFO" alt="SEND YOUR INFO"
 							class="img-fluid smooth"> </span>
 					<div class="text-box">
 						<p class="title-small__all f-bold cl-green mb-10 text-uppercase">WE WILL CONTACT YOU IN 24H</p>
@@ -94,8 +94,9 @@
 			</div>
 			<div class="col-8 col-sm-5 col-md-5 col-lg-4 mb-25 wow fadeInUp" data-wow-delay="0.2s"
 				style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
-				<div class="item-to-buy d-flex align-items-center"> <span class="icon d-flex"> <img
-							src="/front_assets/images/group3.png" title="WE WILL CONTACT YOU"
+				<div class="item-to-buy d-flex align-items-center"> <span class="icon d-flex" style="position: relative;
+					top: -34px;"> <img
+							src="{{ asset('/front_assets/images/icon3.gif') }}" style="border-radius: 50%;"  title="WE WILL CONTACT YOU"
 							alt="WE WILL CONTACT YOU" class="img-fluid smooth"> </span>
 					<div class="text-box">
 						<p class="title-small__all f-bold cl-green mb-10 text-uppercase">PAY & START RANKING!</p>
