@@ -157,7 +157,7 @@
 					<div class="row height-100 align-items-center">
 						<div class="col-lg-3 col-md-3 col-4">
 							<div class="logo">
-								<a href="{{ url('/') }}"><img src="http://admksolutions.com/wp-content/uploads/2020/09/ADMK-LOGO.png" style="height: 50px;" alt="logo" /></a>
+								<a href="{{ url('/') }}"><img src="{{ asset('front_assets/images/applay.png') }}" style="height: 50px;" alt="logo" /></a>
 							</div>
 						</div>
 						<div class="col-lg-9 col-md-9 col-8">
@@ -231,7 +231,7 @@
 					<div class="col-lg-3 col-sm-6">
 						<div class="footer-widget footer-logo">
 							<div class="footer-logo">
-								<img src="http://admksolutions.com/wp-content/uploads/2020/09/ADMK-LOGO.png" style="max-height: 60px;" alt="" />
+								<img src="{{ asset('front_assets/images/applay.png') }}" style="max-height: 60px;" alt="" />
 							</div>
 							<ul class="list-none">
 								<li>Mon - Fri: 9:00 - 19:00</li>
