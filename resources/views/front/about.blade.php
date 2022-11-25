@@ -225,7 +225,9 @@
     <div class="row mt-50">
       <div class="col-xl-5">
         <div class="ds-sm-none wow fadeIn">
-          <img src="{{asset('front_assets/images/testimonials/2.png')}}" alt="" />
+          {{-- <img src="{{asset('front_assets/images/testimonials/2.png')}}" alt="" /> --}}
+          <video src="https://cdnl.iconscout.com/lottie/premium/preview-watermark/product-review-5315364-4453017.mp4" autoplay="autoplay" muted="muted" loop="loop" playsinline="" type="video/mp4" style="height: 500px;
+          width: 100%;"></video>
         </div>
       </div>
       <div class="col-xl-7">

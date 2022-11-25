@@ -5,12 +5,12 @@
 @if (isset($service) && !isset($service_packages))
 <div class="bg-banner mb-5">
 	<div class="row">
-		<div class="col-lg-12">
+		<div class="col-lg-6">
 			<h4 class="pt-5 pl-5">If you've released the app, <br> get it on the app market faster! </h4>
 			<p class="pt-5 pl-5">We can make your app rank Top 1~5 position of any keywords within 25days. We provide the best
 				price for guaranteed app ranking service! Please contact us by filling out the form below 😊 </p>
 		</div>
-		{{-- <div class="col-lg-6 ">
+		<div class="col-lg-6 ">
 			<div id="carouselExampleSlidesOnly" class="carousel slide pr-3" data-ride="carousel">
 				<div class="carousel-inner">
 					<div class="carousel-item active">
@@ -21,7 +21,7 @@
 					</div>
 				</div>
 			</div>
-		</div> --}}
+		</div>
 	</div>
 </div>
 <div class="container">
