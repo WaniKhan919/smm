@@ -76,7 +76,9 @@
   color: #212529;
 }
 .ranking{
-  background-image: url('../front_assets/images/footer_bg.png');
+  background-image: url('https://cdn.pixabay.com/photo/2015/01/08/18/28/startup-593343_960_720.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .footer-top__text p{
   font-size: 36px;
