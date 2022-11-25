@@ -164,7 +164,7 @@
 					
 				<div class="col-lg-4 column-1">
 					<div class="package-card bg-package-card blue-bg package-blue">
-					<div class="pakage-header-div">
+					{{-- <div class="pakage-header-div">
 						<span class="price" style="font-size: 18px;">{{ ucfirst($pakage->level_name) }}</span>
 						@php
 							$price='';
@@ -177,7 +177,33 @@
 					<div class="pakage-header-div">
 						<span class="price" style="font-size: 18px;">{{ ucfirst($pakage->title) }}</span>
 						<span class="discount-price" style="font-size: 18px;">@if($price!='')${{ $pakage->sale_price }} @endif</span>
+					</div> --}}
+
+					{{-- New changes --}}
+					<div class="row py-4 price-card-header-1 change-bg-no rounded-top">
+
+						<div class="col-12 text-white row d-flex justify-content-center">
+
+							<h2>{{ ucfirst($pakage->level_name) }}</h2>
+
+						</div>
+						<div class="col-12 row text-white">
+
+							<div class="col-6 package-status">
+								
+								{{ ucfirst($pakage->title) }}
+
+							</div>
+							<div class="col-6 text-end package-price">
+
+								${{ $pakage->price }}
+
+							</div>
+
+						</div>
+						
 					</div>
+
 					<ul>
 						@if ($pakage->features != "")
 							@foreach (json_decode($pakage->features) as $feature)

@@ -337,3 +337,36 @@
 .country_dropdown option{
   word-wrap: break-word;
 }
+.price-card-header-1 {
+  width: inherit;
+  position: relative;
+  bottom: 20px;
+}
+.change-bg-no {
+  background-color: #663CE1;
+}
+@media (max-width:422px) {
+  .price-card-header-1 {
+    width: 315px;
+  }
+}
+.package-status {
+  padding-left: 36px;
+  font-size: 24px;
+}
+.package-price {
+  text-align: end;
+  font-size: 31px;
+  font-weight: 500;
+}
+.price-card-header-1 .col-12 h2 {
+  padding-left: 31px;
+}
+@media (max-width:420px) {
+  .price-card-header-1 .col-12 h2 {
+    font-size: 43px;
+  }
+}
+.change-bg {
+  background-color: #fb4e83;
+}
