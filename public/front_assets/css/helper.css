@@ -633,3 +633,8 @@ select.form-control:not([size]):not([multiple]) {
 	box-shadow:unset;
 	border-color:unset;
 }
+@media (max-width:421px) {
+	.package-card {
+		max-width: 315px;
+	}
+}
