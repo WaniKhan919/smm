@@ -174,7 +174,7 @@
 						<span class="price-tag" style="font-size: 22px;">${{ $pakage->price }} @if($price!='') off {{ round($price,0) }}% @endif</span>
 					</div>
 					<div class="pakage-header-div">
-						<span class="price" style="font-size: 28px;">{{ ucfirst($pakage->title) }}</span>
+						<span class="price" style="font-size: 22px;">{{ ucfirst($pakage->title) }}</span>
 						<span class="discount-price" style="font-size: 22px;">@if($price!='')${{ $pakage->sale_price }} @endif</span>
 					</div>
 					<ul>
