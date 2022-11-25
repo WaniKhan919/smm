@@ -5,12 +5,12 @@
 @if (isset($service) && !isset($service_packages))
 <div class="bg-banner mb-5">
 	<div class="row">
-		<div class="col-lg-6">
+		<div class="col-lg-12">
 			<h4 class="pt-5 pl-5">If you've released the app, <br> get it on the app market faster! </h4>
 			<p class="pt-5 pl-5">We can make your app rank Top 1~5 position of any keywords within 25days. We provide the best
 				price for guaranteed app ranking service! Please contact us by filling out the form below 😊 </p>
 		</div>
-		<div class="col-lg-6 ">
+		{{-- <div class="col-lg-6 ">
 			<div id="carouselExampleSlidesOnly" class="carousel slide pr-3" data-ride="carousel">
 				<div class="carousel-inner">
 					<div class="carousel-item active">
@@ -21,7 +21,7 @@
 					</div>
 				</div>
 			</div>
-		</div>
+		</div> --}}
 	</div>
 </div>
 <div class="container">
@@ -172,7 +172,7 @@
 								$price=(($pakage->price - $pakage->sale_price)/$pakage->price)*100;
 							}
 							@endphp
-						<span class="price-tag" style="font-size: 18px;">@if($price!='')<del>${{ $pakage->price }}</del> @else ${{ $pakage->price }} @endif @if($price!='') off {{ round($price,0) }}% @endif</span>
+						<span class="price-tag" style="font-size: 18px; text-decoration: none;">@if($price!='')<del style="text-decoration: none;">{{ round($price,0) }}%</del> @else ${{ $pakage->price }} @endif @if($price!='') off <del style="text-decoration: line-through;">${{ $pakage->price }} </del> @endif</span>
 					</div>
 					<div class="pakage-header-div">
 						<span class="price" style="font-size: 18px;">{{ ucfirst($pakage->title) }}</span>
