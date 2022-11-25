@@ -165,18 +165,18 @@
 				<div class="col-lg-4 column-1">
 					<div class="package-card bg-package-card blue-bg package-blue">
 					<div class="pakage-header-div">
-						<span class="price" style="font-size: 22px;">{{ ucfirst($pakage->level_name) }}</span>
+						<span class="price" style="font-size: 18px;">{{ ucfirst($pakage->level_name) }}</span>
 						@php
 							$price='';
 							if($pakage->sale_price!=''){
 								$price=(($pakage->price - $pakage->sale_price)/$pakage->price)*100;
 							}
 							@endphp
-						<span class="price-tag" style="font-size: 22px;">${{ $pakage->price }} @if($price!='') off {{ round($price,0) }}% @endif</span>
+						<span class="price-tag" style="font-size: 18px;">${{ $pakage->price }} @if($price!='') off {{ round($price,0) }}% @endif</span>
 					</div>
 					<div class="pakage-header-div">
-						<span class="price" style="font-size: 22px;">{{ ucfirst($pakage->title) }}</span>
-						<span class="discount-price" style="font-size: 22px;">@if($price!='')${{ $pakage->sale_price }} @endif</span>
+						<span class="price" style="font-size: 18px;">{{ ucfirst($pakage->title) }}</span>
+						<span class="discount-price" style="font-size: 18px;">@if($price!='')${{ $pakage->sale_price }} @endif</span>
 					</div>
 					<ul>
 						@if ($pakage->features != "")
