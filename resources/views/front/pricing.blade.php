@@ -172,7 +172,7 @@
 								$price=(($pakage->price - $pakage->sale_price)/$pakage->price)*100;
 							}
 							@endphp
-						<span class="price-tag" style="font-size: 18px;">${{ $pakage->price }} @if($price!='') off {{ round($price,0) }}% @endif</span>
+						<span class="price-tag" style="font-size: 18px;">@if($price!='')<del>${{ $pakage->price }}</del> @else ${{ $pakage->price }} @endif @if($price!='') off {{ round($price,0) }}% @endif</span>
 					</div>
 					<div class="pakage-header-div">
 						<span class="price" style="font-size: 18px;">{{ ucfirst($pakage->title) }}</span>
