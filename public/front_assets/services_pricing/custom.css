@@ -233,7 +233,7 @@ ul {
   color: #fff;
 }
 .ios-border:before {
-  background: url('http://127.0.0.1:8000/front_assets/images/android-logo.png');
+  background: url('../images/android-logo.png');
   width: 26px;
   height: 33px;
 }
