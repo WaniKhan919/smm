@@ -164,7 +164,6 @@
 							<div class="mainmenu pull-right">
 								<nav>
 									<ul class="list-none">
-										
 										<x-navbar-services></x-navbar-services>
 										<li>
 											<a href="javascript:void(0)">About Us</a>
