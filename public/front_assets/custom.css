@@ -334,3 +334,6 @@
 .pakage_title p, .pakage_title span{
   font-weight: 900;
 }
+.country_dropdown option{
+  word-wrap: break-word;
+}
