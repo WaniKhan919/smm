@@ -192,8 +192,7 @@
 							<input type="email" placeholder="Your email" name='email'>
 							<input type="text" placeholder="Keyword" name='keyword'>
 							<input type="number" placeholder="Set the daily speed" name="daily_speed">
-							<select class="country_dropdown" name="country" id=""
-							class="form-control">
+							<select class="country_dropdown text-center" name="country" id="">
 							<option value="Afghanistan">Afghanistan</option>
 							<option value="Albania">Albania</option>
 							<option value="Algeria">Algeria</option>
