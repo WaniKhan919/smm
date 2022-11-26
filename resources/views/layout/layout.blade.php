@@ -103,6 +103,12 @@
 		<link rel="stylesheet" href="{{ asset('front_assets/custom1.css')}}">
 	</head>
 	<body>
+		@php
+	
+			use App\Models\User;
+			use Auth as Testing;
+
+		@endphp
 		<!--[if lte IE 9]>
 		<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
 		<![endif]-->
@@ -123,14 +129,14 @@
 						</div>
 						<div class="col-lg-6 text-right">
 							<div class="header-top-right pull-right">
-								@if (Auth::check())
+								@if (Auth::check() && Auth::user()->email != "guest@gmail.com")
 									<a href="{{ route('user-dashboard') }}" class="btn-common">Dashboard</a>
 								@else
 									<a href="{{ route('login') }}" class="btn-common">Signin / Signup</a>
 								@endif
 								
 								<div class="social-icons ml-2">
-									@if (Auth::check())
+									@if (Auth::check() && Auth::user()->email != "guest@gmail.com")
 										<a href="{{ route('user-logout') }}">Logout</a>
 									@endif
 								</div>
@@ -346,5 +352,13 @@
 			})();
 			</script>
 			<!--End of Tawk.to Script-->
+
+			<script>
+
+				
+			
+			</script>
+			<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
 	</body>
 </html>

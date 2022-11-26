@@ -11,3 +11,15 @@ document.querySelectorAll(".price-card-header-1").forEach((element, index) => {
 	    element.classList.add("change-bg");
     }
 });
+
+// const stripe_guest_auth = (self) => {
+//     axios
+//     .get("/stripe-guest/login")
+//     .then((response) => {
+//         console.log(response);
+//     })
+//     .catch((error) => {
+//         console.log(error);
+//     })
+//     window.location.reload();
+// }
