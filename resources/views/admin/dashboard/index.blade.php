@@ -39,7 +39,7 @@ Admin - Dashboard
                                         <i class="bi bi-cart"></i>
                                     </div>
                                     <div class="ps-3">
-                                        <h6>145</h6>
+                                        <h6>{{ $order }}</h6>
 
                                     </div>
                                 </div>

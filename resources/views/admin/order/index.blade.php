@@ -103,9 +103,9 @@ Admin | Users Orders
                                           @php
                                             $category=DB::table('service_package_categories')->where('id',$order->service_id)->first();
                                           @endphp
-                                        <td>{{ $category->name }}</td>
-                                        <td>{{ $order->stripe_price }}</td>
-                                        <td>{{ $order->country }}</td>
+                                        <td>{{ $category->name ?? '' }}</td>
+                                        <td>{{ $order->stripe_price ?? '' }}</td>
+                                        <td>{{ $order->country ?? '' }}</td>
                                         <td><a href="{{ $order->url }}" target="_blank">{{ $order->url }}</a></td>
                                         <td>
                                           @php
