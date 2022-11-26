@@ -159,7 +159,7 @@
 					<div class="row height-100 align-items-center">
 						<div class="col-lg-3 col-md-3 col-4">
 							<div class="logo">
-								<a href="{{ url('/') }}"><img src="{{ asset('front_assets/images/applay.png') }}" style="height: 50px;" alt="logo" /></a>
+								<a href="{{ url('/') }}"><img src="{{ asset('front_assets/images/applay.png') }}" style="height: 50px; width: auto; max-width: fit-content;" alt="logo" /></a>
 							</div>
 						</div>
 						<div class="col-lg-9 col-md-9 col-8">
