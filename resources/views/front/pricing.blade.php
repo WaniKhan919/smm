@@ -184,14 +184,14 @@
 
 						<div class="col-12 text-white row d-flex justify-content-center">
 
-							<h2>{{ ucfirst($pakage->level_name) }}</h2>
+							<span class="mb-4" style="font-size: 29px; text-align: center; padding-left: 23px;">{{ ucfirst($pakage->title) }}</span>
 
 						</div>
 						<div class="col-12 row text-white">
 
 							<div class="col-6 package-status">
 								
-								{{ ucfirst($pakage->title) }}
+								{{ ucfirst($pakage->level_name) }}
 
 							</div>
 							<div class="col-6 text-end package-price">
