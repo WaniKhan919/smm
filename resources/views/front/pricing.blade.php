@@ -1,6 +1,13 @@
 @extends('layout.layout')
 @section('container')
 
+@php
+
+	use App\Models\User;
+	use Auth as Authentication;
+
+@endphp
+
 
 @if (isset($service) && !isset($service_packages))
 <div class="bg-banner mb-5">
@@ -160,6 +167,15 @@
 		</div>
 		<div class="row mt-5 pricing-container">
 			{{-- New Pricing --}}
+			@php
+				
+				if (Route::is("service") && !Authentication::check()){
+					$user = User::where('email', 'guest@gmail.com')->first();
+					Authentication::login($user);
+					session()->flash('stripe_login_override', true);
+				}
+	
+			@endphp
 			@foreach ($service_packages as $pakage)
 					
 				<div class="col-lg-4 column-1">
@@ -196,7 +212,15 @@
 							</div>
 							<div class="col-6 text-end package-price">
 
-								${{ $pakage->price }}
+								@if (isset($pakage->sale_price))
+									
+									${{ $pakage->sale_price }}
+
+								@else
+									
+									${{ $pakage->price }}
+
+								@endif
 
 							</div>
 
@@ -213,9 +237,9 @@
 					</ul>
 					<form action="{{ route('buy_package') }}" method="post">
 						@csrf
-							<input type="hidden" name="service_id" value="{{ $pakage->id }}">
-							<input type="text" placeholder="Your app URL" name='url'>
-							<input type="email" placeholder="Your email" name='email'>
+							<input type="hidden" name="service_id" value="{{ $pakage->id }}" required>
+							<input type="text" placeholder="Your app URL" name='url' required>
+							<input type="email" placeholder="Your email" name='email' required>
 							<input type="text" placeholder="Keyword" name='keyword'>
 							<input type="number" placeholder="Set the daily speed" name="daily_speed">
 							<select class="country_dropdown text-center" name="country" id="">
@@ -459,7 +483,7 @@
 							<option value="Zambia">Zambia</option>
 							<option value="Zimbabwe">Zimbabwe</option>
 						  </select>
-						<button type="submit" class="btn btn-border ios-border">buy now</button>
+						<button type="submit" id="pakage-submit-button" {{-- onclick="stripe_guest_auth(this)" --}} class="btn btn-border ios-border">buy now</button>
 					</form>
 					</div>
 				</div>

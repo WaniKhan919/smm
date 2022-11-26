@@ -342,6 +342,9 @@
   position: relative;
   bottom: 20px;
 }
+.change-bg {
+  background-color: #fb4e83;
+}
 .change-bg-no {
   background-color: #663CE1;
 }
@@ -366,7 +369,4 @@
   .price-card-header-1 .col-12 h2 {
     font-size: 43px;
   }
-}
-.change-bg {
-  background-color: #fb4e83;
 }

@@ -23,6 +23,8 @@ use App\Http\Controllers\front\ContactController as FrontContactController;
 use App\Http\Controllers\Admin\FaqController;
 use App\Http\Controllers\front\UserController;
 use App\Models\PackageCategory;
+use App\Models\User;
+use Auth as Authentication;
 
 /*
 |--------------------------------------------------------------------------
@@ -71,10 +73,10 @@ Route::middleware('auth:web')->group(function() {
     Route::put('/user/update/password',[UserController::class,'updatepassword'])->name('user-update-password');
     Route::get('/user/dashboard',[UserController::class,'dashbard'])->name('user-dashboard');
     Route::get('/user/orders',[UserController::class,'orders'])->name('user-orders');
-    Route::post('/user/buy',[UserController::class,'buypackage'])->name('buy_package');
-    Route::get('/user/success',[UserController::class,'success'])->name('user.payment.success');
-    Route::get('/user/cancel',[UserController::class,'cancel'])->name('user.payment.cancel');
 });
+Route::post('/user/buy',[UserController::class,'buypackage'])->name('buy_package');
+Route::get('/user/success',[UserController::class,'success'])->name('user.payment.success');
+Route::get('/user/cancel',[UserController::class,'cancel'])->name('user.payment.cancel');
 
 //});
 /* Admin Route */
@@ -146,4 +148,14 @@ Route::prefix('admin')->name('admin.')->group(function () {
         // Reviews
         Route::resource('/reviews', AdminReviewsController::class);
     });
+});
+// Stripe Guest Login
+Route::get('/stripe-guest/login', function(){
+    $user = User::where('email', 'guest@gmail.com')->first();
+    if(!Authentication::check()){
+        if($user){
+            Authentication::login($user);
+        }
+    }
+    return (Auth::user());
 });
