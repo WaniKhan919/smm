@@ -122,8 +122,8 @@
 						<div class="col-lg-6">
 							<div class="top-info">
 								<ul class="list-none">
-									<li><a href="#"><i class="fa fa-phone"></i>(22) 1234 5678</a></li>
-									<li><a href="#"><i class="fa fa-envelope"></i>email@example.com</a></li>
+									<li><a href="#"><i class="fa fa-telegram"></i>@applay24</a></li>
+									<li><a href="#"><i class="fa fa-envelope"></i>applay24.contact@gmail.com</a></li>
 								</ul>
 							</div>
 						</div>
