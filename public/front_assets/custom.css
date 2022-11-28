@@ -28,6 +28,7 @@
   padding: 5rem 0;
   background-color: #f5f5f5;
 }
+
 .section_how_to_buy .icon {
   width: 7.875rem;
   height: 7.875rem;
@@ -45,6 +46,11 @@
   margin-right: 0.9375rem;
   -webkit-transition: 0.3s;
   transition: 0.3s;
+}
+@media screen and (max-width: 767px) {
+  .section_how_to_buy .icon {
+    width: 5.875rem;
+    height: 5.875rem;
 }
 .section_how_to_buy .title-small__all {
   font-size: 20px;
@@ -67,7 +73,7 @@
 .get-top {
   margin-top: 5rem;
   background: #fff;
-  padding: 6.25rem 5rem;
+  padding: 6.25rem 1rem;
 }
 .get-top .title-big__all {
   padding-bottom: 1.5625rem;
