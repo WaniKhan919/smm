@@ -29,31 +29,31 @@
     <div class="row">
       <div class="col-lg-6">
         <div class="section-title mb-50">
-          <h2><span>Hello, Welcome We are  </span></h2>
-          <h2><span>{{ env('APP_NAME','ADMK') }}!</span></h2>
-          <p class="mt-15">{{ env('APP_NAME','ADMK') }} was founded and developed with the core mission: “Helping your apps to be in the Top apps in the Google Play Store, App Store, and macOS App Store, helping your apps increase revenue sharply and became the most favorite apps”. Proreviewsapp always wants to help each customer achieve their business goals by enhancing their competitive advantage, increasing the ability of potential customers to find Apps and brands on the App Stores.
-
-            In addition, Proreviewsapp has a cross-cutting mission for fellow teammates: “Create the best environment for each member to constantly improve and lead themselves. Besides, every day coming to Proreviewsapp is full of fun at work. And always be happy on the path of pursuing your own aspirations and the meaning of life that Proreviewsapp-er is aiming for.”</p>
+          <h2><span>Hello, Welcome to Applay24 !</span></h2>
+          <p class="mt-15">Applay24 was founded with our company’s identity : “ <b>No.1 App Marketing Solution in the world!</b> ”
+            We help your apps to rank in the Top keywords in both Google Playstore and Appstore. After the company launched the App in the market just need to increase its DAU and revenue by applying 
+            App Install services, App Review services, and App Ranking service. We can help your app increase real impressions and reach 100% safe key word install service. Applay24 has ASO specialists who can deliver the best ASO description for your app. We provide the fastest service and reply to your message in 24 hours. 
+            Our Mission is make your app perform better in the App Store and Google Play, and execute hundreds of tests every month to get the most efficient way to work for each app. Thousands of companies already used Applay24 to improve their app traffic.</p>
         </div>
         <div class="service-single style-2 wow fadeInUp" data-wow-delay=".3s">
           <i class="ti-stats-up"></i>
           <div class="service-single-brief">
-            <h4><span>Be a Master of Our Craft</span></h4>
-            <p>Proreviewsapp is constantly improving what we are doing.</p>
+            <h4><span>The Best App Optimize Solution</span></h4>
+            <p>Applay24 service over +2300 Apps globally, we are monitoring and improving our service every day. </p>
           </div>
         </div>
         <div class="service-single style-2 wow fadeInUp" data-wow-delay=".4s">
-          <i class="ti-twitter"></i>
+          <i class="ti-check-box"></i>
           <div class="service-single-brief">
-            <h4><span>Growth with The Infinitive Mindset</span></h4>
-            <p>Proreviewsapp is not a team with a short-term results mindset. </p>
+            <h4><span>100% Real Active Account Reviews</span></h4>
+            <p>We provide real reviews by targeted countries & languages. 100% safe from Googleplay & IOS policy.</p>
           </div>
         </div>
         <div class="service-single style-2 wow fadeInUp" data-wow-delay=".5s">
-          <i class="ti-desktop"></i>
+          <i class="ti-thumb-up"></i>
           <div class="service-single-brief">
-            <h4><span>Do things with fullest</span></h4>
-            <p>Proreviewsapp does everything with its heart, mind, and soul. Not only creating excellent results.</p>
+            <h4><span>Best Customer Service</span></h4>
+            <p>Applay24 provides the best customer service through the world, our ASO marketing specialist assist you 24/7.</p>
           </div>
         </div>
       </div>

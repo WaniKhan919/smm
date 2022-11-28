@@ -90,6 +90,10 @@ class UserController extends Controller
         return redirect()->route('index');
     }
     public function dashbard(){
+        if(Auth::user()->email == "guest@gmail.com"){
+            Auth::logout();
+            return view('front.login');
+        }
         return view('user.index');
     }
     public function profile(){
@@ -126,7 +130,7 @@ class UserController extends Controller
           $subscription->name=$user->name;
           $subscription->stripe_id=$session->id;
           $subscription->stripe_status=$session->payment_status;
-          $subscription->stripe_price=$price;
+          $subscription->stripe_price=$price/100;
           $subscription->quantity=1;
           $subscription->package_id=$request->service_id;
           $subscription->url=$request->url;
@@ -134,8 +138,10 @@ class UserController extends Controller
           $subscription->country=$request->country;
           $subscription->keyword=$request->keyword;
           $subscription->status="Pending";
+          $subscription->email=$request->email;
           if($subscription->save()){
             session()->put('SUB_ID',$subscription->id);
+            session()->flash('stripe_login_override', true);
             return redirect($session->url);
           }
     }
@@ -146,6 +152,9 @@ class UserController extends Controller
         $subscription->update();
         session()->forget('SUB_ID');
         $message['success']='Payment Success';
+        // if(auth()->user()->email == "guest@gmail.com"){
+        //     Auth::logout();
+        // }
         return view('front.thankyou',$message);
     }
     public function cancel(Request $request){
@@ -155,6 +164,9 @@ class UserController extends Controller
         $subscription->update();
         session()->forget('SUB_ID');
         $message['error']='Payment Failed';
+        // if(auth()->user()->email == "guest@gmail.com"){
+        //     Auth::logout();
+        // }
         return view('front.thankyou',$message);
     }
 }

@@ -7,6 +7,7 @@ use App\Models\BlogPost;
 use App\Models\Package;
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Subscription;
 
 class DashboardController extends Controller
 {
@@ -17,6 +18,7 @@ class DashboardController extends Controller
         $data['packages']=Package::count();
         $data['users']=User::count();
         $data['blogs']=BlogPost::count();
+        $data['order']=Subscription::count();
         return view('admin.dashboard.index',$data);
     }
 
