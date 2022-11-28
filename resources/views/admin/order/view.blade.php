@@ -8,6 +8,12 @@ Admin | Orders Detail
 
 @section('main-content')
 
+@php
+    
+    use App\Models\Subscription;
+
+@endphp
+
 <div id="main">
 
 
@@ -76,7 +82,20 @@ Admin | Orders Detail
                             <h5 class="card-title">User Detail</h5>
                             <div>
                               <p class="h5">User Name :  <span class="h6">{{ $order->name }}</span> </p> 
-                              <p class="h5">Email :  <span class="h6">{{ $user->email }}</span> </p> 
+                              <p class="h5">Email :  <span class="h6">
+                              
+                                @php
+                                    
+                                  if($user->email == "guest@gmail.com"){
+                                    $subscription = Subscription::find($order->id);
+                                    echo $subscription->email;
+                                  }else{
+                                    echo $user->email;
+                                  }
+
+                                @endphp 
+                              
+                              </span> </p> 
                               <p class="h5">Phone :  <span class="h6">{{ $user->phone }}</span> </p>
                             </div>
                           </div>
