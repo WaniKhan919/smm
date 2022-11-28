@@ -115,7 +115,7 @@
 	<div class="container">
 		<h3 class="title-big__all text-uppercase text-center mb-3">How to buy Guaranteed App Ranking Service?</h3>
 		<div class="row row-md-nowrap">
-			<div class="col-8 col-sm-5 col-md-5 col-lg-4 mb-25 wow fadeInUp" data-wow-delay="0s"
+			<div class="col-12 col-sm-5 col-md-5 col-lg-4 mb-25 wow fadeInUp" data-wow-delay="0s"
 				style="visibility: visible; animation-delay: 0s; animation-name: fadeInUp;">
 				<div class="item-to-buy d-flex align-items-center"> <span class="icon d-flex"> <img
 							src="{{ asset('/front_assets/images/icon1.gif') }}" style="border-radius: 50%;" title="ENTER YOUR INFO" alt="ENTER YOUR INFO"
@@ -126,7 +126,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-8 col-sm-5 col-md-5 col-lg-4 mb-25 wow fadeInUp" data-wow-delay="0.1s"
+			<div class="col-12 col-sm-5 col-md-5 col-lg-4 mb-25 wow fadeInUp" data-wow-delay="0.1s"
 				style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
 				<div class="item-to-buy d-flex align-items-center"> <span class="icon d-flex"> <img
 							src="{{ asset('/front_assets/images/icon2.gif') }}" style="border-radius: 50%;"  title="SEND YOUR INFO" alt="SEND YOUR INFO"
@@ -138,7 +138,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-8 col-sm-5 col-md-5 col-lg-4 mb-25 wow fadeInUp" data-wow-delay="0.2s"
+			<div class="col-12 col-sm-5 col-md-5 col-lg-4 mb-25 wow fadeInUp" data-wow-delay="0.2s"
 				style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
 				<div class="item-to-buy d-flex align-items-center"> <span class="icon d-flex" style="position: relative;
 					top: -34px;"> <img
@@ -152,7 +152,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="container get-top">
+		<div class="container get-top w-100">
 			<div class="row align-items-center">
 				<div class="col-lg-4 wow fadeInLeft" style="visibility: visible; animation-name: fadeInLeft;">
 					<h3 class="title-big__all f-bold cl-title text-uppercase position-relative">Get Your App in No.1 Position by
@@ -279,8 +279,9 @@
 							<input type="hidden" name="service_id" value="{{ $pakage->id }}" required>
 							<input type="text" placeholder="Your app URL" name='url' required>
 							<input type="email" placeholder="Your email" name='email' required>
-							<input type="text" placeholder="Keyword" name='keyword'>
-							<input type="number" placeholder="Set the daily speed" name="daily_speed">
+							@if(strtolower($pakage->title)=='android keyword installs' || strtolower($pakage->title) =='ios keyword installs')
+								<input type="text" placeholder="Keyword" name='keyword'>
+							@endif
 							<select class="country_dropdown text-center" name="country" id="">
 							<option value="Afghanistan">Afghanistan</option>
 							<option value="Albania">Albania</option>
