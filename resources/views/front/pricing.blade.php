@@ -8,6 +8,45 @@
 
 @endphp
 
+{{-- Login Modal --}}
+	<div class="modal fade" id="pricing-login-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+		aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content p-4">
+				<button type="button" class="close x" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+				<div class="modal-header border-0 mb-2">
+					<h5 class="modal-title text-dark" id="exampleModalLabel">Log in</h5>
+					<button type="button" class="close" aria-label="Close" disabled='true'>
+						<a href="{{ url('/register') }}"><span aria-hidden="true" id="pricing-login-modal-signup-button">Signup</span></a>
+					</button>
+				</div>
+				<div class="modal-body">
+					<form id="pricing-modal-login-form">
+						<div class="form-group pricing-login-form-item">
+							<input type="text" id="email" class="form-control p-0"
+								style="box-shadow: none;border-radius:0px">
+							<label class="form-control-placeholder p-0" for="name">Email</label>
+							<span class="text-danger text-center"></span>
+						</div>
+						<div class="form-group pricing-login-form-item">
+							<input type="text" id="password" class="form-control p-0"
+								style="box-shadow: none;border-radius:0px">
+							<label class="form-control-placeholder p-0" for="password">Password</label>
+						</div>
+				</div>
+				<div class="modal-footer border-0 mb-4">
+					<button type="submit" id="pricing-login-modal" class="btn signup col-6 col-md-6 checkout-login-centered">Login</button>
+				</div>
+			
+			</form>
+
+				<button id="checkout-guest-button" class="checkout-login-centered">Checkout as a guest!</button>
+			</div>
+		</div>
+	</div>
+{{--  --}}
 
 @if (isset($service) && !isset($service_packages))
 <div class="bg-banner mb-5">
@@ -484,7 +523,18 @@
 							<option value="Zambia">Zambia</option>
 							<option value="Zimbabwe">Zimbabwe</option>
 						  </select>
-						<button type="submit" id="pakage-submit-button" {{-- onclick="stripe_guest_auth(this)" --}} class="btn btn-border ios-border">buy now</button>
+
+						@if (!auth()->check() || auth()->user()->email == "guest@gmail.com")
+						
+						<button type="button" id="pakage-submit-button" class="btn btn-border ios-border pricing-guest-login" data-toggle="modal" data-target="#pricing-login-modal">buy now</button>
+						<button type="submit" class="d-none" id="pricing-checkout-toggle"></button>
+
+						@else
+						
+						<button type="submit" id="pakage-submit-button" class="btn btn-border ios-border">buy now</button>
+
+						@endif
+						
 					</form>
 					</div>
 				</div>
