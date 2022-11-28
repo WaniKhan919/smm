@@ -240,8 +240,9 @@
 							<input type="hidden" name="service_id" value="{{ $pakage->id }}" required>
 							<input type="text" placeholder="Your app URL" name='url' required>
 							<input type="email" placeholder="Your email" name='email' required>
-							<input type="text" placeholder="Keyword" name='keyword'>
-							<input type="number" placeholder="Set the daily speed" name="daily_speed">
+							@if(strtolower($pakage->title)=='android keyword installs' || strtolower($pakage->title) =='ios keyword installs')
+								<input type="text" placeholder="Keyword" name='keyword'>
+							@endif
 							<select class="country_dropdown text-center" name="country" id="">
 							<option value="Afghanistan">Afghanistan</option>
 							<option value="Albania">Albania</option>
