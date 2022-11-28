@@ -279,7 +279,7 @@
 							<input type="hidden" name="service_id" value="{{ $pakage->id }}" required>
 							<input type="text" placeholder="Your app URL" name='url' required>
 							<input type="email" placeholder="Your email" name='email' required>
-							@if(strtolower($pakage->title)=='android keyword installs' || strtolower($pakage->title) =='ios keyword installs')
+							@if($pakage->keyword == 1)
 								<input type="text" placeholder="Keyword" name='keyword'>
 							@endif
 							<select class="country_dropdown text-center" name="country" id="">
