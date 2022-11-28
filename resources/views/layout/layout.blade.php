@@ -273,10 +273,10 @@
 							<div class="footer-widget-title">
 								<h4><span>Contact Us</span></h4>
 							</div>
-							<h5>(00) 1234 5678</h5>
+							<h5>applay24.contact@gmail.com</h5>
 							<ul class="list-none">
-								<li>email@example.com</li>
-								<li>I8 Markaz Islamabad</li>
+								{{-- <li>email@example.com</li> --}}
+								{{-- <li>I8 Markaz Islamabad</li> --}}
 							</ul>
 							<div class="social-icons style-2 mt-25">
 								<a href="#"><i class="fa fa-facebook"></i></a>
