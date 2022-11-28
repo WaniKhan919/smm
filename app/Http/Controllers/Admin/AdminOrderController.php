@@ -40,7 +40,7 @@ class AdminOrderController extends Controller
         if($sub){
             $sub = $sub->delete();
             if($sub){
-                return back()->with(session()->flash('alert', 'User Successfully Deleted'));
+                return back()->with(session()->flash('alert', 'Order Successfully Deleted'));
             }else{
                 return back()->with(session()->flash('alert', 'Failed to Delete'));
             }
