@@ -45,7 +45,11 @@ class ServicePackagesController extends Controller
             'title' => 'required',
             'price' => 'required',
         ]);
-
+        if($request->keyword){
+            $keyword = 1;
+        }else{
+            $keyword=0;
+        }
         ServicePackage::create([
             'title' => $request->title,
             'service_id' => $request->service_id,
@@ -55,6 +59,7 @@ class ServicePackagesController extends Controller
             'price' => $request->price,
             'sale_price' => $request->sale_price,
             'quantity' => $request->quantity,
+            'keyword' => $keyword,
             'features' => $request->features ? json_encode($request->features) : null,
         ]);
 
@@ -108,6 +113,11 @@ class ServicePackagesController extends Controller
         $package->price = $request->price;
         $package->sale_price = $request->sale_price;
         $package->quantity = $request->quantity;
+        if($request->keyword){
+            $package->keyword = 1;
+        }else{
+            $package->keyword = 0;
+        }
         $package->features = $request->features ? json_encode($request->features) : null;
         $package->save();
 

@@ -21,6 +21,7 @@ class ServicePackage extends Model
         'level_name',
         'price',
         'sale_price',
+        'keyword',
         'features',
         'service_id',
         'service_package_category_id',

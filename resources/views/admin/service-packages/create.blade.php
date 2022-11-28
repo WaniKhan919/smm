@@ -103,6 +103,10 @@ Admin | Services Packages - Create
                     <div class="invalid-feedback d-block">{{ $message }}</div>
                     @enderror
                 </div>
+                <div class="col-md-6">
+                    <label for="quantity" class="form-label">Keyword</label>
+                    <input type="checkbox" class="form-check" id="quantity" name="keyword">
+                </div>
                 <div class="col-md-12">
                     <div>
                         <label for="features" class="form-label">Features</label>
