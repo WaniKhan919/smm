@@ -30,7 +30,11 @@ class FrontController extends Controller
         }
         $reviews=Review::where('published', true)->orderBy('id', 'Desc')->limit(3)->get();
         $blogs=BlogPost::orderBy('id','Desc')->limit(6)->get();
-        return view('front.index',compact('blogs', 'reviews','ios','android'));
+        return view('front.index',compact('blogs', 'reviews','ios','android'))->withHeaders([
+            'Cache-Control'=>'nocache, no-store, max-age=0, must-revalidate',
+            'Pragma'=>'no-cache',
+            'Expires'=>'Sun, 02 Jan 1990 00:00:00 GMT'
+        ]);
     }
     public function about(){
         $reviews=Review::where('published', 1)->limit(3)->get();
