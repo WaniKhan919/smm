@@ -314,7 +314,7 @@
     <h1 class="text-center">Any Questions for App Marketing?</h1>
     <p class="text-center">You can ask questions right now by online chat.<br> Our ASO Specialists will offer free consultation for app marketing 24/7</p>
     <div class="d-flex justify-content-center">
-      <a href="https://direct.lc.chat/13266588/" target="_blank" class="online-chat" style="color: #fb5c71;">Free Consultation</a>
+      <a href="https://tawk.to/applay24" target="_blank" class="online-chat" style="color: #fb5c71;">Free Consultation</a>
     </div>
   </div>
 </div>
