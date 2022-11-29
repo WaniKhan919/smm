@@ -42,10 +42,9 @@
             <div class="row">
               <div class="col-md-12">
                 <div class="office-address">
-                  <h3>Address</h3>
-                  <p>I8 Markaz Islamabad</p>
-                  <p>Email: contact@gmail.com</p>
-                  <p>Phone: 123-456-7890</p>
+                  <h3>Contact</h3>
+                  <p><i class="fa fa-telegram" style="color: #fb5c71;">&nbsp</i>@applay24</p>
+                  <p><i class="fa fa-envelope" style="color: #fb5c71;">&nbsp</i>applay24.contact@gmail.com</p>
                 </div>
               </div>
             </div>
@@ -54,10 +53,9 @@
             <div class="row">
               <div class="col-md-12">
                 <div class="office-address">
-                  <h3>Address</h3>
-                  <p>I8 Markaz Islamabad</p>
-                  <p>Email: contact@gmail.com</p>
-                  <p>Phone: 123-456-7890</p>
+                  <h3>Company</h3>
+                  <p><i class="fa-solid fa-building" style="color: #fb5c71;">&nbsp</i>TRENDWIZE MARKETING AND ADVERTISING</p>
+                  <p><i class="fa fa-location-dot" style="color: #fb5c71;">&nbsp</i>USA / Japan / Canada / UAE</p>
                 </div>
               </div>
             </div>

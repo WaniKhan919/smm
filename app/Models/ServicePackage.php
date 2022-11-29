@@ -22,6 +22,7 @@ class ServicePackage extends Model
         'price',
         'sale_price',
         'keyword',
+        'speed_box',
         'features',
         'service_id',
         'service_package_category_id',

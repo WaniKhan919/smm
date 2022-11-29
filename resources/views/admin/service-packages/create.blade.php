@@ -107,6 +107,10 @@ Admin | Services Packages - Create
                     <label for="quantity" class="form-label">Keyword</label>
                     <input type="checkbox" class="form-check" id="quantity" name="keyword">
                 </div>
+                <div class="col-md-6">
+                    <label for="quantity" class="form-label">Speed Box</label>
+                    <input type="checkbox" class="form-check" id="quantity" name="speedbox">
+                </div>
                 <div class="col-md-12">
                     <div>
                         <label for="features" class="form-label">Features</label>

@@ -50,6 +50,13 @@ class ServicePackagesController extends Controller
         }else{
             $keyword=0;
         }
+
+        if($request->speedbox){
+            $speedbox = true;
+        }else{
+            $speedbox = false;
+        }
+
         ServicePackage::create([
             'title' => $request->title,
             'service_id' => $request->service_id,
@@ -60,6 +67,7 @@ class ServicePackagesController extends Controller
             'sale_price' => $request->sale_price,
             'quantity' => $request->quantity,
             'keyword' => $keyword,
+            'speed_box' => $speedbox,
             'features' => $request->features ? json_encode($request->features) : null,
         ]);
 
@@ -117,6 +125,11 @@ class ServicePackagesController extends Controller
             $package->keyword = 1;
         }else{
             $package->keyword = 0;
+        }
+        if($request->speedbox){
+            $package->speed_box = 1;
+        }else{
+            $package->speed_box = 0;
         }
         $package->features = $request->features ? json_encode($request->features) : null;
         $package->save();
