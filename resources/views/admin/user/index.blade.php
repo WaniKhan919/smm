@@ -75,6 +75,8 @@ Admin | Users
     
                                @forelse ($users as $user)
                                     
+                                    @if ($user->email != "guest@gmail.com")
+                                        
                                     <tr>
                                         <th>{{ $i }}</th>
                                         <td>
@@ -99,6 +101,8 @@ Admin | Users
                                             </form>
                                         </td>
                                     </tr>
+
+                                    @endif
     
                                     @php
                                     
@@ -108,9 +112,13 @@ Admin | Users
     
                              @empty
     
+                                    @if ($user->email != "guest@gmail.com")
+                                        
                                     <tr>
                                         <td class="text-center" colspan="8">No Records Found!</td>
                                     </tr>
+
+                                    @endif
                                     
                               @endforelse
     

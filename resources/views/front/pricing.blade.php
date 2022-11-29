@@ -280,7 +280,10 @@
 							<input type="text" placeholder="Your app URL" name='url' required>
 							<input type="email" placeholder="Your email" name='email' required>
 							@if($pakage->keyword == 1)
-								<input type="text" placeholder="Keyword" name='keyword'>
+								<input type="text" placeholder="Key word" name='keyword'>
+							@endif
+							@if($pakage->speed_box == 1)
+								<input type="text" placeholder="Set the daily speed box" name='daily_speed'>
 							@endif
 							<select class="country_dropdown text-center" name="country" id="">
 							<option value="Afghanistan">Afghanistan</option>
