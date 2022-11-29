@@ -22,6 +22,7 @@ use App\Http\Controllers\Admin\Message\MessageController as AdminMessageControll
 use App\Http\Controllers\front\ContactController as FrontContactController;
 use App\Http\Controllers\Admin\FaqController;
 use App\Http\Controllers\front\UserController;
+use Illuminate\Http\Request;
 use App\Models\PackageCategory;
 use App\Models\User;
 use Auth as Authentication;
@@ -158,4 +159,13 @@ Route::get('/stripe-guest/login', function(){
         }
     }
     return (Auth::user());
+});
+// Pricing Guest Modal Login
+Route::post('/modal/login', function(Request $request){
+    // return response()->json($request);
+    if(Authentication::attempt(['email' => $request->email, 'password' => $request->password])){
+        return response()->json("login_success");
+    }else{
+        return response()->json("invalid_credentials");
+    }
 });

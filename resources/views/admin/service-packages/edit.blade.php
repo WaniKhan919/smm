@@ -110,6 +110,12 @@ Admin | Services Packages - edit
                         checked
                     @endif>
                 </div>
+                <div class="col-md-6">
+                    <label for="quantity" class="form-label">Speed Box</label>
+                    <input type="checkbox" class="form-check" id="quantity" name="speedbox" @if ($package->speed_box==1)
+                        checked
+                    @endif>
+                </div>
                 <div class="col-md-12">
                     <div>
                         <label for="features" class="form-label">Features</label>

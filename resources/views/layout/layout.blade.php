@@ -122,8 +122,8 @@
 						<div class="col-lg-6">
 							<div class="top-info">
 								<ul class="list-none">
-									<li><a href="#"><i class="fa fa-phone"></i>(22) 1234 5678</a></li>
-									<li><a href="#"><i class="fa fa-envelope"></i>email@example.com</a></li>
+									<li><a href="#"><i class="fa fa-telegram"></i>@applay24</a></li>
+									<li><a href="#"><i class="fa fa-envelope"></i>applay24.contact@gmail.com</a></li>
 								</ul>
 							</div>
 						</div>
@@ -273,10 +273,10 @@
 							<div class="footer-widget-title">
 								<h4><span>Contact Us</span></h4>
 							</div>
-							<h5>(00) 1234 5678</h5>
+							<h5>applay24.contact@gmail.com</h5>
 							<ul class="list-none">
-								<li>email@example.com</li>
-								<li>I8 Markaz Islamabad</li>
+								{{-- <li>email@example.com</li> --}}
+								{{-- <li>I8 Markaz Islamabad</li> --}}
 							</ul>
 							<div class="social-icons style-2 mt-25">
 								<a href="#"><i class="fa fa-facebook"></i></a>
